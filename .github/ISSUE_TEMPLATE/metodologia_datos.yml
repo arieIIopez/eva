@@ -1,0 +1,48 @@
+name: Observación metodológica o de datos
+description: Proponer correcciones, mejoras o revisiones sobre metodología, parámetros o fuentes de datos
+title: "[Metodología/Datos] "
+labels: []
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Tipo de observación
+      options:
+        - Metodología
+        - Parámetros
+        - Datos
+        - Geometrías
+        - Licencias o atribución de datos
+        - Reproducibilidad
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Explique el problema, supuesto o mejora propuesta.
+    validations:
+      required: true
+  - type: textarea
+    id: basis
+    attributes:
+      label: Fundamento
+      description: Incluya referencias técnicas, bibliográficas, fuente de datos o evidencia cuando corresponda.
+  - type: textarea
+    id: effect
+    attributes:
+      label: Efecto esperado
+      description: Indique cómo podría afectar la evaluación, priorización, comparabilidad o interpretación de resultados.
+  - type: input
+    id: version
+    attributes:
+      label: Versión o capa afectada
+      placeholder: "Ej.: metodología 2.3.0 / siniestros.geojson / proyectos_pmc.geojson"
+  - type: checkboxes
+    id: transparency
+    attributes:
+      label: Transparencia
+      options:
+        - label: La propuesta mantiene explícitos los supuestos y permite auditar el cambio.
+          required: true
