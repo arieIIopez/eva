@@ -1,0 +1,40 @@
+name: Ensamblar memoria científica completa
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/assemble-memory-full.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensamblar fuente completa
+        run: |
+          cat .github/tmp_memoria_full/part00.md \
+              .github/tmp_memoria_full/part01.md \
+              .github/tmp_memoria_full/part02.md \
+              .github/tmp_memoria_full/part03.md \
+              .github/tmp_memoria_full/part04.md \
+              .github/tmp_memoria_full/part05.md \
+              .github/tmp_memoria_full/part06.md \
+              > docs/MEMORIA_TECNICA_CIENTIFICA.md
+          test "$(wc -c < docs/MEMORIA_TECNICA_CIENTIFICA.md)" -eq 65350
+
+      - name: Publicar fuente completa
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/MEMORIA_TECNICA_CIENTIFICA.md
+          if git diff --cached --quiet; then
+            echo 'La memoria ya estaba actualizada.'
+          else
+            git commit -m 'Publicar memoria técnica científica completa'
+            git push
+          fi
