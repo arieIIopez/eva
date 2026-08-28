@@ -1,0 +1,10 @@
+EVA — Evaluador de Ciclovías Proyectadas
+Copyright 2026 Gobierno Regional Metropolitano de Santiago
+
+Desarrollado internamente por la División de Infraestructura y Transportes del Gobierno Regional Metropolitano de Santiago.
+
+El software de EVA se distribuye bajo Apache License 2.0, según el archivo LICENSE incluido en este repositorio.
+
+Los nombres, logotipos, emblemas, marcas, signos distintivos y demás elementos de identidad institucional del Gobierno Regional Metropolitano de Santiago no se encuentran licenciados por Apache License 2.0. Su uso se rige por las normas y autorizaciones institucionales que correspondan.
+
+Los datos, cartografías y otros insumos de terceros incluidos o referenciados por EVA pueden estar sujetos a condiciones de uso, licencias o atribuciones propias de sus fuentes. La inclusión de esos insumos en este repositorio no modifica ni amplía los derechos otorgados por sus titulares o entidades de origen. Consulte docs/LICENCIAS_DATOS.md.
