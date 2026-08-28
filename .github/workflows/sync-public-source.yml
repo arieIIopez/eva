@@ -1,0 +1,187 @@
+name: Sincronizar código y datos públicos de EVA
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sync-public-source.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Descargar código y capas públicas desde DITDATOS
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://ditdatos.gobiernosantiago.cl/evaluador"
+          mkdir -p src data assets
+
+          files=(
+            src/tweaks-panel.jsx
+            src/terminal.jsx
+            src/version.jsx
+            src/scenarios.jsx
+            src/demanda-modal.jsx
+            src/metodologia.jsx
+            src/data.jsx
+            src/engine.jsx
+            src/qa.jsx
+            src/analysis.jsx
+            src/netview.jsx
+            src/ui.jsx
+            src/fractal.js
+            src/flyover.js
+            src/reports.js
+            src/comparador.jsx
+            src/map.jsx
+            src/left-panel.jsx
+            src/right-panel.jsx
+            src/app.jsx
+            src/styles.css
+            data/proyectos_pmc.geojson
+            data/ciclovias_existentes.geojson
+            data/od_hex.geojson
+            data/od_comunas.json
+            data/educacion_superior.geojson
+            data/siniestros.geojson
+            data/monumentos.geojson
+            data/ferias.geojson
+            data/metro.geojson
+            data/paraderos_bus.json
+            data/otras_carteras.geojson
+            data/parques.geojson
+            data/manzanas_por_hex.json
+            data/variables_modelo_hex.json
+            data/comunas_rm.geojson
+            assets/logo_gore.svg
+            assets/logo_gore_inicio.svg
+            assets/logo_gore_inicio.png
+          )
+
+          for f in "${files[@]}"; do
+            echo "Descargando $f"
+            curl --fail --location --retry 4 --retry-delay 3 --connect-timeout 20 --max-time 180 \
+              "$BASE/$f" --output "$f"
+          done
+
+      - name: Sanear información de despliegue y referencias no publicables
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          # El token de cartografía se configura externamente y nunca se publica.
+          p = Path('src/map.jsx')
+          t = p.read_text(encoding='utf-8')
+          t = re.sub(
+              r'const\s+MAPBOX_TOKEN\s*=\s*["\']pk\.[^"\']+["\'];',
+              'const MAPBOX_TOKEN = window.EVA_MAPBOX_TOKEN || "";',
+              t,
+              count=1,
+          )
+          t = re.sub(r'pk\.[A-Za-z0-9._-]+', '', t)
+          p.write_text(t, encoding='utf-8')
+
+          # Se elimina del código público el contacto personal asociado a una capa restringida.
+          p = Path('src/left-panel.jsx')
+          t = p.read_text(encoding='utf-8')
+          t = re.sub(
+              r'\s*<p style=\{\{ margin: "10px 0 0", fontSize: 13, lineHeight: 1\.6, color: "var\(--ink-2\)" \}\}>\s*Esta capa es de uso restringido, puede contactarse con el investigador Ricardo Hurtubia para más información — <a href="mailto:rhg@ing\.puc\.cl">rhg@ing\.puc\.cl</a>\s*</p>',
+              '',
+              t,
+              flags=re.S,
+          )
+          p.write_text(t, encoding='utf-8')
+          PY
+
+      - name: Auditoría automática previa a publicación
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if grep -RniE 'pk\.[A-Za-z0-9._-]+' src data assets; then
+            echo 'Se detectó un token Mapbox en los archivos que se iban a publicar.' >&2
+            exit 1
+          fi
+
+          if grep -RniE 'rhg@ing\.puc\.cl' src data assets; then
+            echo 'Se detectó un contacto personal que no debe publicarse.' >&2
+            exit 1
+          fi
+
+          # Una referencia científica vinculada específicamente al modelo Logit puede
+          # mantenerse en demanda-modal.jsx o metodologia.jsx. Cualquier otra mención
+          # debe revisarse antes de publicar.
+          mentions="$(grep -RniE 'Hurtubia' src data assets || true)"
+          if [ -n "$mentions" ]; then
+            disallowed="$(printf '%s\n' "$mentions" | grep -vE '^src/(demanda-modal|metodologia)\.jsx:' || true)"
+            if [ -n "$disallowed" ]; then
+              echo 'Se detectó una referencia no autorizada fuera de la documentación del modelo Logit:' >&2
+              printf '%s\n' "$disallowed" >&2
+              exit 1
+            fi
+          fi
+
+      - name: Ajustar index para utilizar las capas publicadas
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path('index.html')
+          t = p.read_text(encoding='utf-8')
+          # El repositorio conserva las capas procesadas en sus formatos originales,
+          # navegables directamente desde GitHub.
+          t = re.sub(r'(data/[A-Za-z0-9_./-]+\.(?:geojson|json))\.gz', r'\1', t)
+          p.write_text(t, encoding='utf-8')
+          PY
+
+      - name: Verificar integridad mínima
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s src/engine.jsx
+          test -s src/metodologia.jsx
+          test -s src/version.jsx
+          test -s src/qa.jsx
+          test -s data/proyectos_pmc.geojson
+          test -s data/ciclovias_existentes.geojson
+          test -s data/od_hex.geojson
+          test -s data/comunas_rm.geojson
+          test -s assets/logo_gore.svg
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for f in Path('data').iterdir():
+              if f.suffix in {'.json', '.geojson'}:
+                  with f.open(encoding='utf-8') as h:
+                      json.load(h)
+          print('JSON/GeoJSON: OK')
+          PY
+
+      - name: Publicar archivos navegables
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src data assets index.html
+          if git diff --cached --quiet; then
+            echo "No hay cambios que publicar."
+            exit 0
+          fi
+          git commit -m "Publica código fuente y datos procesados de EVA"
+          git push
