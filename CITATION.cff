@@ -3,15 +3,15 @@ message: "Si utiliza EVA en un informe, publicación o desarrollo derivado, cite
 title: "EVA — Evaluador de Ciclovías Proyectadas"
 type: software
 authors:
+  - name: "Gobierno Regional Metropolitano de Santiago"
+    website: "https://www.gobiernosantiago.cl/"
+    country: "CL"
   - family-names: "López"
     given-names: "Ariel"
     affiliation: "Gobierno Regional Metropolitano de Santiago, División de Infraestructura y Transportes"
   - family-names: "Bastías"
     given-names: "Gabriela"
     affiliation: "Gobierno Regional Metropolitano de Santiago, División de Infraestructura y Transportes"
-  - name: "Gobierno Regional Metropolitano de Santiago"
-    website: "https://www.gobiernosantiago.cl/"
-    country: "CL"
 version: "3.12.1"
 date-released: "2026-08-28"
 doi: "10.5281/zenodo.22145509"
