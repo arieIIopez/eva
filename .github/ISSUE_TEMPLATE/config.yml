@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Aplicación EVA
+    url: https://ditdatos.gobiernosantiago.cl/evaluador
+    about: Consulte la versión pública de EVA antes de reportar un problema.
+  - name: Gobierno Regional Metropolitano de Santiago
+    url: https://www.gobiernosantiago.cl/
+    about: Para asuntos institucionales o reportes sensibles utilice los canales oficiales.
