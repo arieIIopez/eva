@@ -9,7 +9,7 @@ authors:
   - family-names: "Bastías"
     given-names: "Gabriela"
     affiliation: "Gobierno Regional Metropolitano de Santiago, División de Infraestructura y Transportes"
-  - name: "Gobierno Regional Metropolitano de Santiago, División de Infraestructura y Transportes"
+  - name: "Gobierno Regional Metropolitano de Santiago"
     website: "https://www.gobiernosantiago.cl/"
     country: "CL"
 version: "3.12.1"
