@@ -2,13 +2,28 @@
 
 Este archivo documenta la evolución de las versiones públicas de EVA.
 
-EVA mantiene versionamiento separado para motor, datos, procesamiento y metodología. La versión del motor se utiliza como referencia principal de la aplicación, mientras que las demás versiones permiten reproducir el contexto exacto de cada corrida.
+EVA mantiene versionamiento separado para motor, datos, procesamiento y metodología. La versión pública del repositorio puede incorporar revisiones de documentación, publicación o citación sin modificar el motor de cálculo; cuando esto ocurra se indicará expresamente.
 
 ## [No publicado]
 
 - Próximas mejoras metodológicas, funcionales y de datos serán documentadas aquí antes de una nueva versión pública estable.
 
-## [3.12.0] — 2026-08-07
+## [3.12.1] — 2026-08-28
+
+### Publicación y citación
+
+- Release de mantenimiento destinada a consolidar el archivado permanente y la citación académica mediante la integración GitHub–Zenodo.
+- Actualización de `CITATION.cff` a la versión pública `3.12.1`.
+- No introduce cambios en el motor de cálculo, los datos, el procesamiento ni la metodología respecto de la versión 3.12.0.
+
+### Componentes técnicos de referencia
+
+- Motor: `3.12.0`
+- Datos: `2026.08`
+- Procesamiento de datos: `2026.08-comunas-oficiales`
+- Metodología: `2.3.0`
+
+## [3.12.0] — 2026-08-28
 
 ### Estado de versión
 
