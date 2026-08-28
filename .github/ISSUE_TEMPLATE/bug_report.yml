@@ -1,0 +1,47 @@
+name: Reporte de error
+description: Informar un problema reproducible en EVA
+title: "[Error] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar un problema. No incluya credenciales, tokens, datos personales ni información sensible.
+  - type: input
+    id: version
+    attributes:
+      label: Versión de EVA
+      description: Indique la versión visible en la aplicación o exportación.
+      placeholder: "Ej.: motor 3.12.0 / datos 2026.08"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Descripción del problema
+      description: Explique qué ocurrió y qué esperaba que ocurriera.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Indique parámetros, escenario, proyecto o secuencia necesaria para reproducir el problema.
+      placeholder: |
+        1. Abrir...
+        2. Seleccionar...
+        3. Ejecutar...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia adicional
+      description: Puede adjuntar capturas, exportaciones o mensajes de error que no contengan información sensible.
+  - type: checkboxes
+    id: security
+    attributes:
+      label: Seguridad
+      options:
+        - label: Confirmo que este reporte no contiene credenciales, tokens ni información sensible.
+          required: true
