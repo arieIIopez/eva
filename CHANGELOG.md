@@ -19,6 +19,9 @@ EVA mantiene versionamiento separado para motor, datos, procesamiento y metodolo
 - La **División de Infraestructura y Transportes** se mantiene como afiliación institucional de los autores personales y unidad responsable del desarrollo.
 - Actualización de la referencia recomendada en `README.md` para reflejar el orden de autoría **GORE RM → López → Bastías**.
 - No introduce cambios en el motor de cálculo, los datos, el procesamiento ni la metodología respecto de la versión 3.12.0.
+- Publicación de `docs/MEMORIA_TECNICA_CIENTIFICA.md`, nueva memoria técnica, metodológica y científica alineada con el código vigente.
+- Publicación de `docs/METODO_DENDRITICO.md`, formulación científica del índice de conectividad dendrítica por distancia topológica a una red raíz.
+- Incorporación de un workflow reproducible para generar el PDF `docs/EVA_Memoria_Tecnica_Metodologica_Cientifica_v3.12.1.pdf` desde la fuente Markdown.
 
 ### Componentes técnicos de referencia
 

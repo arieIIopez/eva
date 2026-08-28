@@ -99,6 +99,9 @@ El directorio de trabajo `uploads/` no se publica: contiene fuentes originales, 
 
 | Documento | Contenido |
 |---|---|
+| [`docs/MEMORIA_TECNICA_CIENTIFICA.md`](docs/MEMORIA_TECNICA_CIENTIFICA.md) | **Memoria técnica, metodológica y científica vigente de EVA v3.12.1** |
+| [`docs/EVA_Memoria_Tecnica_Metodologica_Cientifica_v3.12.1.pdf`](docs/EVA_Memoria_Tecnica_Metodologica_Cientifica_v3.12.1.pdf) | Versión PDF de la memoria científica, generada reproduciblemente desde el Markdown |
+| [`docs/METODO_DENDRITICO.md`](docs/METODO_DENDRITICO.md) | Formulación científica detallada del índice de conectividad dendrítica |
 | [`docs/DATOS.md`](docs/DATOS.md) | Capas procesadas, estructura y procedencia |
 | [`docs/LICENCIAS_DATOS.md`](docs/LICENCIAS_DATOS.md) | Condiciones de uso y licencias de datos |
 | [`docs/VALIDACION.md`](docs/VALIDACION.md) | Verificación computacional, revisión académica, validación social y aplicación institucional |
