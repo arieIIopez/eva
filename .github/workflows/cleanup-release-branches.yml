@@ -19,17 +19,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Eliminar ramas temporales y retirar este workflow
+      - name: Eliminar rama temporal restante y retirar este workflow
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          for branch in v3.12.0-release release-v3.12.0-prep release-v3.12.0 release-v3.12.0-final v3.12.0; do
-            if git ls-remote --exit-code --heads origin "refs/heads/${branch}" >/dev/null 2>&1; then
-              git push origin --delete "${branch}"
-            fi
-          done
+          if git ls-remote --exit-code --heads origin refs/heads/v3.12.0 >/dev/null 2>&1; then
+            git push origin :refs/heads/v3.12.0
+          fi
 
           git rm .github/workflows/cleanup-release-branches.yml
           git commit -m "Retira workflow temporal de limpieza de release"
