@@ -160,11 +160,11 @@ Las contribuciones, observaciones metodológicas y experiencias de adaptación p
 
 La versión `v3.12.1` se encuentra archivada en **Zenodo** y cuenta con un DOI persistente. Para reproducibilidad, se recomienda citar la versión específica utilizada:
 
-> López, A., Bastías, G., & Gobierno Regional Metropolitano de Santiago. (2026). *EVA — Evaluador de Ciclovías Proyectadas* (Version v3.12.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22145509
+> Gobierno Regional Metropolitano de Santiago, López, A., & Bastías, G. (2026). *EVA — Evaluador de Ciclovías Proyectadas* (Version v3.12.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22145509
 
 **DOI de esta versión:** [`10.5281/zenodo.22145509`](https://doi.org/10.5281/zenodo.22145509)
 
-`CITATION.cff` reconoce simultáneamente la autoría técnica de **Ariel López y Gabriela Bastías** y la autoría institucional del **Gobierno Regional Metropolitano de Santiago**. La **División de Infraestructura y Transportes** se mantiene como unidad de afiliación institucional de ambos autores personales y como unidad responsable del desarrollo dentro del GORE RM.
+`CITATION.cff` reconoce al **Gobierno Regional Metropolitano de Santiago** como primer autor institucional, seguido por **Ariel López** y **Gabriela Bastías** como autores personales del software. La **División de Infraestructura y Transportes** se mantiene como unidad de afiliación institucional de ambos autores personales y como unidad responsable del desarrollo dentro del GORE RM.
 
 El repositorio incluye [`CITATION.cff`](CITATION.cff), por lo que GitHub puede generar automáticamente una referencia desde la opción **“Cite this repository”**.
 
