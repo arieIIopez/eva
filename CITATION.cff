@@ -5,10 +5,13 @@ type: software
 authors:
   - family-names: "López"
     given-names: "Ariel"
+    affiliation: "Gobierno Regional Metropolitano de Santiago, División de Infraestructura y Transportes"
   - family-names: "Bastías"
     given-names: "Gabriela"
+    affiliation: "Gobierno Regional Metropolitano de Santiago, División de Infraestructura y Transportes"
 version: "3.12.1"
 date-released: "2026-08-28"
+doi: "10.5281/zenodo.22145509"
 license: "Apache-2.0"
 repository-code: "https://github.com/arieIIopez/eva"
 url: "https://ditdatos.gobiernosantiago.cl/evaluador"
