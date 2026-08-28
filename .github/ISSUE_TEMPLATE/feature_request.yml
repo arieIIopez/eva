@@ -1,0 +1,43 @@
+name: Propuesta de mejora o replicación
+description: Proponer una nueva capacidad, adaptación territorial o experiencia de reutilización
+title: "[Mejora] "
+labels: []
+body:
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Ámbito
+      options:
+        - Nueva funcionalidad
+        - Mejora de interfaz
+        - Nueva fuente de datos
+        - Adaptación a otra institución o territorio
+        - Nueva prueba o validación
+        - Documentación
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: Problema o necesidad
+      description: Describa el problema público o de planificación que busca resolver.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta
+      description: Explique la mejora y cómo se integraría con la lógica de EVA.
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Valor público o beneficio esperado
+      description: Indique quién se beneficiaría y qué decisión o proceso mejoraría.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Antecedentes o referencias
+      description: Incluya experiencias, datos, enlaces o referencias que ayuden a evaluar la propuesta.
