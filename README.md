@@ -1,7 +1,8 @@
 # EVA — Evaluador de Ciclovías Proyectadas
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22145509.svg)](https://doi.org/10.5281/zenodo.22145509)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![EVA](https://img.shields.io/badge/EVA-3.12.0-informational.svg)](CHANGELOG.md)
+[![EVA](https://img.shields.io/badge/EVA-3.12.1-informational.svg)](CHANGELOG.md)
 [![Datos](https://img.shields.io/badge/datos-2026.08-informational.svg)](docs/DATOS.md)
 [![Metodología](https://img.shields.io/badge/metodolog%C3%ADa-2.3.0-informational.svg)](docs/VALIDACION.md)
 [![Publicación verificada](https://github.com/arieIIopez/eva/actions/workflows/sync-public-source.yml/badge.svg)](https://github.com/arieIIopez/eva/actions/workflows/sync-public-source.yml)
@@ -143,7 +144,7 @@ Por seguridad, el repositorio **no publica un token Mapbox**. Para utilizar la v
 
 EVA mantiene versionamiento de motor, datos, procesamiento y metodología, y genera información de procedencia asociada a las corridas y exportaciones. La documentación metodológica incorporada en la aplicación explicita ecuaciones, parámetros, supuestos, limitaciones y criterios de evaluación.
 
-La versión pública actual corresponde a **motor 3.12.0**, **datos 2026.08** y **metodología 2.3.0**. Consulte [`CHANGELOG.md`](CHANGELOG.md) para el historial de versiones.
+La versión pública actual corresponde a **release 3.12.1**, con **motor 3.12.0**, **datos 2026.08** y **metodología 2.3.0**. Consulte [`CHANGELOG.md`](CHANGELOG.md) para el historial de versiones.
 
 EVA es una herramienta de apoyo a la priorización relativa y **no reemplaza** la evaluación social de inversiones ni la ingeniería de detalle de cada proyecto.
 
@@ -157,9 +158,15 @@ Las contribuciones, observaciones metodológicas y experiencias de adaptación p
 
 ## Cómo citar EVA
 
-El repositorio incluye [`CITATION.cff`](CITATION.cff), por lo que GitHub puede generar automáticamente una referencia desde la opción **“Cite this repository”**.
+La versión `v3.12.1` se encuentra archivada en **Zenodo** y cuenta con un DOI persistente. Para reproducibilidad, se recomienda citar la versión específica utilizada:
 
-Al utilizar EVA en informes, publicaciones o desarrollos derivados, se recomienda citar la versión específica del software utilizada.
+> López, A., & Bastías, G. (2026). *EVA — Evaluador de Ciclovías Proyectadas* (Version v3.12.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22145509
+
+**DOI de esta versión:** [`10.5281/zenodo.22145509`](https://doi.org/10.5281/zenodo.22145509)
+
+El desarrollo corresponde institucionalmente al **Gobierno Regional Metropolitano de Santiago — División de Infraestructura y Transportes**. `CITATION.cff` identifica a Ariel López y Gabriela Bastías como autores del software e incorpora su afiliación institucional.
+
+El repositorio incluye [`CITATION.cff`](CITATION.cff), por lo que GitHub puede generar automáticamente una referencia desde la opción **“Cite this repository”**.
 
 ## Licencia
 
