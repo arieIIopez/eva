@@ -25,21 +25,22 @@ EVA forma parte del ecosistema de herramientas **DITDATOS**, desarrollado por la
 
 Sitio institucional: https://ditdatos.gobiernosantiago.cl/
 
-## Estructura del repositorio
+## Distribución pública del código
 
-```text
-.
-├── index.html              # aplicación web
-├── src/                    # interfaz, motor, metodología y análisis
-├── data/                   # capas procesadas utilizadas por la aplicación
-├── assets/                 # recursos gráficos institucionales
-├── screenshots/            # capturas de referencia
-└── docs/                   # documentación para reutilización
-```
+El paquete público saneado del código fuente está disponible en:
+
+`dist/eva-code-public.zip`
+
+El paquete contiene la aplicación, estilos y código del motor y de la interfaz. Antes de publicarlo se retiraron credenciales de despliegue, contactos asociados a capas restringidas e insumos internos que no son necesarios para auditar o reutilizar la herramienta.
+
+El directorio de trabajo `uploads/` no se publica: contiene fuentes originales, archivos intermedios e insumos de desarrollo. La estructura y gobernanza de las capas utilizadas por EVA se documentan en `docs/DATOS.md`.
 
 ## Ejecución local
 
-La versión fuente utiliza archivos estáticos y puede servirse con cualquier servidor HTTP local. Por ejemplo:
+1. Descargar y descomprimir `dist/eva-code-public.zip`.
+2. Incorporar las capas de datos compatibles con los contratos descritos en `docs/DATOS.md`.
+3. Configurar un token público de Mapbox autorizado mediante `window.EVA_MAPBOX_TOKEN` si se desea utilizar la visualización cartográfica.
+4. Servir la carpeta con un servidor HTTP local, por ejemplo:
 
 ```bash
 python -m http.server 8000
@@ -49,25 +50,17 @@ Luego abrir `http://localhost:8000`.
 
 ### Cartografía Mapbox
 
-Por seguridad, este repositorio **no publica un token Mapbox**. Antes de iniciar la aplicación debe definirse un token público autorizado:
-
-```html
-<script>
-  window.EVA_MAPBOX_TOKEN = "TU_TOKEN_PUBLICO_MAPBOX";
-</script>
-```
-
-Ese bloque puede incorporarse antes de cargar los scripts de EVA. En despliegues institucionales el token debe restringirse por dominio y a los permisos mínimos necesarios.
+Por seguridad, este repositorio **no publica un token Mapbox**. En despliegues institucionales el token debe restringirse por dominio y a los permisos mínimos necesarios.
 
 ## Datos y reproducibilidad
 
-Las capas incluidas en `data/` corresponden a insumos procesados utilizados por la versión publicada. EVA mantiene versionamiento de motor, datos y metodología, y genera información de procedencia asociada a las corridas y exportaciones.
+EVA mantiene versionamiento de motor, datos y metodología, y genera información de procedencia asociada a las corridas y exportaciones. La documentación metodológica disponible dentro de la propia aplicación describe ecuaciones, supuestos, parámetros y limitaciones.
 
-La documentación metodológica disponible dentro de la propia aplicación describe ecuaciones, supuestos, parámetros y limitaciones. EVA es una herramienta de apoyo a la priorización relativa y **no reemplaza** la evaluación social de inversiones ni la ingeniería de detalle de cada proyecto.
+EVA es una herramienta de apoyo a la priorización relativa y **no reemplaza** la evaluación social de inversiones ni la ingeniería de detalle de cada proyecto.
 
 ## Reutilización
 
-La arquitectura fue concebida para facilitar su adaptación por otros gobiernos regionales, municipalidades y organismos públicos que necesiten evaluar carteras territoriales multicriterio. La publicación del código busca favorecer auditoría, aprendizaje y transferencia institucional.
+La arquitectura fue concebida para facilitar su adaptación por otros gobiernos regionales, municipalidades y organismos públicos que necesiten evaluar carteras territoriales multicriterio. El aspecto transferible no es el ranking particular de Santiago, sino el método para convertir una cartera territorial compleja en escenarios comparables, recalculables y trazables.
 
 La licencia de reutilización del código será formalizada por el Gobierno Regional Metropolitano de Santiago. Hasta que exista un archivo `LICENSE`, la publicación del código no debe interpretarse como una concesión automática de derechos más allá de los establecidos por la legislación aplicable.
 
