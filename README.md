@@ -31,8 +31,8 @@ Sitio institucional: https://ditdatos.gobiernosantiago.cl/
 
 EVA fue desarrollado internamente por un equipo de la **División de Infraestructura y Transportes del Gobierno Regional Metropolitano de Santiago**, responsable de su estructura metodológica, desarrollo, integración de datos, evaluación y evolución funcional:
 
-- **Ariel López** — ingeniería de transportes, modelación, metodología y desarrollo.
-- **Gabriela Bastías** — geografía, análisis territorial, integración de datos y desarrollo. GitHub: [@gcbastias](https://github.com/gcbastias)
+- **Ariel López** — ingeniería de transportes, modelación, metodología y desarrollo. [@ariellopez](https://github.com/arieIIopez)
+- **Gabriela Bastías** — geografía, análisis territorial, integración de datos y desarrollo. [@gcbastias](https://github.com/gcbastias)
 
 ## Referencias públicas y difusión
 
