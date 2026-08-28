@@ -81,7 +81,6 @@ jobs:
           from pathlib import Path
           import re
 
-          # El token de cartografía se configura externamente y nunca se publica.
           p = Path('src/map.jsx')
           t = p.read_text(encoding='utf-8')
           t = re.sub(
@@ -93,7 +92,6 @@ jobs:
           t = re.sub(r'pk\.[A-Za-z0-9._-]+', '', t)
           p.write_text(t, encoding='utf-8')
 
-          # Se elimina del código público el contacto personal asociado a una capa restringida.
           p = Path('src/left-panel.jsx')
           t = p.read_text(encoding='utf-8')
           t = re.sub(
@@ -109,20 +107,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-
           if grep -RniE 'pk\.[A-Za-z0-9._-]+' src data assets; then
             echo 'Se detectó un token Mapbox en los archivos que se iban a publicar.' >&2
             exit 1
           fi
-
           if grep -RniE 'rhg@ing\.puc\.cl' src data assets; then
             echo 'Se detectó un contacto personal que no debe publicarse.' >&2
             exit 1
           fi
-
-          # Una referencia científica vinculada específicamente al modelo Logit puede
-          # mantenerse en demanda-modal.jsx o metodologia.jsx. Cualquier otra mención
-          # debe revisarse antes de publicar.
           mentions="$(grep -RniE 'Hurtubia' src data assets || true)"
           if [ -n "$mentions" ]; then
             disallowed="$(printf '%s\n' "$mentions" | grep -vE '^src/(demanda-modal|metodologia)\.jsx:' || true)"
@@ -142,8 +134,6 @@ jobs:
           import re
           p = Path('index.html')
           t = p.read_text(encoding='utf-8')
-          # El repositorio conserva las capas procesadas en sus formatos originales,
-          # navegables directamente desde GitHub.
           t = re.sub(r'(data/[A-Za-z0-9_./-]+\.(?:geojson|json))\.gz', r'\1', t)
           p.write_text(t, encoding='utf-8')
           PY
@@ -161,7 +151,6 @@ jobs:
           test -s data/od_hex.geojson
           test -s data/comunas_rm.geojson
           test -s assets/logo_gore.svg
-
           python - <<'PY'
           import json
           from pathlib import Path
