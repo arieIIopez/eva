@@ -27,6 +27,26 @@ EVA forma parte del ecosistema de herramientas **DITDATOS**, desarrollado por la
 
 Sitio institucional: https://ditdatos.gobiernosantiago.cl/
 
+## Equipo responsable
+
+EVA fue desarrollado internamente por un equipo de la **División de Infraestructura y Transportes del Gobierno Regional Metropolitano de Santiago**, responsable de su estructura metodológica, desarrollo, integración de datos, evaluación y evolución funcional:
+
+- **Ariel López** — ingeniería de transportes, modelación, metodología y desarrollo.
+- **Gabriela Bastías** — geografía, análisis territorial, integración de datos y desarrollo. GitHub: [@gcbastias](https://github.com/gcbastias)
+
+## Referencias públicas y difusión
+
+EVA ha sido presentado y discutido públicamente en instancias de ciudad inteligente, movilidad y participación social. Algunas referencias públicas son:
+
+- **Gobierno de Santiago — Smart City Expo Santiago 2026:** presentación pública de EVA como plataforma para apoyar la priorización de ciclovías.  
+  https://www.facebook.com/Gobierno.Santiago/posts/en-smart-city-expo-santiago-expo-santiago-2026-presentamos-eva-la-plataforma-de-/1060331616363665/
+
+- **Mesa participativa Santiago Caminable y Pedaleable:** presentación de EVA a representantes de la sociedad civil y actores vinculados a movilidad.  
+  https://www.extranoticias.cl/mesa-participativa-aborda-avances-de-la-red-metropolitana-de-ciclovias-en-santiago/
+
+- **Revista Pedalea — “¿Qué construir primero? EVA: la herramienta que pone orden al rompecabezas de 820 km”:** artículo sobre el problema de priorización de la Red Metropolitana de Ciclovías, las fuentes de información utilizadas y el funcionamiento de EVA.  
+  https://revistapedalea.com/que-construir-primero-eva-la-herramienta-que-pone-orden-al-rompecabezas-de-820-km/
+
 ## Código y datos publicados
 
 El código fuente se encuentra disponible directamente y puede revisarse archivo por archivo en `src/`. Las capas procesadas utilizadas por la versión publicada se encuentran en `data/`, mientras que los recursos gráficos necesarios para la interfaz están en `assets/`.
@@ -107,4 +127,4 @@ La licencia Apache 2.0 **no relicencia automáticamente los datos ni los activos
 **Gobierno Regional Metropolitano de Santiago**  
 **División de Infraestructura y Transportes**
 
-Desarrollo interno por el equipo de planificación y análisis territorial de la División.
+Desarrollo interno por el equipo responsable de EVA: **Ariel López y Gabriela Bastías**.
