@@ -13,7 +13,8 @@ EVA mantiene versionamiento separado para motor, datos, procesamiento y metodolo
 ### Publicación y citación
 
 - Release de mantenimiento destinada a consolidar el archivado permanente y la citación académica mediante la integración GitHub–Zenodo.
-- Actualización de `CITATION.cff` a la versión pública `3.12.1`.
+- DOI de la versión: `10.5281/zenodo.22145509`.
+- Actualización de `CITATION.cff` a la versión pública `3.12.1`, incorporando DOI y afiliación institucional del equipo responsable.
 - No introduce cambios en el motor de cálculo, los datos, el procesamiento ni la metodología respecto de la versión 3.12.0.
 
 ### Componentes técnicos de referencia
