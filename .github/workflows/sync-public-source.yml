@@ -18,62 +18,126 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Descargar código y capas públicas desde DITDATOS
+      - name: Descargar bundle público de EVA
         shell: bash
         run: |
           set -euo pipefail
-          BASE="https://ditdatos.gobiernosantiago.cl/evaluador"
-          mkdir -p src data assets
+          curl --fail --location --retry 4 --retry-delay 3 --connect-timeout 20 --max-time 300 \
+            "https://ditdatos.gobiernosantiago.cl/evaluador" \
+            --output eva-public-bundle.html
+          test -s eva-public-bundle.html
+          grep -q '__bundler/manifest' eva-public-bundle.html
 
-          files=(
-            src/tweaks-panel.jsx
-            src/terminal.jsx
-            src/version.jsx
-            src/scenarios.jsx
-            src/demanda-modal.jsx
-            src/metodologia.jsx
-            src/data.jsx
-            src/engine.jsx
-            src/qa.jsx
-            src/analysis.jsx
-            src/netview.jsx
-            src/ui.jsx
-            src/fractal.js
-            src/flyover.js
-            src/reports.js
-            src/comparador.jsx
-            src/map.jsx
-            src/left-panel.jsx
-            src/right-panel.jsx
-            src/app.jsx
-            src/styles.css
-            data/proyectos_pmc.geojson
-            data/ciclovias_existentes.geojson
-            data/od_hex.geojson
-            data/od_comunas.json
-            data/educacion_superior.geojson
-            data/siniestros.geojson
-            data/monumentos.geojson
-            data/ferias.geojson
-            data/metro.geojson
-            data/paraderos_bus.json
-            data/otras_carteras.geojson
-            data/parques.geojson
-            data/manzanas_por_hex.json
-            data/variables_modelo_hex.json
-            data/comunas_rm.geojson
-            assets/logo_gore.svg
-            assets/logo_gore_inicio.svg
-            assets/logo_gore_inicio.png
-          )
+      - name: Extraer únicamente los componentes verificados
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import base64, gzip, hashlib, json, re, zlib
 
-          for f in "${files[@]}"; do
-            echo "Descargando $f"
-            curl --fail --location --retry 4 --retry-delay 3 --connect-timeout 20 --max-time 180 \
-              "$BASE/$f" --output "$f"
-          done
+          html = Path('eva-public-bundle.html').read_text(encoding='utf-8', errors='strict')
+          mm = re.search(r'<script\s+type=["\']__bundler/manifest["\'][^>]*>(.*?)</script>', html, re.S)
+          tm = re.search(r'<script\s+type=["\']__bundler/template["\'][^>]*>(.*?)</script>', html, re.S)
+          if not mm or not tm:
+              raise SystemExit('El despliegue público no contiene el formato de bundle esperado.')
 
-      - name: Sanear información de despliegue y referencias no publicables
+          manifest = json.loads(mm.group(1))
+          template = json.loads(tm.group(1))
+
+          # SHA-256 calculados sobre los archivos del paquete fuente revisado antes de publicar.
+          # El workflow solo extrae un recurso del bundle público cuando sus bytes coinciden
+          # exactamente con uno de estos hashes conocidos.
+          expected = {
+            '30755428fa89c8a912deaf67df91198d44b6a671bea3e9b2957a8ab175e0beb8': 'src/analysis.jsx',
+            '8edb6a17445038b751ce97ad5034f9b78019baabef8f6accaa15f69b03678395': 'src/app.jsx',
+            'e50090191701be18cb95e4c5787ed68f91de85a1c4c596a820a5f732e04a4f71': 'src/comparador.jsx',
+            '46ff5d3a48598ae11875475dfbccad3e64b02e3cd72b8ab5305fafaa627151f9': 'src/data.jsx',
+            'ae4a750201f6aa6e9e55f5041d126baf3472afffffd680826d5c22a489711ac8': 'src/demanda-modal.jsx',
+            '4bf1fcf52f8a9f5d30c0a89b30f02e8aeaee31b252342b62d38ca0796401b05d': 'src/engine.jsx',
+            '50f7ddc37c32cb3b0315a9de0d70d475ded5360b6a11448e20ba3ae12b05b15f': 'src/flyover.js',
+            '4655318c37bd5877686e231fdbc83b00dfc75e2c8f8e377c7ff8254af3dc4ca4': 'src/fractal.js',
+            '4a5696fea46aafc8c01bff72e4f0be1e57e1d720e2177efa12ddadc67fb7f913': 'src/left-panel.jsx',
+            '675f4f5c7655afa07c3613bb96cfde3a5a6cf940f2dc6b70c7b3298463e6eed5': 'src/map.jsx',
+            '13eed8fe3e15d3d7bf00a465ddce094d82711616f67a0f4d724c2410bc9f4877': 'src/metodologia.jsx',
+            '8ce6e74cbf007a93645317ec042307df308423537dde167f5e0ea40af5f629c0': 'src/netview.jsx',
+            '5012587732acae5f1fda75ea68052935604ffc15a4aee3c338dc0f85463a6c04': 'src/qa.jsx',
+            '563c0b1fcf7b45d5c7becb797862d806fddfcd2b8a7fb7c532877d476e26b0b7': 'src/reports.js',
+            'e06413c92c51705f52ce31d6db8a153898c559885ccc5904868a54554ac749e8': 'src/right-panel.jsx',
+            'c3732131a025382b9378fb6106551be46ee4228cd974253a48bc5f414c48dc53': 'src/scenarios.jsx',
+            '9feba5d89ea3550feeff6859be78546f7cd3b2e3bc6d0707788fde6700e9d942': 'src/terminal.jsx',
+            '82c38755258809f6acf49c0b6b2ecc8ddcdcd97fa453e3530f546b6626acb77b': 'src/tweaks-panel.jsx',
+            'e4de2cfa741dfd3936ea1393185250a878206e76ff508cb9850d4f2eaad81d3d': 'src/ui.jsx',
+            '87ebbafc87fdc5a483fa60e0ed35a87572131bdea618d9c642267856f90f0b08': 'src/version.jsx',
+            '1f7143723849cefffa3ecd0b042c2dc6c871f9c6aa160eec3966c8ad50d04fd8': 'data/ciclovias_existentes.geojson',
+            '4c76c4e3d46ffe4ea73bf0e899bd9a3f94028fae81b6d6eb13e67bdadbcc2b8c': 'data/comunas_rm.geojson',
+            'c1cba035a2cec5775405ce8ff9b0833c2bd3a2cab675f71c3ab0b27e6f177b9f': 'data/educacion_superior.geojson',
+            '7bb222849aaf6d30b909311cf626d0b115dc69fc01d052f3df1b247821b53d3e': 'data/ferias.geojson',
+            '7730ef3e87c17e3e6e8b82b6d41d3420d63e72d75e134e6bf4b8962a7173a948': 'data/manzanas_por_hex.json',
+            'ff62666465e8452ae1effe3b3eaa6b5700447310207f20015e472b605fd8b247': 'data/metro.geojson',
+            'f40f2d71caf624931af8ef068aec302ea912755e2b607a58468048105fe09788': 'data/monumentos.geojson',
+            '181afbfb5a5e71d664854a8bddde5b4f92da51ba2b14a9444d5c3307d1aef895': 'data/od_comunas.json',
+            '2d74a9a9808664ff6b876b092021d729f8ab5fe86a568a36662dcf9e5c989ef0': 'data/od_hex.geojson',
+            '79123f4219dc249a0089aeff0a5bf30c787ef6cab6271aff8f337bb1ccf1b4e0': 'data/otras_carteras.geojson',
+            '9b2a9976ecbb04910265e2413e24613eb467a45a500b00ce9eccea53191fd541': 'data/paraderos_bus.json',
+            '27d191f9d98b8ed3a85b5077665ed0634248339442e887126a2b69adacda2572': 'data/parques.geojson',
+            '4837a2df5cbb1b2dd756a88e875f8b98676eb02d93cea03034e6a544fc03776e': 'data/proyectos_pmc.geojson',
+            'ef2f4810e0b0b16a142a472943fd511f007bdd01d9637a89b65ad2beaa0cc646': 'data/siniestros.geojson',
+            '54e0fc4ad199d7ffba6b9b9893ceacf8bd8c8ee2eae7923d9a4d44b04791edc8': 'data/variables_modelo_hex.json',
+            '066daf9320a3b692bd5b1c249ce79c88c174d99662daa7c3a16a5969a275e768': 'assets/logo_gore.svg',
+            '8b00af60f525a0466c48dd286f0ddb2b00820d459be215375d286baeaabb8066': 'assets/logo_gore_inicio.png',
+          }
+
+          def decode_entry(entry):
+              raw = base64.b64decode(entry['data'])
+              if not entry.get('compressed'):
+                  return raw
+              for decoder in (gzip.decompress, zlib.decompress):
+                  try:
+                      return decoder(raw)
+                  except Exception:
+                      pass
+              try:
+                  return zlib.decompress(raw, -zlib.MAX_WBITS)
+              except Exception as exc:
+                  raise RuntimeError('No se pudo descomprimir un recurso del bundle') from exc
+
+          found = set()
+          for entry in manifest.values():
+              raw = decode_entry(entry)
+              digest = hashlib.sha256(raw).hexdigest()
+              path = expected.get(digest)
+              if not path:
+                  continue
+              dst = Path(path)
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              dst.write_bytes(raw)
+              found.add(digest)
+              print(f'OK {path} {digest[:12]}')
+
+          # styles.css queda incorporado directamente en la plantilla del bundle.
+          css_expected = '7967ac2bc610dc23c03193939441236726945575af7197d53378743c8a544121'
+          css_found = False
+          for block in re.findall(r'<style[^>]*>(.*?)</style>', template, re.S):
+              if 'EvaCiclo · sistema visual' not in block:
+                  continue
+              raw = block.encode('utf-8')
+              digest = hashlib.sha256(raw).hexdigest()
+              if digest == css_expected:
+                  Path('src').mkdir(exist_ok=True)
+                  Path('src/styles.css').write_bytes(raw)
+                  css_found = True
+                  print(f'OK src/styles.css {digest[:12]}')
+                  break
+
+          missing = [expected[h] for h in expected if h not in found]
+          if missing:
+              raise SystemExit('El bundle público no coincide íntegramente con el paquete revisado. Faltan: ' + ', '.join(missing))
+          if not css_found:
+              raise SystemExit('No se pudo verificar y extraer src/styles.css.')
+          PY
+
+      - name: Sanear información no destinada al repositorio público
         shell: bash
         run: |
           set -euo pipefail
@@ -81,6 +145,7 @@ jobs:
           from pathlib import Path
           import re
 
+          # El token de cartografía se configura externamente.
           p = Path('src/map.jsx')
           t = p.read_text(encoding='utf-8')
           t = re.sub(
@@ -92,6 +157,7 @@ jobs:
           t = re.sub(r'pk\.[A-Za-z0-9._-]+', '', t)
           p.write_text(t, encoding='utf-8')
 
+          # Se retira el contacto personal asociado a una capa restringida.
           p = Path('src/left-panel.jsx')
           t = p.read_text(encoding='utf-8')
           t = re.sub(
@@ -108,7 +174,7 @@ jobs:
         run: |
           set -euo pipefail
           if grep -RniE 'pk\.[A-Za-z0-9._-]+' src data assets; then
-            echo 'Se detectó un token Mapbox en los archivos que se iban a publicar.' >&2
+            echo 'Se detectó un token de cartografía en los archivos a publicar.' >&2
             exit 1
           fi
           if grep -RniE 'rhg@ing\.puc\.cl' src data assets; then
@@ -119,13 +185,13 @@ jobs:
           if [ -n "$mentions" ]; then
             disallowed="$(printf '%s\n' "$mentions" | grep -vE '^src/(demanda-modal|metodologia)\.jsx:' || true)"
             if [ -n "$disallowed" ]; then
-              echo 'Se detectó una referencia no autorizada fuera de la documentación del modelo Logit:' >&2
+              echo 'Referencia no autorizada fuera de la documentación científica del modelo Logit:' >&2
               printf '%s\n' "$disallowed" >&2
               exit 1
             fi
           fi
 
-      - name: Ajustar index para utilizar las capas publicadas
+      - name: Ajustar index para la distribución del repositorio
         shell: bash
         run: |
           set -euo pipefail
@@ -135,10 +201,11 @@ jobs:
           p = Path('index.html')
           t = p.read_text(encoding='utf-8')
           t = re.sub(r'(data/[A-Za-z0-9_./-]+\.(?:geojson|json))\.gz', r'\1', t)
+          t = t.replace('assets/logo_gore_inicio.svg', 'assets/logo_gore_inicio.png')
           p.write_text(t, encoding='utf-8')
           PY
 
-      - name: Verificar integridad mínima
+      - name: Verificar JSON y estructura mínima
         shell: bash
         run: |
           set -euo pipefail
@@ -146,6 +213,7 @@ jobs:
           test -s src/metodologia.jsx
           test -s src/version.jsx
           test -s src/qa.jsx
+          test -s src/styles.css
           test -s data/proyectos_pmc.geojson
           test -s data/ciclovias_existentes.geojson
           test -s data/od_hex.geojson
@@ -165,6 +233,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          rm -f eva-public-bundle.html
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src data assets index.html
@@ -172,5 +241,5 @@ jobs:
             echo "No hay cambios que publicar."
             exit 0
           fi
-          git commit -m "Publica código fuente y datos procesados de EVA"
+          git commit -m "Publica código fuente navegable y datos procesados de EVA"
           git push
