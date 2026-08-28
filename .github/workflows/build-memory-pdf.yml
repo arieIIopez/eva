@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Instalar dependencias de documentación
         run: |
@@ -53,5 +55,6 @@ jobs:
             echo 'PDF sin cambios.'
           else
             git commit -m 'Actualizar PDF de memoria técnica científica'
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
