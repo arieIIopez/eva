@@ -1,5 +1,7 @@
 # EVA — Evaluador de Ciclovías Proyectadas
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 **EVA** es una herramienta de apoyo a la decisión desarrollada internamente por la **División de Infraestructura y Transportes del Gobierno Regional Metropolitano de Santiago (GORE RM)** para evaluar y priorizar carteras de infraestructura ciclable como componentes de una red y no como proyectos aislados.
 
 La herramienta nace de un problema operativo de planificación: cuando una red contiene decenas o cientos de proyectos, el orden de ejecución modifica el beneficio de los proyectos siguientes. EVA permite evaluar esa interdependencia, combinar criterios técnicos, territoriales, sociales y de política pública, modificar ponderaciones y recalcular escenarios de forma interactiva.
@@ -31,6 +33,8 @@ El código fuente se encuentra disponible directamente y puede revisarse archivo
 
 ```text
 .
+├── LICENSE                            # Apache License 2.0 para el software
+├── NOTICE                             # autoría institucional y exclusiones
 ├── index.html                         # punto de entrada de la aplicación
 ├── src/                               # motor, interfaz, metodología y análisis
 ├── data/                              # capas procesadas utilizadas por EVA
@@ -78,7 +82,7 @@ Por seguridad, el repositorio **no publica un token Mapbox**. Para utilizar la v
 
 EVA mantiene versionamiento de motor, datos y metodología, y genera información de procedencia asociada a las corridas y exportaciones. La documentación metodológica incorporada en la aplicación explicita ecuaciones, parámetros, supuestos, limitaciones y criterios de evaluación.
 
-La estructura y gobernanza de las capas publicadas se describen en [`docs/DATOS.md`](docs/DATOS.md).
+La estructura y gobernanza de las capas publicadas se describen en [`docs/DATOS.md`](docs/DATOS.md). El alcance de las licencias y condiciones de reutilización de los datos se documenta en [`docs/LICENCIAS_DATOS.md`](docs/LICENCIAS_DATOS.md).
 
 EVA es una herramienta de apoyo a la priorización relativa y **no reemplaza** la evaluación social de inversiones ni la ingeniería de detalle de cada proyecto.
 
@@ -88,9 +92,15 @@ La arquitectura fue concebida para facilitar su adaptación por otros gobiernos 
 
 Una guía conceptual para su adaptación se encuentra en [`docs/REPLICABILIDAD.md`](docs/REPLICABILIDAD.md).
 
-## Condiciones de reutilización
+## Licencia
 
-La licencia de reutilización del código será formalizada por el Gobierno Regional Metropolitano de Santiago. Hasta que exista un archivo `LICENSE`, la publicación del código no debe interpretarse como una concesión automática de derechos más allá de los establecidos por la legislación aplicable.
+El **software desarrollado para EVA** se distribuye bajo **Apache License 2.0**. Esto permite su uso, estudio, modificación y redistribución conforme a los términos de la licencia, favoreciendo su adaptación por otras instituciones.
+
+Consulte [`LICENSE`](LICENSE) para el texto completo y [`NOTICE`](NOTICE) para la atribución institucional y el alcance respecto de marcas y otros activos.
+
+La licencia Apache 2.0 **no relicencia automáticamente los datos ni los activos de terceros** incluidos o referenciados por el proyecto. Los logos, emblemas, marcas y demás elementos de identidad institucional del Gobierno Regional Metropolitano de Santiago están excluidos de la licencia de software. Para datos y cartografías, consulte [`docs/LICENCIAS_DATOS.md`](docs/LICENCIAS_DATOS.md).
+
+**Copyright 2026 Gobierno Regional Metropolitano de Santiago.**
 
 ## Autoría institucional
 
