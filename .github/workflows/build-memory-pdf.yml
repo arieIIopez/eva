@@ -1,0 +1,56 @@
+name: Construir memoria técnica PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/MEMORIA_TECNICA_CIENTIFICA.md'
+      - 'docs/METODO_DENDRITICO.md'
+      - '.github/workflows/build-memory-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-memory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias de documentación
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-lang-spanish fonts-dejavu-core
+
+      - name: Construir PDF
+        run: |
+          pandoc docs/MEMORIA_TECNICA_CIENTIFICA.md \
+            --from=gfm+tex_math_dollars \
+            --pdf-engine=xelatex \
+            -V lang=es-CL \
+            -V papersize=a4 \
+            -V geometry:margin=22mm \
+            -V mainfont='DejaVu Sans' \
+            -V fontsize=10pt \
+            -V colorlinks=true \
+            -V linkcolor=blue \
+            -V urlcolor=blue \
+            --metadata title='EVA — Memoria técnica, metodológica y científica' \
+            --metadata author='Gobierno Regional Metropolitano de Santiago — División de Infraestructura y Transportes' \
+            --toc \
+            --toc-depth=3 \
+            -o docs/EVA_Memoria_Tecnica_Metodologica_Cientifica_v3.12.1.pdf
+
+      - name: Publicar PDF generado
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/EVA_Memoria_Tecnica_Metodologica_Cientifica_v3.12.1.pdf
+          if git diff --cached --quiet; then
+            echo 'PDF sin cambios.'
+          else
+            git commit -m 'Actualizar PDF de memoria técnica científica'
+            git push
+          fi
