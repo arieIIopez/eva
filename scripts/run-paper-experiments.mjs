@@ -44,6 +44,8 @@ try {
   const result = await page.evaluate(async () => {
     return await window.EVA_PAPER_EXPERIMENTS.runAll({
       mainSteps: 30,
+      orderEffectTopN: 8,
+      orderEffectDelta: 1,
       rootCount: 6,
       rootSteps: 15,
       tauAlphaSteps: 10,
@@ -77,6 +79,8 @@ try {
   }));
 
   await writeCsv('static_vs_sequential_metrics.csv', result.static_vs_sequential.comparison);
+  await writeCsv('order_effect_pairs.csv', (result.order_effect && result.order_effect.pairs) || []);
+  await writeCsv('order_effect_projects.csv', (result.order_effect && result.order_effect.projects) || []);
 
   const rootRows = [];
   for (const run of result.root_sensitivity.runs) {
@@ -103,6 +107,9 @@ try {
   const k20 = comparison.find(x => x.k === 20) || comparison.at(-1) || {};
   const rootRobust = result.robust_core.roots_top10 || [];
   const taRobust = result.robust_core.tau_alpha_top10 || [];
+  const orderPairs = (result.order_effect && result.order_effect.pairs) || [];
+  const maxOrder = orderPairs.length ? orderPairs.reduce((a, b) => b.abs_delta_order > a.abs_delta_order ? b : a, orderPairs[0]) : null;
+
   const readme = `# Resultados reproducibles para el paper\n\n` +
     `Generado: ${result.generated_at}\n\n` +
     `- Motor: ${result.versions.ENGINE_VERSION}\n` +
@@ -113,6 +120,8 @@ try {
     `- Hexágonos OD: ${result.counts.od_hex}\n\n` +
     `## Resumen de contraste estático–secuencial\n\n` +
     `Para k=${k20.k ?? '—'}: Jaccard Top-k=${k20.jaccard_top_k == null ? '—' : k20.jaccard_top_k.toFixed(3)}, Spearman=${k20.spearman_rank == null ? '—' : k20.spearman_rank.toFixed(3)}, Kendall tau=${k20.kendall_tau == null ? '—' : k20.kendall_tau.toFixed(3)}, desplazamiento medio=${k20.desplazamiento_medio == null ? '—' : k20.desplazamiento_medio.toFixed(2)}.\n\n` +
+    `## Efecto de orden\n\n` +
+    (maxOrder ? `Mayor |Δ_ord| dentro del subconjunto evaluado: ${maxOrder.abs_delta_order.toFixed(6)} para ${maxOrder.p_id} ↔ ${maxOrder.q_id}.\n\n` : `Sin pares calculados.\n\n`) +
     `## Núcleo robusto topológico\n\n` +
     `- Proyectos con frecuencia >=0,8 en Top-10 al variar raíces: ${rootRobust.length}.\n` +
     `- Proyectos con frecuencia >=0,8 en Top-10 al variar tau y alpha: ${taRobust.length}.\n\n` +
@@ -123,6 +132,11 @@ try {
     versions: result.versions,
     counts: result.counts,
     comparison: result.static_vs_sequential.comparison,
+    order_effect: {
+      top_n: result.order_effect && result.order_effect.top_n,
+      max_abs_delta_order: maxOrder && maxOrder.abs_delta_order,
+      max_pair: maxOrder && [maxOrder.p_id, maxOrder.q_id],
+    },
     selected_roots: result.root_sensitivity.roots.map(r => r.name),
     robust_roots_top10: rootRobust,
     robust_tau_alpha_top10: taRobust,
