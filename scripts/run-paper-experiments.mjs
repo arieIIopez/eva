@@ -47,9 +47,10 @@ try {
       orderEffectTopN: 8,
       orderEffectDelta: 1,
       rootCount: 6,
-      rootSteps: 15,
+      rootSteps: 10,
       tauAlphaSteps: 10,
       baselineSteps: 20,
+      weightSteps: 10,
     });
   });
 
@@ -103,10 +104,19 @@ try {
   }
   await writeCsv('baselines.csv', baselineRows);
 
+  const weightRows = [];
+  for (const run of (result.weight_sensitivity && result.weight_sensitivity.runs) || []) {
+    for (const row of run.order) weightRows.push({ scenario_key: run.key, scenario_name: run.nombre, ...row });
+  }
+  await writeCsv('weight_sensitivity.csv', weightRows);
+  await writeCsv('weight_sensitivity_pairwise.csv', (result.weight_sensitivity && result.weight_sensitivity.pairwise_vs_balanceado) || []);
+  await writeCsv('weight_robust_top10.csv', (result.weight_sensitivity && result.weight_sensitivity.robust_top10) || []);
+
   const comparison = result.static_vs_sequential.comparison;
   const k20 = comparison.find(x => x.k === 20) || comparison.at(-1) || {};
   const rootRobust = result.robust_core.roots_top10 || [];
   const taRobust = result.robust_core.tau_alpha_top10 || [];
+  const policyRobust = result.robust_core.policy_scenarios_top10 || [];
   const orderPairs = (result.order_effect && result.order_effect.pairs) || [];
   const maxOrder = orderPairs.length ? orderPairs.reduce((a, b) => b.abs_delta_order > a.abs_delta_order ? b : a, orderPairs[0]) : null;
 
@@ -118,14 +128,15 @@ try {
     `- Proyectos: ${result.counts.projects}\n` +
     `- Red existente: ${result.counts.existing} ejes\n` +
     `- Hexágonos OD: ${result.counts.od_hex}\n\n` +
-    `## Resumen de contraste estático–secuencial\n\n` +
+    `## Contraste estático–secuencial\n\n` +
     `Para k=${k20.k ?? '—'}: Jaccard Top-k=${k20.jaccard_top_k == null ? '—' : k20.jaccard_top_k.toFixed(3)}, Spearman=${k20.spearman_rank == null ? '—' : k20.spearman_rank.toFixed(3)}, Kendall tau=${k20.kendall_tau == null ? '—' : k20.kendall_tau.toFixed(3)}, desplazamiento medio=${k20.desplazamiento_medio == null ? '—' : k20.desplazamiento_medio.toFixed(2)}.\n\n` +
     `## Efecto de orden\n\n` +
     (maxOrder ? `Mayor |Δ_ord| dentro del subconjunto evaluado: ${maxOrder.abs_delta_order.toFixed(6)} para ${maxOrder.p_id} ↔ ${maxOrder.q_id}.\n\n` : `Sin pares calculados.\n\n`) +
-    `## Núcleo robusto topológico\n\n` +
-    `- Proyectos con frecuencia >=0,8 en Top-10 al variar raíces: ${rootRobust.length}.\n` +
-    `- Proyectos con frecuencia >=0,8 en Top-10 al variar tau y alpha: ${taRobust.length}.\n\n` +
-    `Los archivos CSV contienen las secuencias y métricas por experimento. Estos resultados describen la aplicación EVA; no constituyen validación empírica del marco en otros modos de transporte.\n`;
+    `## Robustez Top-10\n\n` +
+    `- Frecuencia >=0,8 al variar raíces bajo escenario dendrítico multicriterio: ${rootRobust.length} proyectos.\n` +
+    `- Frecuencia >=0,8 al variar tau y alpha bajo escenario dendrítico multicriterio: ${taRobust.length} proyectos.\n` +
+    `- Frecuencia >=0,8 entre escenarios de política pública W: ${policyRobust.length} proyectos.\n\n` +
+    `Los archivos CSV contienen las secuencias y métricas por experimento. La sensibilidad de alpha se evalúa dentro de un score multicriterio, ya que en un ranking puramente dendrítico alpha es una transformación monótona de la distancia topológica y no altera por sí sola el orden entre grados. Estos resultados describen la aplicación EVA; no constituyen validación empírica del marco en otros modos de transporte.\n`;
   await fs.writeFile(path.join(outDir, 'README.md'), readme, 'utf8');
 
   console.log('PAPER_EXPERIMENT_SUMMARY', JSON.stringify({
@@ -140,6 +151,8 @@ try {
     selected_roots: result.root_sensitivity.roots.map(r => r.name),
     robust_roots_top10: rootRobust,
     robust_tau_alpha_top10: taRobust,
+    robust_policy_scenarios_top10: policyRobust,
+    weight_pairwise_vs_balanceado: (result.weight_sensitivity && result.weight_sensitivity.pairwise_vs_balanceado) || [],
   }));
 } finally {
   await browser.close();
