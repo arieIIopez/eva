@@ -1,0 +1,13 @@
+key,nombre,jaccard_top10
+ponderacion_rmc,Ponderación RMC,1
+balanceado,Balanceado,1
+equidad,Equidad territorial,0.42857142857142855
+demanda,Demanda potencial,1
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),0.8181818181818182
+fractal_alameda,Red dendrítica Alameda (fractal),1
+continuidad,Continuidad de red,1
+eficiencia,Eficiencia presupuestaria,0.42857142857142855
+educacion,Educación superior,1
+integracion,Integración metropolitana,1
+seguridad,Seguridad vial,1
+intermodal,Intermodalidad bici-metro,1
