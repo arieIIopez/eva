@@ -7,14 +7,14 @@
 ============================================================ */
 
 window.EVA_VERSION = {
-  ENGINE_VERSION: "3.12.0",       // + ciclistas inducidos (logit Biogeme) y conectividad fractal como criterios de score; 15 criterios ponderables activos
+  ENGINE_VERSION: "3.13.0",       // raíz dendrítica configurable + recálculo modal y dendrítico efectivo dentro del solver secuencial
   DATA_VERSION: "2026.08",        // + límites comunales oficiales RM (52 comunas, EPSG:32719→WGS84) y clasificación ferias vs red ciclable
   DATA_PROCESSING_VERSION: "2026.08-comunas-oficiales", // comuna por overlay punto-en-polígono contra límites oficiales (reemplaza vecino OD más cercano)
-  METHODOLOGY_VERSION: "2.3.0",   // elección modal (logit) + orden dendrítico (Strahler invertido) incorporados al multicriterio
+  METHODOLOGY_VERSION: "2.4.0",   // priorización secuencial estado-dependiente + raíz dendrítica parametrizable; 15 criterios ponderables activos
   CONTINUITY_FORMULA: "min(1, K_p / 4)",
   MODAL_CHOICE_MODEL: "ciclo_todo_chile 41 (logit binario, Biogeme)",
-  FRACTAL_FORMULA: "Score = 100 · 0.5^(g-1); g = saltos BFS a la raíz (Alameda + red existente conectada + priorizados); tol. empalme 100 m; aislado = 0",
-  BUILD_DATE: "2026-08-07",
+  FRACTAL_FORMULA: "Score = 100 · α^(g-1); g = saltos BFS a R_t; R_0 = eje raíz configurable + red existente conectada; R_t agrega priorizados; default τ=100 m, α=0.5; aislado = 0",
+  BUILD_DATE: "2026-08-29",
 };
 
 /* ============================================================
