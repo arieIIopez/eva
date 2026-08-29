@@ -51,7 +51,8 @@
           '../src/engine.jsx',
           '../src/fractal.js',
           '../src/dendritic-config.js',
-          './paper-experiments.js'
+          './paper-experiments.js',
+          './paper-experiments-fast.js'
         ];
         for (const path of scripts) await evalScript(path);
         await window.loadProjects();
