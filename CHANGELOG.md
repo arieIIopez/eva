@@ -6,7 +6,19 @@ EVA mantiene versionamiento separado para motor, datos, procesamiento y metodolo
 
 ## [No publicado]
 
-- Próximas mejoras metodológicas, funcionales y de datos serán documentadas aquí antes de una nueva versión pública estable.
+### Desarrollo hacia motor 3.13.0 / metodología 2.4.0
+
+- La raíz del criterio de conectividad dendrítica deja de estar fijada internamente a Alameda y pasa a ser un parámetro seleccionable por el usuario.
+- Alameda se conserva como escenario predeterminado para mantener comparabilidad con las corridas históricas.
+- El usuario puede seleccionar cualquier eje de la red existente como semilla de crecimiento y decidir si la raíz se expande al componente construido conectado.
+- Se parametrizan explícitamente la tolerancia dendrítica `τ` y el factor de atenuación `α` en la configuración de raíz.
+- La configuración de raíz se incorpora a la firma reproducible de la corrida (`config_hash`).
+- El solver secuencial recalcula en cada iteración tanto el criterio dendrítico como el modelo de ciclistas inducidos, de modo que ambos sean efectivamente dependientes del estado de la red dentro de la secuencia completa.
+- La salida del solver registra grado y score dendrítico de cada proyecto elegido y la configuración de raíz utilizada.
+- Esta evolución está orientada a análisis de sensibilidad de trayectorias topológicas y a la formulación metodológica general de priorización secuencial de intervenciones en redes.
+- Datos y procesamiento permanecen en `2026.08` y `2026.08-comunas-oficiales`, respectivamente.
+
+Estos cambios permanecen en desarrollo en `main` y todavía no constituyen una nueva versión archivada en Zenodo.
 
 ## [3.12.1] — 2026-08-28
 
