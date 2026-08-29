@@ -1,8 +1,9 @@
-/* Fast-path and methodological extensions for the paper CI.
-   The full EVA engine is preserved for multicriteria/state-dependent
-   experiments. Purely dendritic sensitivity avoids the heavier OD engine.
-   This layer also computes a pairwise order-effect matrix and corrects
-   Spearman correlation by re-ranking the common project subset. */
+/* Methodological extensions for the paper CI.
+   The full EVA engine is preserved whenever a topological parameter must
+   interact with the multicriteria score. A pure dendritic fast-path is kept
+   only for the unidimensional dendritic baseline. This layer also computes
+   a pairwise order-effect matrix and corrects Spearman correlation by
+   re-ranking the common project subset. */
 (function () {
   "use strict";
   const base = window.EVA_PAPER_EXPERIMENTS;
@@ -182,9 +183,35 @@
     return { top_n: selected.length, delta: d, projects: selected.map(x => ({ id: x.id, nombre: x.nombre, static_rank: x.rank, score: x.score })), pairs };
   }
 
+  async function scenarioSensitivity(params, rootConfig, maxSteps) {
+    const scenarios = (window.EVA_SCENARIOS || []).filter(s => s && s.weights);
+    const runs = [];
+    for (let i = 0; i < scenarios.length; i++) {
+      const s = scenarios[i];
+      console.log(`[paper] E/5 · escenario W ${i + 1}/${scenarios.length}: ${s.nombre}`);
+      const seq = await base.sequential({ ...s.weights }, {
+        params,
+        rootConfig,
+        maxSteps: maxSteps || 10,
+      });
+      runs.push({ key: s.key, nombre: s.nombre, order: seq.order });
+    }
+    const ref = runs.find(r => r.key === "balanceado") || runs[0] || { order: [] };
+    return {
+      runs,
+      pairwise_vs_balanceado: runs.map(run => ({
+        key: run.key,
+        nombre: run.nombre,
+        jaccard_top10: jaccard(ref.order.slice(0, 10).map(x => x.id), run.order.slice(0, 10).map(x => x.id)),
+      })),
+      robust_top10: robustFrequency(runs, 10),
+    };
+  }
+
   async function runAllFast(opts) {
     opts = opts || {};
     const balance = { ...(window.EVA_SCENARIO_MAP.balanceado.weights || {}) };
+    const dendriticWeights = { ...((window.EVA_SCENARIO_MAP.fractal_alameda || {}).weights || balance) };
     const params = { ...(window.PARAM_DEFAULTS || {}), perfil: "general", segKSI: false };
     const defaultRoot = base.rootCfg("Alameda", 100, 0.5);
 
@@ -199,7 +226,7 @@
       methodological_note: "Resultados computacionales del motor EVA. La aplicación empírica no implica validación del marco en otros modos de transporte.",
     };
 
-    console.log("[paper] A/4 · ranking estático vs. secuencial");
+    console.log("[paper] A/5 · ranking estático vs. secuencial");
     const staticRows = base.staticRanking(balance, { params, rootConfig: defaultRoot });
     const seqBalance = await base.sequential(balance, { params, rootConfig: defaultRoot, maxSteps: opts.mainSteps || 30 });
     result.static_vs_sequential = {
@@ -208,24 +235,29 @@
       comparison: compareStaticSequentialCorrect(staticRows, seqBalance.order),
     };
 
-    console.log("[paper] A2/4 · matriz pareada de efecto de orden");
+    console.log("[paper] A2/5 · matriz pareada de efecto de orden");
     result.order_effect = await orderEffectMatrix(
       staticRows, balance, params, defaultRoot,
       opts.orderEffectTopN || 8,
       opts.orderEffectDelta == null ? 1 : opts.orderEffectDelta
     );
 
-    console.log("[paper] B/4 · raíces dendríticas (fast-path)");
+    console.log("[paper] B/5 · sensibilidad a la raíz bajo escenario dendrítico multicriterio");
     const roots = base.chooseSpatialRoots(opts.rootCount || 6);
     const rootRuns = [];
     for (let i = 0; i < roots.length; i++) {
       const r = roots[i];
-      console.log(`[paper] B/4 · ${i + 1}/${roots.length} ${r.name}`);
-      const seq = await topologySequential(base.rootCfg(r.name, 100, 0.5), opts.rootSteps || 10);
+      console.log(`[paper] B/5 · ${i + 1}/${roots.length} ${r.name}`);
+      const seq = await base.sequential(dendriticWeights, {
+        params,
+        rootConfig: base.rootCfg(r.name, 100, 0.5),
+        maxSteps: opts.rootSteps || 10,
+      });
       rootRuns.push({ root: r, order: seq.order });
     }
     const ref = rootRuns[0] || { order: [] };
     result.root_sensitivity = {
+      design: "escenario fractal_alameda con raíz variable; el resto de los pesos se mantiene constante",
       roots,
       runs: rootRuns,
       pairwise_vs_default: rootRuns.map(run => ({
@@ -235,22 +267,33 @@
       robust_top10: robustFrequency(rootRuns, 10),
     };
 
-    console.log("[paper] C/4 · tau × alpha (fast-path)");
+    console.log("[paper] C/5 · tau × alpha bajo escenario dendrítico multicriterio");
     const taus = opts.taus || [50, 75, 100, 150];
     const alphas = opts.alphas || [0.35, 0.50, 0.65, 0.80];
     const taRuns = [];
     for (const tau of taus) for (const alpha of alphas) {
-      console.log(`[paper] C/4 · tau=${tau} alpha=${alpha}`);
-      const seq = await topologySequential(base.rootCfg("Alameda", tau, alpha), opts.tauAlphaSteps || 10);
+      console.log(`[paper] C/5 · tau=${tau} alpha=${alpha}`);
+      // alpha is only ordinally relevant when the dendritic score competes
+      // with other criteria. Therefore this block intentionally uses the
+      // full multicriteria scenario rather than the pure topology fast-path.
+      const seq = await base.sequential(dendriticWeights, {
+        params,
+        rootConfig: base.rootCfg("Alameda", tau, alpha),
+        maxSteps: opts.tauAlphaSteps || 10,
+      });
       taRuns.push({ tau, alpha, order: seq.order });
     }
-    result.tau_alpha_sensitivity = { runs: taRuns, robust_top10: robustFrequency(taRuns, 10) };
+    result.tau_alpha_sensitivity = {
+      design: "escenario fractal_alameda; raíz Alameda; tau y alpha variables",
+      runs: taRuns,
+      robust_top10: robustFrequency(taRuns, 10),
+    };
 
-    console.log("[paper] D/4 · baselines relacionales");
+    console.log("[paper] D/5 · baselines relacionales");
     const baselineKeys = opts.baselineKeys || ["poblacion", "demanda", "equidad", "continuidad", "costoInv"];
     const baselines = [];
     for (const key of baselineKeys) {
-      console.log(`[paper] D/4 · ${key}`);
+      console.log(`[paper] D/5 · ${key}`);
       const seq = await base.sequential(base.oneCriterion(key), { params, rootConfig: defaultRoot, maxSteps: opts.baselineSteps || 20 });
       baselines.push({ criterion: key, order: seq.order });
     }
@@ -258,9 +301,13 @@
     baselines.push({ criterion: "fractal", order: dend.order });
     result.baselines = baselines;
 
+    console.log("[paper] E/5 · sensibilidad a preferencias W");
+    result.weight_sensitivity = await scenarioSensitivity(params, defaultRoot, opts.weightSteps || 10);
+
     result.robust_core = {
       roots_top10: result.root_sensitivity.robust_top10.filter(x => x.frecuencia >= 0.8),
       tau_alpha_top10: result.tau_alpha_sensitivity.robust_top10.filter(x => x.frecuencia >= 0.8),
+      policy_scenarios_top10: result.weight_sensitivity.robust_top10.filter(x => x.frecuencia >= 0.8),
     };
 
     window.FRACTAL.setRootConfig(defaultRoot);
@@ -272,4 +319,5 @@
   window.EVA_PAPER_EXPERIMENTS.topologySequential = topologySequential;
   window.EVA_PAPER_EXPERIMENTS.orderEffectMatrix = orderEffectMatrix;
   window.EVA_PAPER_EXPERIMENTS.compareStaticSequentialCorrect = compareStaticSequentialCorrect;
+  window.EVA_PAPER_EXPERIMENTS.scenarioSensitivity = scenarioSensitivity;
 })();
