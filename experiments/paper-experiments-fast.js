@@ -1,7 +1,8 @@
-/* Fast-path for purely dendritic experiments used by the paper CI.
-   It preserves the full EVA engine for the multicriteria and relational
-   baselines, but avoids running the complete OD/accessibility engine when
-   the experimental score is exclusively the dendritic criterion. */
+/* Fast-path and methodological extensions for the paper CI.
+   The full EVA engine is preserved for multicriteria/state-dependent
+   experiments. Purely dendritic sensitivity avoids the heavier OD engine.
+   This layer also computes a pairwise order-effect matrix and corrects
+   Spearman correlation by re-ranking the common project subset. */
 (function () {
   "use strict";
   const base = window.EVA_PAPER_EXPERIMENTS;
@@ -65,6 +66,59 @@
     return u ? inter / u : null;
   }
 
+  function pearson(x, y) {
+    const n = Math.min(x.length, y.length);
+    if (n < 2) return null;
+    const mx = x.slice(0, n).reduce((a, b) => a + b, 0) / n;
+    const my = y.slice(0, n).reduce((a, b) => a + b, 0) / n;
+    let sxy = 0, sxx = 0, syy = 0;
+    for (let i = 0; i < n; i++) {
+      const dx = x[i] - mx, dy = y[i] - my;
+      sxy += dx * dy; sxx += dx * dx; syy += dy * dy;
+    }
+    const den = Math.sqrt(sxx * syy);
+    return den > 0 ? sxy / den : null;
+  }
+
+  function kendallTau(seqIds, staticRank) {
+    let concord = 0, discord = 0;
+    for (let i = 0; i < seqIds.length; i++) {
+      for (let j = i + 1; j < seqIds.length; j++) {
+        const ri = staticRank.get(seqIds[i]), rj = staticRank.get(seqIds[j]);
+        if (ri == null || rj == null || ri === rj) continue;
+        if (ri < rj) concord++; else discord++;
+      }
+    }
+    const den = concord + discord;
+    return den ? (concord - discord) / den : null;
+  }
+
+  function compareStaticSequentialCorrect(staticRows, seqRows, ks) {
+    const staticRank = new Map(staticRows.map(r => [r.id, r.rank]));
+    const staticIds = staticRows.map(r => r.id);
+    const seqIds = seqRows.map(r => r.id);
+    return (ks || [5, 10, 15, 20, 30]).filter(k => k <= seqIds.length).map(k => {
+      const S = seqIds.slice(0, k);
+      // Spearman requires ranks within the same object set; gaps in the full
+      // static ranking are therefore compressed before Pearson correlation.
+      const orderedByStatic = [...S].sort((a, b) => staticRank.get(a) - staticRank.get(b));
+      const restrictedStaticRank = new Map(orderedByStatic.map((id, i) => [id, i + 1]));
+      const x = S.map((_, i) => i + 1);
+      const y = S.map(id => restrictedStaticRank.get(id));
+      const topStatic = new Set(staticIds.slice(0, k));
+      const disp = S.map((id, i) => Math.abs((staticRank.get(id) || 0) - (i + 1)));
+      return {
+        k,
+        jaccard_top_k: jaccard(staticIds.slice(0, k), S),
+        spearman_rank: pearson(x, y),
+        kendall_tau: kendallTau(S, staticRank),
+        desplazamiento_medio: disp.reduce((a, b) => a + b, 0) / disp.length,
+        desplazamiento_maximo: Math.max(...disp),
+        coincidencias_top_k: S.filter(id => topStatic.has(id)).length,
+      };
+    });
+  }
+
   function robustFrequency(runs, k) {
     const count = new Map();
     for (const run of runs) {
@@ -73,6 +127,59 @@
     const n = runs.length || 1;
     return Array.from(count, ([id, c]) => ({ id, frecuencia: c / n, apariciones: c, escenarios: n }))
       .sort((a, b) => b.frecuencia - a.frecuencia || String(a.id).localeCompare(String(b.id)));
+  }
+
+  async function orderEffectMatrix(staticRows, weights, params, rootConfig, topN, delta) {
+    const rawFC = rawPortfolio();
+    const selected = staticRows.slice(0, topN || 8);
+    const d = delta == null ? 1 : +delta;
+    window.FRACTAL.setRootConfig(rootConfig);
+
+    const s0 = new Map(selected.map(r => [r.id, num(r.score)]));
+    const after = new Map();
+
+    // One state evaluation per selected project is enough to recover every
+    // pairwise p→q effect; no N² engine evaluations are required.
+    for (let i = 0; i < selected.length; i++) {
+      const p = selected[i];
+      console.log(`[paper] A2 · efecto de orden ${i + 1}/${selected.length}: fijando ${p.id}`);
+      const geom = rawFC.features.find(f => f.properties && f.properties.id === p.id);
+      if (!geom) continue;
+      const state = base.evaluateState([geom], weights, params);
+      after.set(p.id, new Map(state.ranked.map(q => [q.id, num(q.score)])));
+      if (window.evaYield) await window.evaYield();
+    }
+
+    const pairs = [];
+    for (let i = 0; i < selected.length; i++) {
+      for (let j = i + 1; j < selected.length; j++) {
+        const p = selected[i], q = selected[j];
+        const sp = s0.get(p.id), sq = s0.get(q.id);
+        const sqAfterP = after.get(p.id) && after.get(p.id).get(q.id);
+        const spAfterQ = after.get(q.id) && after.get(q.id).get(p.id);
+        if (sqAfterP == null || spAfterQ == null) continue;
+        const vpq = sp + d * sqAfterP;
+        const vqp = sq + d * spAfterQ;
+        pairs.push({
+          p_id: p.id,
+          p_nombre: p.nombre,
+          q_id: q.id,
+          q_nombre: q.nombre,
+          score_p_G0: sp,
+          score_q_G0: sq,
+          score_q_after_p: sqAfterP,
+          score_p_after_q: spAfterQ,
+          interaction_p_on_q: sqAfterP - sq,
+          interaction_q_on_p: spAfterQ - sp,
+          V_pq: vpq,
+          V_qp: vqp,
+          delta_order: vpq - vqp,
+          abs_delta_order: Math.abs(vpq - vqp),
+        });
+      }
+    }
+    pairs.sort((a, b) => b.abs_delta_order - a.abs_delta_order);
+    return { top_n: selected.length, delta: d, projects: selected.map(x => ({ id: x.id, nombre: x.nombre, static_rank: x.rank, score: x.score })), pairs };
   }
 
   async function runAllFast(opts) {
@@ -98,8 +205,15 @@
     result.static_vs_sequential = {
       static: staticRows,
       sequential: seqBalance.order,
-      comparison: base.compareStaticSequential(staticRows, seqBalance.order),
+      comparison: compareStaticSequentialCorrect(staticRows, seqBalance.order),
     };
+
+    console.log("[paper] A2/4 · matriz pareada de efecto de orden");
+    result.order_effect = await orderEffectMatrix(
+      staticRows, balance, params, defaultRoot,
+      opts.orderEffectTopN || 8,
+      opts.orderEffectDelta == null ? 1 : opts.orderEffectDelta
+    );
 
     console.log("[paper] B/4 · raíces dendríticas (fast-path)");
     const roots = base.chooseSpatialRoots(opts.rootCount || 6);
@@ -156,4 +270,6 @@
 
   window.EVA_PAPER_EXPERIMENTS.runAll = runAllFast;
   window.EVA_PAPER_EXPERIMENTS.topologySequential = topologySequential;
+  window.EVA_PAPER_EXPERIMENTS.orderEffectMatrix = orderEffectMatrix;
+  window.EVA_PAPER_EXPERIMENTS.compareStaticSequentialCorrect = compareStaticSequentialCorrect;
 })();
