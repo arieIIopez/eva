@@ -13,6 +13,27 @@
     };
     window.evaYield = () => new Promise(resolve => setTimeout(resolve, 0));
 
+    // data.jsx resuelve recursos respecto de la página que lo ejecuta. Como este
+    // runner vive en /experiments/, se declaran rutas absolutas desde la raíz del
+    // repositorio para que las mismas capas públicas de EVA sean utilizadas en CI.
+    window.__resources = {
+      proyectosPmc: "/data/proyectos_pmc.geojson",
+      cicloviasExistentes: "/data/ciclovias_existentes.geojson",
+      odHex: "/data/od_hex.geojson",
+      odComunas: "/data/od_comunas.json",
+      educacionSuperior: "/data/educacion_superior.geojson",
+      siniestros: "/data/siniestros.geojson",
+      monumentos: "/data/monumentos.geojson",
+      ferias: "/data/ferias.geojson",
+      metro: "/data/metro.geojson",
+      busStops: "/data/paraderos_bus.json",
+      otrasCarteras: "/data/otras_carteras.geojson",
+      parques: "/data/parques.geojson",
+      manzanasPorHex: "/data/manzanas_por_hex.json",
+      variablesModeloHex: "/data/variables_modelo_hex.json",
+      comunasRM: "/data/comunas_rm.geojson"
+    };
+
     async function evalScript(path) {
       const response = await fetch(path);
       if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
