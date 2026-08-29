@@ -14,6 +14,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: eva-paper-experiments
+  cancel-in-progress: true
+
 jobs:
   experiments:
     runs-on: ubuntu-latest
