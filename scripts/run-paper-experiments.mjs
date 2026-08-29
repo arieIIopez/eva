@@ -25,6 +25,32 @@ async function writeCsv(file, rows) {
   await fs.writeFile(path.join(outDir, file), text, 'utf8');
 }
 
+async function exportRankSequence(prefix, block) {
+  const staticMap = new Map((block.static || []).map(r => [r.id, r]));
+  const seqMap = new Map((block.sequential || []).map(r => [r.id, r]));
+  const ids = Array.from(new Set([...staticMap.keys(), ...seqMap.keys()]));
+  await writeCsv(`${prefix}.csv`, ids.map(id => {
+    const s = staticMap.get(id) || {};
+    const q = seqMap.get(id) || {};
+    return {
+      id,
+      nombre: s.nombre || q.nombre || '',
+      static_rank: s.rank,
+      static_score: s.score,
+      sequential_step: q.step,
+      sequential_score: q.score,
+      rank_delta_static_minus_sequential: q.step != null && s.rank != null ? s.rank - q.step : '',
+      poblacion_marginal_step: q.poblacion_marginal,
+      demanda_habilitada_step: q.demanda_habilitada,
+      ciclistas_inducidos_step: q.ciclistas_inducidos,
+      componentes_red_step: q.componentes_red,
+      costo_mclp_step: q.costo_mclp,
+      grado_dendritico_step: q.grado_dendritico,
+    };
+  }));
+  await writeCsv(`${prefix}_metrics.csv`, block.comparison || []);
+}
+
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage();
 page.setDefaultTimeout(60 * 60 * 1000);
@@ -44,7 +70,7 @@ try {
   const result = await page.evaluate(async () => {
     return await window.EVA_PAPER_EXPERIMENTS.runAll({
       mainSteps: 30,
-      orderEffectTopN: 8,
+      orderEffectTopN: 20,
       orderEffectDelta: 1,
       rootCount: 6,
       rootSteps: 10,
@@ -56,30 +82,20 @@ try {
 
   await fs.writeFile(path.join(outDir, 'summary.json'), JSON.stringify(result, null, 2), 'utf8');
 
-  const staticMap = new Map(result.static_vs_sequential.static.map(r => [r.id, r]));
-  const seqMap = new Map(result.static_vs_sequential.sequential.map(r => [r.id, r]));
-  const ids = Array.from(new Set([...staticMap.keys(), ...seqMap.keys()]));
-  await writeCsv('static_vs_sequential.csv', ids.map(id => {
-    const s = staticMap.get(id) || {};
-    const q = seqMap.get(id) || {};
-    return {
-      id,
-      nombre: s.nombre || q.nombre || '',
-      static_rank: s.rank,
-      static_score: s.score,
-      sequential_step: q.step,
-      sequential_score: q.score,
-      rank_delta_static_minus_sequential: q.step != null && s.rank != null ? s.rank - q.step : '',
-      poblacion_marginal_step: q.poblacion_marginal,
-      demanda_habilitada_step: q.demanda_habilitada,
-      ciclistas_inducidos_step: q.ciclistas_inducidos,
-      componentes_red_step: q.componentes_red,
-      costo_mclp_step: q.costo_mclp,
-      grado_dendritico_step: q.grado_dendritico,
-    };
-  }));
+  // Primary scientific contrast: fixed G0 normalization.
+  await exportRankSequence('static_vs_sequential_fixed', result.static_vs_sequential);
+  // Backwards-compatible aliases for analysis scripts.
+  await exportRankSequence('static_vs_sequential', result.static_vs_sequential);
 
-  await writeCsv('static_vs_sequential_metrics.csv', result.static_vs_sequential.comparison);
+  // Operational EVA contrast, where maxima are recomputed over active projects.
+  await exportRankSequence('static_vs_sequential_operational', result.operational_static_vs_sequential || { static: [], sequential: [], comparison: [] });
+  await writeCsv('fixed_vs_operational_sequence_metrics.csv', (result.normalization_sensitivity && result.normalization_sensitivity.fixed_vs_operational_sequence) || []);
+  await fs.writeFile(path.join(outDir, 'normalization_reference.json'), JSON.stringify(result.normalization_reference || {}, null, 2), 'utf8');
+
+  await writeCsv('order_effect_pairs_fixed.csv', (result.order_effect && result.order_effect.pairs) || []);
+  await writeCsv('order_effect_projects_fixed.csv', (result.order_effect && result.order_effect.projects) || []);
+  await writeCsv('order_effect_coupling_fixed.csv', result.order_effect && result.order_effect.coupling ? [result.order_effect.coupling] : []);
+  // Backwards-compatible aliases.
   await writeCsv('order_effect_pairs.csv', (result.order_effect && result.order_effect.pairs) || []);
   await writeCsv('order_effect_projects.csv', (result.order_effect && result.order_effect.projects) || []);
 
@@ -100,7 +116,7 @@ try {
 
   const baselineRows = [];
   for (const run of result.baselines) {
-    for (const row of run.order) baselineRows.push({ baseline: run.criterion, ...row });
+    for (const row of run.order) baselineRows.push({ baseline: run.criterion, normalization: run.normalization, ...row });
   }
   await writeCsv('baselines.csv', baselineRows);
 
@@ -112,13 +128,17 @@ try {
   await writeCsv('weight_sensitivity_pairwise.csv', (result.weight_sensitivity && result.weight_sensitivity.pairwise_vs_balanceado) || []);
   await writeCsv('weight_robust_top10.csv', (result.weight_sensitivity && result.weight_sensitivity.robust_top10) || []);
 
-  const comparison = result.static_vs_sequential.comparison;
-  const k20 = comparison.find(x => x.k === 20) || comparison.at(-1) || {};
+  const primary = result.static_vs_sequential.comparison || [];
+  const operational = (result.operational_static_vs_sequential && result.operational_static_vs_sequential.comparison) || [];
+  const k20 = primary.find(x => x.k === 20) || primary.at(-1) || {};
+  const op20 = operational.find(x => x.k === 20) || operational.at(-1) || {};
+  const norm20 = ((result.normalization_sensitivity && result.normalization_sensitivity.fixed_vs_operational_sequence) || []).find(x => x.k === 20) || {};
   const rootRobust = result.robust_core.roots_top10 || [];
   const taRobust = result.robust_core.tau_alpha_top10 || [];
   const policyRobust = result.robust_core.policy_scenarios_top10 || [];
   const orderPairs = (result.order_effect && result.order_effect.pairs) || [];
   const maxOrder = orderPairs.length ? orderPairs.reduce((a, b) => b.abs_delta_order > a.abs_delta_order ? b : a, orderPairs[0]) : null;
+  const coupling = (result.order_effect && result.order_effect.coupling) || {};
 
   const readme = `# Resultados reproducibles para el paper\n\n` +
     `Generado: ${result.generated_at}\n\n` +
@@ -128,23 +148,29 @@ try {
     `- Proyectos: ${result.counts.projects}\n` +
     `- Red existente: ${result.counts.existing} ejes\n` +
     `- Hexágonos OD: ${result.counts.od_hex}\n\n` +
-    `## Contraste estático–secuencial\n\n` +
+    `## Contraste principal: estado con normalización fija en G0\n\n` +
     `Para k=${k20.k ?? '—'}: Jaccard Top-k=${k20.jaccard_top_k == null ? '—' : k20.jaccard_top_k.toFixed(3)}, Spearman=${k20.spearman_rank == null ? '—' : k20.spearman_rank.toFixed(3)}, Kendall tau=${k20.kendall_tau == null ? '—' : k20.kendall_tau.toFixed(3)}, desplazamiento medio=${k20.desplazamiento_medio == null ? '—' : k20.desplazamiento_medio.toFixed(2)}.\n\n` +
-    `## Efecto de orden\n\n` +
-    (maxOrder ? `Mayor |Δ_ord| dentro del subconjunto evaluado: ${maxOrder.abs_delta_order.toFixed(6)} para ${maxOrder.p_id} ↔ ${maxOrder.q_id}.\n\n` : `Sin pares calculados.\n\n`) +
+    `## Contraste operacional\n\n` +
+    `Para k=${op20.k ?? '—'}: Jaccard Top-k=${op20.jaccard_top_k == null ? '—' : op20.jaccard_top_k.toFixed(3)}. La diferencia entre la secuencia fija y la operacional tiene Jaccard Top-k=${norm20.jaccard_top_k == null ? '—' : norm20.jaccard_top_k.toFixed(3)} para k=${norm20.k ?? '—'}.\n\n` +
+    `## Efecto de orden con escalas G0\n\n` +
+    (maxOrder ? `Mayor |Δ_ord| dentro del subconjunto evaluado: ${maxOrder.abs_delta_order.toFixed(6)} para ${maxOrder.p_id} ↔ ${maxOrder.q_id}.\n` : `Sin pares calculados.\n`) +
+    `Interacción media absoluta C=${coupling.C_mean_abs_interaction == null ? '—' : coupling.C_mean_abs_interaction.toFixed(6)} sobre ${coupling.directed_interactions ?? 0} interacciones dirigidas.\n\n` +
     `## Robustez Top-10\n\n` +
     `- Frecuencia >=0,8 al variar raíces bajo escenario dendrítico multicriterio: ${rootRobust.length} proyectos.\n` +
     `- Frecuencia >=0,8 al variar tau y alpha bajo escenario dendrítico multicriterio: ${taRobust.length} proyectos.\n` +
     `- Frecuencia >=0,8 entre escenarios de política pública W: ${policyRobust.length} proyectos.\n\n` +
-    `Los archivos CSV contienen las secuencias y métricas por experimento. La sensibilidad de alpha se evalúa dentro de un score multicriterio, ya que en un ranking puramente dendrítico alpha es una transformación monótona de la distancia topológica y no altera por sí sola el orden entre grados. Estos resultados describen la aplicación EVA; no constituyen validación empírica del marco en otros modos de transporte.\n`;
+    `La prueba principal fija las escalas de normalización en G0. Esta decisión evita atribuir al estado de la red cambios que sólo provienen de retirar del conjunto activo el proyecto que define el máximo de un criterio. La sensibilidad de alpha se evalúa dentro de un score multicriterio, ya que en un ranking puramente dendrítico alpha es una transformación monótona de la distancia topológica. Estos resultados describen la aplicación EVA; no constituyen validación empírica del marco en otros modos de transporte.\n`;
   await fs.writeFile(path.join(outDir, 'README.md'), readme, 'utf8');
 
   console.log('PAPER_EXPERIMENT_SUMMARY', JSON.stringify({
     versions: result.versions,
     counts: result.counts,
-    comparison: result.static_vs_sequential.comparison,
+    fixed_comparison: primary,
+    operational_comparison: operational,
+    fixed_vs_operational: (result.normalization_sensitivity && result.normalization_sensitivity.fixed_vs_operational_sequence) || [],
     order_effect: {
       top_n: result.order_effect && result.order_effect.top_n,
+      coupling,
       max_abs_delta_order: maxOrder && maxOrder.abs_delta_order,
       max_pair: maxOrder && [maxOrder.p_id, maxOrder.q_id],
     },
