@@ -1,0 +1,2 @@
+strategy,steps,final_cost_mclp,cumulative_realized_eva_score,discounted_eva_score,mean_network_components,integrated_component_reduction,final_network_components,cumulative_population_marginal,cumulative_demand_enabled,cumulative_induced_cyclists
+eva_adaptive_open,30,19431,15.399817148710662,8.480210282917724,124.6,492,114,506807,800723,3313
