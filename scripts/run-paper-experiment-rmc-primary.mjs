@@ -50,3 +50,5 @@ try {
 } finally {
   await browser.close();
 }
+
+// Trigger marker: 2026-09-01 RMC+C/I primary correction.
