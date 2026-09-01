@@ -1,0 +1,65 @@
+name: Paper experiment RMC eligible
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [paper-rmc-eligible-2026-09-01]
+    paths:
+      - 'experiments/paper-experiments-rmc-eligible.js'
+      - 'experiments/runner-rmc-eligible.html'
+      - 'scripts/run-paper-experiment-rmc-eligible.mjs'
+      - '.github/workflows/paper-experiment-rmc-eligible.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eva-paper-rmc-eligible
+  cancel-in-progress: true
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+
+      - name: Start local server
+        run: |
+          python3 -m http.server 8080 > /tmp/eva-http.log 2>&1 &
+          echo $! > /tmp/eva-http.pid
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/experiments/runner-rmc-eligible.html >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/eva-http.log
+          exit 1
+
+      - name: Run corrected RMC + C/I experiment
+        env:
+          EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner-rmc-eligible.html
+        run: node scripts/run-paper-experiment-rmc-eligible.mjs
+
+      - name: Upload experiment outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eva-paper-rmc-eligible
+          path: |
+            results/paper-experiments-rmc-eligible/**
+            /tmp/eva-http.log
+          if-no-files-found: warn
+          retention-days: 30
