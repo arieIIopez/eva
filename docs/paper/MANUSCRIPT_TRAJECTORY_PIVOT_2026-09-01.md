@@ -24,14 +24,7 @@ Dos secuencias pueden contener exactamente los mismos proyectos, tener el mismo 
 
 ## Contribución metodológica
 
-EVA representa cada proyecto `p` como operador `T_p` sobre el estado `G_t`, recalcula atributos dependientes de red y reevalúa el conjunto factible `P^f_t`. La arquitectura mantiene separados:
-
-- `G_t`: estado de la red;
-- `P`: universo modelado;
-- `P^f_t`: conjunto factible;
-- `W`: preferencias de política;
-- `Omega`: estrategia topológica;
-- `Theta`: parámetros técnicos.
+EVA representa cada proyecto `p` como operador `T_p` sobre el estado `G_t`, recalcula atributos dependientes de red y reevalúa el conjunto factible `P^f_t`. La arquitectura mantiene separados `G_t`, `P`, `P^f_t`, `W`, `Omega` y `Theta`.
 
 La interacción dirigida se observa como:
 
@@ -49,12 +42,7 @@ Los análisis de normalización, preferencias `W`, estrategia `Omega` y conjunto
 
 ## Experimento 1 — efecto puro del orden
 
-Se fija el Top-30 inicial y se comparan:
-
-- orden estático congelado;
-- EVA reordenando únicamente esos mismos 30 proyectos.
-
-Ambas trayectorias terminan con exactamente los mismos proyectos, costo total `21.079 MCLP` y `119` componentes. Por tanto, las diferencias intermedias son atribuibles al orden.
+Se fija el Top-30 inicial y se comparan el orden estático congelado y EVA reordenando únicamente esos mismos 30 proyectos. Ambas trayectorias terminan con exactamente los mismos proyectos, costo total `21.079 MCLP` y `119` componentes. Por tanto, las diferencias intermedias son atribuibles al orden.
 
 Resultados:
 
@@ -73,84 +61,62 @@ No existe dominancia de Pareto: ciclistas inducidos son menores bajo EVA en algu
 EVA reevalúa en cada paso los 124 proyectos C/I elegibles.
 
 Entran 11 proyectos fuera del Top-30 inicial:
-
 `C067, I04, I27, I25, C086, I06, C089, C046, C052, C035, C063`
 
 Salen 11 proyectos del Top-30 inicial:
-
 `I14, I15, I08, C006, I05, I07, I02, I29, C060, C057, C058`
 
-Ejemplos:
+Ejemplos: C067 pasa de rank 57 a paso 6; C089 de 85 a paso 25; I14 parte rank 2 y no entra en los primeros 30.
 
-- C067: rank inicial 57 -> paso 6;
-- C089: 85 -> paso 25;
-- I14: rank inicial 2 -> no entra en primeros 30;
-- C006: rank inicial 17 -> no entra en primeros 30.
-
-Frente al Top-30 estático, la trayectoria abierta obtiene:
-
-- costo `-7,82%` (`21.079 -> 19.431 MCLP`);
-- valor EVA acumulado `+12,67%`;
-- valor EVA descontado `+11,00%`;
-- componentes finales `119 -> 114`;
-- población marginal `+16,06%`;
-- demanda habilitada `+22,39%`;
-- ciclistas inducidos `-12,01%`.
+Frente al Top-30 estático, la trayectoria abierta obtiene costo `-7,82%`, valor EVA acumulado `+12,67%`, valor descontado `+11,00%`, componentes finales `119 -> 114`, población marginal `+16,06%`, demanda habilitada `+22,39%` y ciclistas inducidos `-12,01%`.
 
 Esta comparación no identifica efecto puro del orden porque la composición cambia; se interpreta como política adaptativa de cartera.
 
 ## Interacciones durante la trayectoria
 
-Se observaron 3.255 efectos dirigidos:
+Se observaron 3.255 efectos dirigidos: 421 positivos, 179 negativos y 2.655 nulos; media absoluta `0,004710`; `Q(|I|>=0,005)=15,55%` y `Q(|I|>=0,01)=10,14%`.
 
-- positivos: 421;
-- negativos: 179;
-- cero: 2.655;
-- media absoluta: 0,004710;
-- Q(|I|>=0,005)=15,55%;
-- Q(|I|>=0,01)=10,14%.
+Señal habilitante máxima: I26 San Pablo -> C049 Federico Errázuriz, score `0,329 -> 0,561`, rank `48 -> 4`.
 
-Señal habilitante máxima:
+Señal negativa máxima: C068 San Carlos -> C006 Domingo Tocornal, score `0,490 -> 0,227`, rank `6 -> 104`.
 
-- I26 San Pablo -> C049 Federico Errázuriz: score `0,329 -> 0,561`, rank `48 -> 4`, delta `+0,23169`.
-
-Señal negativa máxima:
-
-- C068 San Carlos -> C006 Domingo Tocornal: score `0,490 -> 0,227`, rank `6 -> 104`, delta `-0,26322`.
-
-Dependencia del estado de la propia interacción:
-
-- C049 antes de I26: rank 48, score 0,329;
-- después de I26: rank 4, score 0,561;
-- después de la siguiente intervención I11: rank 64, score 0,302.
-
-Esto respalda representar las interacciones como `I_t(i,j)`.
+Dependencia del estado: C049 pasa de rank 48 / score 0,329 a rank 4 / 0,561 después de I26, y luego a rank 64 / 0,302 después de I11. Esto respalda representar las interacciones como `I_t(i,j)`.
 
 ## Precauciones de interpretación
 
 - EVA usa actualmente una heurística voraz; no demuestra óptimo global.
 - La comparación controlada demuestra ventaja frente al orden estático, no frente a todas las permutaciones posibles.
 - El puntaje EVA no es bienestar monetario.
-- Una interacción negativa no implica eliminar automáticamente un proyecto; indica pérdida de contribución marginal bajo ese estado y función de decisión.
+- Una interacción negativa no implica eliminar automáticamente un proyecto.
 - La aplicación empírica ciclable valida el mecanismo, no los mismos indicadores para otros modos.
-- La transferibilidad es arquitectónica: carreteras, metro, ferrocarriles y otras redes deben sustituir sus funciones sectoriales de demanda, capacidad, costo, seguridad, resiliencia, etc.
+- La transferibilidad es arquitectónica.
 
-## Cambios ya aplicados al manuscrito
+## Cambios aplicados al manuscrito
 
 - Nuevo título, resumen/abstract y palabras clave.
 - Introducción reescrita desde el problema `G0 -> GH` versus trayectoria intermedia.
 - Sección 2.5 reenfocada hacia la brecha entre formulación del plan e implementación.
-- Secciones 3 y 4 conservan la formalización de operadores, tipología, interacción, orden y heurística, pero ya no dominan el framing del paper.
-- Sección 5 renombrada como implementación empírica del método, eliminando el framing de “caso de estudio”.
-- Sección 6 reescrita con: métricas de trayectoria, experimento controlado, experimento abierto, panel de interacciones, sensibilidades y reproducibilidad.
-- Sección 7 reescrita alrededor de trayectoria, adaptación e interacción; los análisis previos pasan a controles.
+- Secciones 3 y 4 conservan la formalización, pero la tipología queda como soporte y no como contribución principal.
+- Sección 3.2 renombrada `Operadores de transformación y funciones de red`.
+- Sección 3.3 renombrada `Atributos y dependencia del estado`.
+- Sección 3.6 comprimida a las condiciones mínimas del problema secuencial y remitida a `I_t`, `K_t` y `Q_t` para medir intensidad empírica; se eliminó el catálogo redundante de cinco ejes tipológicos.
+- Se eliminó un párrafo redundante de transferibilidad en 5.1.
+- Sección 6 organizada como protocolo de evaluación de trayectorias: métricas, experimento controlado, experimento abierto, interacciones, sensibilidad y reproducibilidad.
+- Sección 7 centrada en trayectoria, adaptación e interacción; sensibilidades como controles.
 - Tabla 4 añadida para el contraste controlado de trayectorias.
+- **Figura 2** incorporada al Google Doc: valor decisional acumulado frente a porcentaje de presupuesto equivalente para el mismo Top-30. Datos: `results/paper-plan-trajectory/order_only_budget_comparison.csv`.
+- **Figura 3** incorporada al Google Doc: evolución de C049 Federico Errázuriz antes y después de I26 e I11 para mostrar que la interacción depende del estado.
 - Sección 8 reescrita con el aporte metodológico y sus límites.
+
+## Estado editorial al 2026-09-01
+
+La narrativa central queda organizada en tres demostraciones: (1) mismo plan final, distinta trayectoria; (2) cartera adaptativa que cambia composición; y (3) interacciones dirigidas dependientes del estado. La siguiente revisión debe concentrarse en formato final EDTR, consistencia de ecuaciones/notación, referencias, calidad gráfica de Figura 1 y extensión total, sin volver a abrir el framing científico salvo que aparezca nueva evidencia.
 
 ## Resultados reproducibles
 
 - Experimento correctivo RMC+C/I: `results/paper-experiments/2026-09-01-rmc-eligible/`
 - Experimento de trayectorias: `results/paper-plan-trajectory/`
 - Informe detallado: `docs/paper/PLAN_TRAJECTORY_RESULTS_2026-09-01.md`
+- Presupuesto equivalente: `results/paper-plan-trajectory/order_only_budget_comparison.csv`
 
 Workflow de trayectoria: `Paper plan trajectory experiment`, run `33543155548`, artifact `9814615341`.
