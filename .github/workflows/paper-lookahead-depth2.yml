@@ -1,0 +1,55 @@
+name: Paper lookahead depth2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/paper-lookahead-depth2-only.js'
+      - 'experiments/runner-lookahead-depth2.html'
+      - 'scripts/run-paper-lookahead-depth2.mjs'
+      - 'results/paper-lookahead-depth2/baseline-greedy.json'
+      - '.github/workflows/paper-lookahead-depth2.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eva-paper-lookahead-depth2
+  cancel-in-progress: true
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start local server
+        run: |
+          python3 -m http.server 8080 > /tmp/eva-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/experiments/runner-lookahead-depth2.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/eva-http.log
+          exit 1
+      - name: Run depth-2 lookahead experiment
+        env:
+          EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner-lookahead-depth2.html
+        run: node scripts/run-paper-lookahead-depth2.mjs
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eva-paper-lookahead-depth2
+          path: |
+            results/paper-lookahead-depth2/**
+            /tmp/eva-http.log
+          retention-days: 30
