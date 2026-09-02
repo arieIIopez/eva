@@ -1,0 +1,2 @@
+eligible_projects,steps_executed,remaining_projects,stop_reason,population_at_stop,population_fraction_of_full,population_area_horizon_124,population_capture_index,step_50,step_75,step_90,step_95,step_99,one_step_enablers_executed,cum_cost_mclp_at_stop
+124,42,82,no_direct_or_one_step_population_gain,600177,1,68838193,0.9249716629293283,8,15,23,28,35,0,20631
