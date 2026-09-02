@@ -1,0 +1,17 @@
+{
+  "reference": "eligible-CI-G0",
+  "eligible_count": 124,
+  "poblacion": 54569,
+  "costoOD": 12,
+  "oportunidades": 105,
+  "demanda": 58232,
+  "ciclistas": 272,
+  "estudiantes": 12189,
+  "seguridad": 52.13,
+  "monumentos": 21,
+  "intermodal": 6,
+  "factibilidad": 3.9,
+  "parques": 780968,
+  "costo": 1435,
+  "fractalBase": 100
+}
