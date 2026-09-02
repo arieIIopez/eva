@@ -1,0 +1,54 @@
+name: Paper population saturation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/paper-population-saturation.js'
+      - 'experiments/runner-population-saturation.html'
+      - 'scripts/run-paper-population-saturation.mjs'
+      - '.github/workflows/paper-population-saturation.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eva-paper-population-saturation
+  cancel-in-progress: true
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start local server
+        run: |
+          python3 -m http.server 8080 > /tmp/eva-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/experiments/runner-population-saturation.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/eva-http.log
+          exit 1
+      - name: Run population saturation experiment
+        env:
+          EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner-population-saturation.html
+        run: node scripts/run-paper-population-saturation.mjs
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eva-paper-population-saturation
+          path: |
+            results/paper-population-saturation/**
+            /tmp/eva-http.log
+          retention-days: 30
