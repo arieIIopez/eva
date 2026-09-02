@@ -19,8 +19,24 @@ concurrency:
 
 jobs:
   experiment:
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario:
+          - ponderacion_rmc
+          - balanceado
+          - equidad
+          - demanda
+          - ciclistas_biogeme
+          - fractal_alameda
+          - continuidad
+          - eficiencia
+          - educacion
+          - integracion
+          - seguridad
+          - intermodal
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 90
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,18 +64,19 @@ jobs:
           cat /tmp/eva-http.log
           exit 1
 
-      - name: Run all scenario benefit experiment
+      - name: Run scenario benefit experiment
         env:
           EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner-all-scenario-benefits.html
+          EVA_SCENARIO_KEY: ${{ matrix.scenario }}
         run: node scripts/run-paper-all-scenario-benefits.mjs
 
       - name: Upload outputs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: eva-paper-all-scenario-benefits
+          name: eva-benefits-${{ matrix.scenario }}
           path: |
-            results/paper-all-scenario-benefits/**
+            results/paper-all-scenario-benefits/${{ matrix.scenario }}/**
             /tmp/eva-http.log
           if-no-files-found: warn
           retention-days: 30
