@@ -1,0 +1,4 @@
+Escenario,Población final,Área acumulada población-etapa,Índice de captura temprana,Etapa media ponderada del beneficiario,Etapa para alcanzar 50%,Población a proyecto 10,Población a proyecto 20,Población a proyecto 30
+RMC,600177,64430859,0.86575077287684,17.646904163271834,9,319070,465429,506807
+Balanceado,600177,64836416,0.8712002002420038,16.97117516999152,11,283945,457066,512085
+Logit (Biogeme),600177,63944093,0.8592101485975616,18.457941573902364,12,274191,435201,505322
