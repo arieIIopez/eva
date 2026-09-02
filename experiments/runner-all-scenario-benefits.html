@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EVA · 12 escenarios · posiciones y beneficios</title>
+</head>
+<body>
+  <pre id="status">Inicializando experimento 12 escenarios…</pre>
+  <script>
+    window.evaLog = function(level, message) {
+      if (level === 'err' || level === 'warn') console.log(`[${level}] ${message}`);
+    };
+    window.evaYield = () => new Promise(resolve => setTimeout(resolve, 0));
+
+    window.__resources = {
+      proyectosPmc: "/data/proyectos_pmc.geojson",
+      cicloviasExistentes: "/data/ciclovias_existentes.geojson",
+      odHex: "/data/od_hex.geojson",
+      odComunas: "/data/od_comunas.json",
+      educacionSuperior: "/data/educacion_superior.geojson",
+      siniestros: "/data/siniestros.geojson",
+      monumentos: "/data/monumentos.geojson",
+      ferias: "/data/ferias.geojson",
+      metro: "/data/metro.geojson",
+      busStops: "/data/paraderos_bus.json",
+      otrasCarteras: "/data/otras_carteras.geojson",
+      parques: "/data/parques.geojson",
+      manzanasPorHex: "/data/manzanas_por_hex.json",
+      variablesModeloHex: "/data/variables_modelo_hex.json",
+      comunasRM: "/data/comunas_rm.geojson"
+    };
+
+    async function evalScript(path) {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+      const code = await response.text();
+      (0, eval)(`${code}\n//# sourceURL=${path}`);
+    }
+
+    (async function boot() {
+      try {
+        const scripts = [
+          '../src/version.jsx',
+          '../src/scenarios.jsx',
+          '../src/demanda-modal.jsx',
+          '../src/data.jsx',
+          '../src/engine.jsx',
+          '../src/fractal.js',
+          '../src/dendritic-config.js',
+          './paper-experiments.js',
+          './paper-experiments-fast.js',
+          './paper-all-scenario-benefits.js'
+        ];
+        for (const path of scripts) await evalScript(path);
+        await window.loadProjects();
+        window.__EVA_EXPERIMENT_READY = true;
+        document.getElementById('status').textContent = `Listo · ${(window.projectsFC && window.projectsFC.features || []).length} proyectos`;
+      } catch (error) {
+        window.__EVA_EXPERIMENT_ERROR = String(error && error.stack || error);
+        document.getElementById('status').textContent = window.__EVA_EXPERIMENT_ERROR;
+        console.error(error);
+      }
+    })();
+  </script>
+</body>
+</html>
