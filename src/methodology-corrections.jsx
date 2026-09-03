@@ -6,7 +6,7 @@
 
    IMPORTANTE: esta capa no modifica cálculos, parámetros ni ponderaciones.
    Sólo corrige documentación mostrada al usuario. Debe consolidarse dentro
-   de metodologia.jsx antes de declarar una release estable posterior.
+   de metodologia.jsx y scenarios.jsx antes de declarar una release estable.
 ============================================================ */
 (function applyMethodologyCorrections() {
   const M = window.METODOLOGIA;
@@ -47,4 +47,75 @@
       "Ortúzar, J. de D. & Willumsen, L.G. (2011). Modelling Transport, 4th ed. Wiley.",
     ],
   };
+
+  /* `pob` en od_hex representa población ocupada modelada, no población total. */
+  M.crit_poblacion = {
+    title: "Cobertura marginal de población ocupada",
+    desc: "Ocupados que residen en hexágonos sin acceso a la red efectiva en el estado vigente y que adquieren acceso al incorporar el proyecto. El motor utiliza el campo `pob` de la base OD, correspondiente a población ocupada modelada; no debe interpretarse como población total. La métrica es incremental y evita recontar ocupados que ya tenían acceso.",
+    eq: [
+      "\\Delta P_p = \\sum_{h \\in H(p)} ocup_h \\cdot \\mathbb{1}[d(h, red_t)>\\delta_O]",
+      "H(p)=\\{h:d(h,p)\\le\\delta_O\\}",
+    ],
+    expected: "En la cartera PMC el rango observado es aproximadamente 0–60.000 ocupados por proyecto. δ_O = 700 m por defecto.",
+    limits: [
+      "Representa acceso potencial de población ocupada modelada; no población total, uso observado, bienestar ni causalidad individual.",
+      "Usa distancia geométrica desde el centroide del hexágono a la red, no una ruta peatonal real de acceso; puede sobreestimar acceso ante barreras urbanas.",
+      "El hexágono agrega población y el acceso se asigna al conjunto del hexágono desde su centroide.",
+      "No distingue por sí sola propensión a usar bicicleta; esa dimensión se modela separadamente.",
+    ],
+    refs: [
+      "Vega, Greene & Ortúzar (2024), op. cit.",
+      "Geurs, K. & van Wee, B. (2004). Accessibility evaluation of land-use and transport strategies. J. of Transport Geography 12(2).",
+      "INE (2024). Censo de Población y Vivienda — n_ocupado por manzana.",
+    ],
+  };
+
+  if (M.crit_oportunidades) {
+    M.crit_oportunidades.desc = "Número de hexágonos OD que obtienen al menos un viaje laboral nuevo viable gracias al proyecto, sea por acceso directo o por interconexión de subredes. Mide extensión territorial del cambio y complementa la cobertura marginal de población ocupada, que representa su intensidad demográfica dentro de la base OD.";
+    M.crit_oportunidades.limits = [
+      "Cuenta hexágonos, no personas ni ocupados: dos hexágonos pesan igual aunque contengan magnitudes muy distintas; por eso se combina con cobertura de población ocupada.",
+      "Sensible al umbral de servicio del destino y a los parámetros de acceso y conectividad.",
+    ];
+  }
+
+  if (M.crit_equidad) {
+    M.crit_equidad.title = "Equidad territorial de población ocupada habilitada";
+    M.crit_equidad.desc = "Fracción de la población ocupada asociada a hexágonos con nuevos viajes viables que reside en comunas cuya cobertura ciclable actual está bajo la mediana regional. Prioriza cierre de brechas territoriales dentro de la población ocupada representada por la base OD; no constituye una medida completa de equidad social.";
+    M.crit_equidad.limits = [
+      "La cobertura comunal es un promedio que oculta heterogeneidad intracomunal.",
+      "La métrica utiliza población ocupada modelada y no incorpora directamente ingreso, género, discapacidad u otras dimensiones distributivas.",
+      "La mediana de cobertura depende del estado vigente de la red y puede cambiar durante la priorización secuencial.",
+    ];
+  }
+
+  /* Corrige terminología de escenarios sin modificar los vectores de pesos. */
+  if (Array.isArray(window.EVA_SCENARIOS)) {
+    window.EVA_SCENARIOS.forEach(s => {
+      if (!s || !s.desc) return;
+      s.desc = s.desc
+        .replace(/población marginal/g, "cobertura marginal de población ocupada")
+        .replace(/cobertura poblacional/g, "cobertura de población ocupada");
+    });
+  }
+
+  /* Corrige la explicación automática del score generada por scenarios.jsx. */
+  if (typeof window.evaExplainScore === "function") {
+    const baseExplainScore = window.evaExplainScore;
+    const fixLabel = (s) => (s || "")
+      .replace(/población marginal/g, "cobertura marginal de población ocupada")
+      .replace(/cobertura poblacional/g, "cobertura de población ocupada");
+
+    window.evaExplainScore = function (p, weights, ranking) {
+      const out = baseExplainScore(p, weights, ranking);
+      if (!out) return out;
+      out.explicacion = fixLabel(out.explicacion)
+        .replace(/beneficia ([0-9.]+) personas de forma marginal/g, "incorpora acceso para $1 ocupados de forma marginal");
+      if (Array.isArray(out.aportes)) {
+        out.aportes.forEach(a => { if (a && a.criterio === "poblacion") a.etiqueta = "cobertura marginal de población ocupada"; });
+      }
+      if (Array.isArray(out.fortalezas)) out.fortalezas = out.fortalezas.map(fixLabel);
+      if (Array.isArray(out.debilidades)) out.debilidades = out.debilidades.map(fixLabel);
+      return out;
+    };
+  }
 })();
