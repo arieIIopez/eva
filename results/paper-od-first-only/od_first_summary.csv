@@ -1,0 +1,2 @@
+eligible_projects,steps_executed,remaining_projects,stop_reason,demand_at_stop,full_demand_reference,demand_fraction_of_full,demand_area_horizon_124,demand_capture_index,step_50,step_75,step_90,step_95,step_99,one_step_enablers_executed,population_at_stop,cum_cost_mclp_at_stop
+124,52,72,no_direct_or_one_step_od_gain,871510,871511,0.9999988525687563,99097405,0.9161342118191494,8,14,25,33,44,0,579441,25896
