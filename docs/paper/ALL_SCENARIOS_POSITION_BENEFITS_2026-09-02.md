@@ -31,19 +31,19 @@ Se comparan los doce escenarios actualmente definidos en EVA:
 
 ## 3. Estabilidad de posición por ciclovía
 
-Para cada proyecto `i` se define su posición secuencial `r_i(W)` bajo cada escenario. Se resumen:
+Para cada proyecto `i` se define su posición secuencial `r_i(W)` bajo cada escenario. La estabilidad se reporta sin construir un metarranking arbitrario mediante dos familias de métricas:
 
-- `r_min = min_W r_i(W)`;
-- `r_max = max_W r_i(W)`;
-- `R_i = r_max-r_min`;
-- media, mediana y desviación estándar de posición;
-- frecuencia de aparición en Top-10, Top-20 y Top-30.
+`R_i = max_W r_i(W) - min_W r_i(W)`
 
-Esto permite distinguir entre prioridad robusta y prioridad dependiente de la política, evitando tratar el orden como atributo intrínseco del proyecto.
+como amplitud de sensibilidad interescenario, y
+
+`F_i(k) = (1/|W|) * sum_W 1[r_i(W) <= k]`
+
+como frecuencia de prioridad robusta en un Top-`k`. Se reportan además media, mediana y desviación estándar de posición. Un proyecto puede así ser estable, polarizado o sistemáticamente tardío sin asignarle un único rango promedio normativo.
 
 ### 3.1 Núcleo robusto
 
-Resultados ya disponibles de la matriz de doce escenarios:
+Resultados disponibles de la matriz de doce escenarios:
 
 | Proyecto | Nombre | r_min | r_max | media | Top-10 / 12 | Lectura |
 |---|---|---:|---:|---:|---:|---|
@@ -56,7 +56,7 @@ Resultados ya disponibles de la matriz de doce escenarios:
 | I22 | Pedro Fontova | 3 | 16 | 8,67 | 8 | prioridad robusta Top-20 |
 | I04 | Del Ferrocarril | 6 | 15 | 10,33 | 6 | prioridad robusta Top-20 |
 
-I12 es el caso más claro: permanece dentro de los primeros diez lugares bajo los doce escenarios predefinidos. Esto constituye una señal de consenso multicriterio mucho más fuerte que su posición bajo un único vector de pesos.
+I12 es el caso más claro: `F_I12(10)=1`, pues permanece dentro de los primeros diez lugares bajo los doce escenarios. Esto constituye una señal de consenso multicriterio mucho más fuerte que su posición bajo un único vector de pesos.
 
 ### 3.2 Proyectos polarizados o muy sensibles a W
 
@@ -71,24 +71,24 @@ I12 es el caso más claro: permanece dentro de los primeros diez lugares bajo lo
 | C067 | Cardenal Raúl Silva Henríquez | 4 | 100 | 96 | 8 | alta prioridad en muchos W, pero polarizada |
 | I19 | PAC–Lo Espejo–San Bernardo | 4 | 98 | 94 | 7 | alta prioridad en muchos W, pero polarizada |
 
-Lo Ovalle es especialmente ilustrativo: una sola afirmación del tipo “es el proyecto número X de la cartera” oculta que su prioridad cambia desde cuarto a último lugar según el objetivo público representado por `W`.
+Lo Ovalle es especialmente ilustrativo: `R_I14=120`. Una sola afirmación del tipo “es el proyecto número X de la cartera” oculta que su prioridad cambia desde cuarto a último lugar según el objetivo público representado por `W`.
 
 ## 4. Comparación de beneficios comunes
 
-Dado que los puntajes propios de escenarios distintos no comparten una escala normativa común, la comparación se realiza con resultados físicos/comunes:
+Dado que los puntajes propios de escenarios distintos no comparten una escala normativa común, la comparación se realiza con resultados físicos/comunes.
 
 ### 4.1 Población marginal
 
 La trayectoria acumulada se resume mediante `A_P = Σ_t P_t` y el índice de captura temprana `I_P`.
 
-Valores disponibles de las corridas de 124 proyectos:
+Valores de las corridas de 124 proyectos:
 
 1. Educación superior: `A_P=66.003.660`, `I_P=0,8869`.
 2. Demanda potencial: `A_P=64.945.037`, `I_P=0,8727`.
 3. Balanceado: `A_P=64.836.416`, `I_P=0,8712`.
 4. RMC: `A_P=64.430.859`, `I_P=0,8658`.
 
-Educación superior adelanta más población a lo largo de toda la trayectoria, aunque no fue diseñado explícitamente como Population-first. Esto debe interpretarse como resultado empírico de la interacción entre su vector de preferencias y la estructura espacial de la cartera.
+Educación superior adelanta más población a lo largo de toda la trayectoria entre los escenarios predefinidos, aunque no fue diseñado explícitamente como Population-first. Debe interpretarse como resultado empírico de la interacción entre su vector de preferencias y la estructura espacial de la cartera, no como superioridad general del escenario.
 
 ### 4.2 Conexión funcional: habilitación OD/demanda
 
@@ -113,22 +113,39 @@ La reducción acumulada de fragmentación se resume mediante el área de reducci
 
 Por ello “conexión” debe desagregarse en conexión funcional OD y conexión topológica. Un escenario puede adelantar viajes habilitados sin ser el que más tempranamente consolida componentes de red.
 
-## 5. Frontera población–conexión
+## 5. Fronteras de beneficios
+
+### 5.1 Frontera bidimensional población–conexión funcional
 
 Al evaluar simultáneamente `A_P` y `A_D`, la frontera no dominada de los doce escenarios predefinidos queda compuesta por:
 
 - **Educación superior**, que maximiza captura poblacional de trayectoria;
 - **Demanda potencial**, que maximiza captura de viajes OD habilitados.
 
-Los otros diez escenarios son dominados en este plano bidimensional por al menos uno de estos dos. Esto no los hace inferiores en general: pueden producir más seguridad, equidad, conexión topológica, ciclistas inducidos u otros resultados no contenidos en el plano `A_P × A_D`.
+Los otros diez escenarios son dominados en este plano bidimensional por al menos uno de estos dos. Esto no los hace inferiores en general: pueden producir más seguridad, equidad, conexión topológica, ciclistas inducidos u otros resultados no contenidos en `A_P × A_D`.
 
-La formulación correcta para el artículo es, por tanto, una **frontera de compromisos**, no la identificación de un único escenario universalmente óptimo.
+### 5.2 Frontera tridimensional: población + conexión funcional + conexión topológica
+
+Al incorporar la reducción temprana de componentes como tercera dimensión, la frontera no dominada se amplía a cuatro estrategias:
+
+- **Educación superior**: extremo de captura poblacional;
+- **Demanda potencial**: extremo de habilitación OD;
+- **Integración metropolitana**: compromiso intermedio entre población, OD y consolidación de red;
+- **Continuidad de red**: extremo de conexión topológica.
+
+Esta frontera tridimensional es más fiel al significado de “conexión” en EVA y refuerza que no existe un único escenario predefinido que maximice simultáneamente todos los resultados públicos considerados.
+
+La formulación correcta para el artículo es, por tanto, una **frontera de compromisos**, no la identificación de un escenario universalmente óptimo.
 
 ## 6. Rendimientos decrecientes y saturación
 
-Los resúmenes disponibles muestran ya que la etapa de 95% depende fuertemente de `W`.
+Para un resultado acumulado `Y_t`, se define la fracción capturada `C_Y(t)=Y_t/Y_H`. Una medida de saturación práctica conjunta para población y conexión funcional puede escribirse como:
 
-Ejemplos:
+`t_W^(γ) = min{t : C_P,W(t) >= γ y C_D,W(t) >= γ}`.
+
+Al incluir conexión topológica puede añadirse `C_K,W(t)` y exigir las tres condiciones. `γ=0,95` representa saturación práctica; no implica beneficio marginal exactamente cero.
+
+Los resúmenes disponibles muestran que la etapa de 95% depende fuertemente de `W`:
 
 | Escenario | Población 95% | Demanda 95% | máximo de ambas |
 |---|---:|---:|---:|
@@ -141,13 +158,15 @@ Ejemplos:
 | Continuidad | 57 | 36 | 57 |
 | RMC | 59 | 38 | 59 |
 | Logit/Biogeme | 70 | 41 | 70 |
-| Eficiencia | 77 | 47 | 77 |
 | Equidad | 75 | 45 | 75 |
+| Eficiencia | 77 | 47 | 77 |
 | Fractal Alameda | 107 | 49 | 107 |
 
-Esto permite definir **saturación práctica** (p. ej. 95% o 99%) separada de **suficiencia exacta**. Population-first ya demostró suficiencia poblacional exacta en `t*=42` bajo `ε=0` y habilitación de un paso. En cambio, una política multicriterio puede continuar incorporando proyectos con pequeñas ganancias poblacionales hasta etapas tardías porque persigue simultáneamente otros objetivos.
+Esto permite separar **saturación práctica** de **suficiencia exacta**. Population-first ya demostró suficiencia poblacional exacta en `t*=42` bajo `ε=0` y habilitación de un paso. En cambio, una política multicriterio puede continuar incorporando proyectos con pequeñas ganancias poblacionales hasta etapas tardías porque persigue simultáneamente otros objetivos.
 
-No debe escribirse “después de X proyectos no hay beneficio” salvo que el beneficio marginal sea exactamente cero para todas las métricas declaradas. La formulación correcta es “después de X proyectos el beneficio marginal respecto de Y entra en una zona de rendimientos decrecientes / se ha capturado Z% del beneficio final”.
+Los resúmenes de las secuencias predefinidas muestran además que la última ganancia positiva de población o demanda ocurre, en casi todos los escenarios, muy cerca de agotar la cartera. Por ello no corresponde afirmar que las curvas multicriterio alcancen beneficio exactamente cero en torno al 95%. La conclusión científicamente correcta es que después del umbral aparece una **cola de rendimientos decrecientes**.
+
+No debe escribirse “después de X proyectos no hay beneficio” salvo que el beneficio marginal sea exactamente cero para todas las métricas declaradas. La formulación correcta es “después de X proyectos se ha capturado γ% del beneficio final respecto de Y y el beneficio marginal entra en una zona de rendimientos decrecientes”.
 
 ## 7. Corrida exacta de 12 escenarios
 
@@ -158,7 +177,7 @@ Se incorporó un nuevo experimento reproducible:
 - `scripts/run-paper-all-scenarios-benefits.mjs`
 - `.github/workflows/paper-all-scenarios-benefits.yml`
 
-La corrida exportará la trayectoria completa de 124 pasos para cada uno de los doce escenarios, matriz de posiciones, frontera población–conexión y métricas de saturación. Esto permitirá construir las curvas marginales exactas `ΔP_t`, `ΔD_t` y reducción topológica por etapa, sin interpolar checkpoints.
+La corrida exporta la trayectoria completa de 124 pasos para cada uno de los doce escenarios, matriz de posiciones, frontera población–conexión y métricas de saturación. Los CSV de etapa permitirán graficar directamente `ΔP_t`, `ΔD_t` y reducción topológica por etapa, sin interpolar checkpoints.
 
 ## 8. Integración propuesta en el manuscrito
 
@@ -169,7 +188,7 @@ Incorporar una subsección de resultados del tipo:
 con tres resultados visuales:
 
 1. gráfico de posición de proyectos seleccionados a través de los doce escenarios;
-2. frontera `A_P × A_D`, indicando escenarios no dominados;
-3. curvas acumuladas/marginales de población, demanda y conectividad con zona de rendimientos decrecientes.
+2. frontera de beneficios `A_P × A_D`, con la conexión topológica como tercera dimensión o panel complementario;
+3. curvas acumuladas/marginales de población, demanda y conectividad con zona de rendimientos decrecientes y umbrales 95/99%.
 
-El mensaje metodológico que emerge es más fuerte que una comparación de rankings: EVA permite distinguir **qué proyectos son prioridad robusta**, **cuáles dependen de la preferencia pública declarada** y **hasta qué punto de la trayectoria se capturan los beneficios que justifican continuar expandiendo la cartera**.
+El mensaje metodológico que emerge es más fuerte que una comparación de rankings: EVA permite distinguir **qué proyectos son prioridad robusta**, **cuáles dependen de la preferencia pública declarada**, **qué escenarios se ubican en la frontera de resultados públicos** y **hasta qué punto de la trayectoria se capturan los beneficios que justifican continuar expandiendo la cartera**.
