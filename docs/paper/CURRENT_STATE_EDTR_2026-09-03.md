@@ -2,260 +2,263 @@
 
 Fecha de corte: 2026-09-03
 
-Este archivo es el **cursor autoritativo de reanudación** del paper. Sustituye como punto de partida a `FINAL_MANUSCRIPT_QA_2026-09-02.md` y al DOCX de 18 páginas generado el 2 de septiembre, porque el manuscrito, los experimentos y la auditoría científica cambiaron sustantivamente el 3 de septiembre.
+Este archivo es el **cursor autoritativo de reanudación** del paper. La fuente viva de contenido es el Google Doc y GitHub conserva el estado científico, computacional y editorial necesario para continuar sin reconstruir la conversación.
 
 ## 1. Manuscrito vivo
 
-Google Doc de contenido:
-
-- Título: `EDTR - Evaluación de trayectorias de implementación en redes de transporte - Método EVA`
+- Google Doc: `EDTR - Evaluación de trayectorias de implementación en redes de transporte - Método EVA`
 - ID: `1d4W7EdCoJDnU1rHB7Z4Y9wy-cU4JnjcaswqS5RtZUIs`
-- URL: `https://docs.google.com/document/d/1d4W7EdCoJDnU1rHB7Z4Y9wy-cU4JnjcaswqS5RtZUIs/edit`
+- Título del artículo: **Evaluación de trayectorias de implementación en redes de transporte: método EVA para la secuenciación dependiente del estado**.
+- Estado editorial al cierre de esta actualización: **20 páginas exactas** en la exportación PDF de Google Docs.
+- Resumen español: aproximadamente **177 palabras** después de la última compactación, bajo el límite de 200 palabras.
+- Google Docs sigue siendo fuente de contenido, no artefacto tipográfico final: su PDF rompe varios subíndices/superíndices Unicode. El DOCX final debe reconstruir matemática con Word Math/OMML y pasar QA visual página por página.
 
-Título del artículo:
+## 2. Tesis científica central: evaluación de trayectoria de planes maestros
 
-**Evaluación de trayectorias de implementación en redes de transporte: método EVA para la secuenciación dependiente del estado**
+La formulación que debe preservarse es más general que la aplicación ciclable.
 
-El Google Doc es la **fuente viva de contenido**, pero no debe considerarse el artefacto tipográfico final: su exportación PDF rompe numerosos subíndices/superíndices matemáticos Unicode. El DOCX de envío deberá reconstruir las expresiones matemáticas como Word Math/OMML y pasar QA visual página por página.
+Los planes maestros de transporte suelen representar una condición base `G0` y uno o más horizontes futuros en que una cartera de proyectos y políticas ya está incorporada. Esa evaluación permite comparar estados y proyectos, pero un plan que se ejecuta por etapas también genera una trayectoria:
 
-## 2. Contribución científica que debe preservarse
+`G0 -> G1 -> G2 -> ... -> GH`
 
-EVA no reclama como novedad que “el orden importa”, que una red pueda actualizarse después de una inversión o que una secuencia pueda detenerse. La literatura de secuenciación, expansión multiperíodo, planificación adaptativa, portafolios interdependientes y crecimiento de redes ya cubre esas ideas. Los antecedentes recientes especialmente próximos son Paulsen y Rich (2023, 2024) y Yu et al. (2026).
+Cada proyecto `p` actúa como un operador `T_p` que transforma el estado vigente. Si al cambiar `G_t` cambian los beneficios, atributos o prioridades de los proyectos restantes, entonces el orden de implementación forma parte del desempeño del plan y no es sólo una decisión administrativa posterior.
 
-La contribución defendible es la **articulación metodológica y reproducible** de una cartera pública ya formulada:
+EVA debe presentarse como una **capa de evaluación de trayectoria**. Su pregunta no es solamente “¿qué proyectos componen el mejor estado final?”, sino también:
 
-1. representar explícitamente el estado `G_t`, los operadores `T_p`, el conjunto factible `P^f_t`, las preferencias `W`, la estrategia topológica `Ω` y los parámetros `Θ`;
-2. separar la función decisional `S_t` de los resultados públicos con que se juzga la trayectoria;
-3. separar cambios atribuibles al estado de red de cambios mecánicos de normalización y de cambios en preferencias;
-4. comparar secuencias que contienen exactamente el mismo conjunto físico final para aislar el efecto de trayectoria;
-5. diagnosticar interacciones **dirigidas y dependientes del estado** `I_t(p,q)` sin imponer una matriz bilateral constante;
-6. distinguir saturación práctica de una **condición de suficiencia objetivo-específica**, condicionada a la métrica y al horizonte explícito de habilitación;
-7. mantener trazabilidad entre datos, código, parámetros, resultados y versión computacional.
+- ¿qué beneficios se obtienen en cada estado intermedio?;
+- ¿cómo cambia el beneficio marginal de un mismo proyecto según el momento en que se incorpora?;
+- ¿cómo cambia la prioridad de las alternativas remanentes después de cada intervención?;
+- ¿qué secuencias adelantan determinados resultados públicos?;
+- ¿cuándo un objetivo alcanza una condición de suficiencia bajo una profundidad explícita de habilitación?;
+- ¿qué proyectos son robustamente prioritarios y cuáles dependen fuertemente del estado y de las preferencias de política?
 
-Paulsen y Rich (2024) incorpora demanda inducida, actualización de estados intermedios y reglas económicas de detención. Yu et al. (2026) reevalúa iterativamente una cartera oficial mediante TOPSIS. Por ello la novedad de EVA no puede formularse como secuenciación dinámica, reevaluación o detención por sí solas.
+### recomendación general del paper
 
-La transferencia a otros modos es una hipótesis **arquitectónica**: `G_t → T_p(G_t) → G_{t+1}` puede conservarse sustituyendo las métricas sectoriales. La validación empírica del artículo sigue siendo ciclable y no demuestra por sí sola validez externa en metro, vialidad u otros sistemas.
+La conclusión metodológica defendible es:
 
-## 3. Universo, conjunto factible y normalización
+> **Todo plan maestro cuyos proyectos puedan ser interdependientes debería someter su cartera, al menos, a un test de dependencia de secuencia.**
+
+Si rankings, beneficios y resultados permanecen prácticamente invariantes al actualizar el estado, el test respalda que una priorización estática es suficiente. Si cambian materialmente, debe evaluarse explícitamente la trayectoria y el orden debe tratarse como una variable sustantiva del plan.
+
+Esta recomendación es general. La **validación empírica** del artículo, sin embargo, sigue siendo ciclable; por ello no afirmar que EVA ya está empíricamente validado para metro, carreteras u otros sistemas.
+
+## 3. Inserción en la metodología SECTRA de Chile
+
+La revisión de la metodología oficial chilena permite ubicar EVA en un vacío concreto del proceso de planificación.
+
+La **Guía metodológica para la elaboración de Planes Maestros de Transporte Urbano Metropolitano (PMTUM)** de SECTRA/SUBDERE:
+
+- modela iniciativas respecto de una situación base, individual y conjuntamente;
+- trabaja con cortes temporales y estados futuros;
+- incorpora evaluación social y evaluación multicriterio del plan;
+- una vez conformada la cartera definitiva, exige priorizar proyectos considerando restricciones financieras, temporales y de recursos;
+- define una **secuencia de implementación**;
+- exige seguimiento, indicadores, complementariedad, evaluaciones periódicas y actualización adaptativa;
+- admite explícitamente cambios posteriores en el orden de priorización de iniciativas.
+
+La brecha es que esas etapas no establecen un procedimiento que, después de incorporar cada proyecto, reconstruya sistemáticamente el nuevo estado y recalcule el beneficio y la prioridad de todas las alternativas remanentes.
+
+EVA se inserta **entre la evaluación/conformación de la cartera y su programación definitiva**, y puede volver a utilizarse durante el seguimiento:
+
+1. calibrar y representar `G0`;
+2. modelar/evaluar proyectos y paquetes mediante los instrumentos sectoriales vigentes;
+3. realizar evaluación social y multicriterio;
+4. conformar la cartera definitiva;
+5. **aplicar EVA para construir y comparar trayectorias secuenciales**;
+6. fijar programación financiera y temporal con conocimiento del efecto de orden;
+7. durante la ejecución, actualizar `G_t` y repetir el análisis cuando cambien proyectos, restricciones o condiciones externas.
+
+EVA **no reemplaza** las herramientas SECTRA. En aplicaciones viales o de transporte público puede operar como capa de orquestación:
+
+- `ESTRAUS` / `VIVALDI`: pueden producir indicadores y estados operacionales de red en cada `G_t`;
+- `MESPIVU` / SNI: pueden aportar resultados de evaluación social;
+- `MODEM` / `MODEC`: pueden aportar emisiones e impactos ambientales/económicos;
+- AHP u otro MCDA: puede representar preferencias `W`;
+- EVA organiza la actualización iterativa `G_t -> T_p(G_t) -> G_{t+1}` y compara la trayectoria completa.
+
+La referencia incorporada al manuscrito es:
+
+`SECTRA y SUBDERE (2025) Guía metodológica para la elaboración de Planes Maestros de Transporte Urbano Metropolitano (PMTUM). Programa de Vialidad y Transporte Urbano, Ministerio de Transportes y Telecomunicaciones, Chile.`
+
+## 4. Qué NO debe reclamarse como novedad
+
+EVA no inventa la idea de que el orden importa. La literatura de secuenciación, expansión multiperíodo, planificación adaptativa y proyectos interdependientes ya lo reconoce.
+
+Antecedentes recientes especialmente próximos:
+
+- Paulsen y Rich (2023): expansión ciclable secuencial con interdependencias;
+- Paulsen y Rich (2024): demanda inducida, actualización de estados intermedios y reglas económicas de detención;
+- Yu et al. (2026): reevaluación iterativa de una cartera oficial mediante TOPSIS.
+
+La contribución incremental de EVA es la **articulación auditable** de:
+
+- estado `G_t`;
+- operadores `T_p`;
+- conjunto factible `P^f_t`;
+- preferencias `W`;
+- estrategia topológica `Ω`;
+- parámetros `Θ`;
+- resultados públicos separados de la función decisional;
+- normalización controlada para no confundir dependencia de estado con cambios del denominador;
+- interacciones dirigidas `I_t(p,q)`;
+- captura temprana y suficiencia objetivo-específica;
+- trazabilidad entre datos, parámetros, código, resultados y versión.
+
+EVA se presenta como **método de evaluación de trayectoria**, no como un nuevo optimizador global.
+
+## 5. Universo experimental y normalización
 
 - Universo modelado: 133 proyectos.
-- Conjunto factible inicial: 124 proyectos = 88 comunales + 36 intercomunales.
-- Nueve corredores MET permanecen en la representación del sistema, pero están excluidos de competencia por prioridad y de las referencias de normalización del experimento.
-- El contraste científico utiliza normalización fijada en `G0` sobre el conjunto elegible.
-- La normalización operacional de EVA, basada en la cartera activa, se conserva sólo como sensibilidad.
-- El costo no es la función objetivo del experimento; puede operar como restricción de factibilidad/programación.
+- Conjunto factible inicial `P^f_0`: 124 proyectos = 88 comunales + 36 intercomunales.
+- Nueve corredores MET permanecen modelados, pero se excluyen de competencia por prioridad y de las referencias de normalización del experimento.
+- Las corridas científicas usan referencias de normalización fijadas en `G0`.
+- La normalización operacional de EVA sobre la cartera activa se conserva como sensibilidad.
+- La escala fija `G0` no está necesariamente acotada a `[0,1]`: un atributo que supere posteriormente el máximo observado en `G0` puede producir `x_hat > 1`.
+- El costo no es objetivo del experimento; puede operar como restricción de factibilidad/programación.
 
-El código experimental verifica la referencia fija `G0` mediante `fixedNorm` y `fixedScore`; eliminar proyectos durante la secuencia no modifica mecánicamente los denominadores científicos.
+## 6. Significado correcto de P y D
 
-## 4. Notación y formulación corregidas
+### Población
 
-Correcciones incorporadas al manuscrito:
+El motor usa `h.properties.pob`, que corresponde a **población ocupada modelada** asociada a la base OD laboral, no a población total.
 
-- `D_t` queda reservado para habilitación OD acumulada.
-- El beneficio directo de cobertura de población ocupada se escribe `B^P_t(p)=ΔP_t(p|G_t)`.
-- Sea `P^f_{t+1}(p)` el conjunto factible sucesor tras aplicar `T_p`. La habilitación de un paso se escribe `H^P_t(p)=max_{q∈P^f_{t+1}(p)} ΔP_{t+1}(q|T_p(G_t))`.
-- En la aplicación empírica no se activan nuevas precedencias, por lo que `P^f_{t+1}(p)` coincide con el conjunto remanente tras retirar `p`.
-- La condición se generaliza como `B^Y_t` y `H^Y_t` para un resultado público `Y`.
-- Se eliminó la expresión “suficiencia exacta”: los puntos de detención son condiciones de suficiencia **respecto de una métrica y de una profundidad de habilitación de un paso**.
-- La suficiencia EVA no equivale a una regla económica basada en NPV/BCR/rentabilidad y no declara sin valor a los proyectos restantes.
-- Para población y OD, `I_Y=A_Y/(k·Y_k)` se usa con `Y_k>0` como índice de captura temprana.
-- Para topología, como `C_t` puede ser no monótono, `A_C` e `I_C` son integral e índice normalizado de trayectoria topológica; no deben interpretarse como proporción monotónica de captura.
-- La ecuación multicriterio se expresa como `S_t(p)`.
-- `S^0_t(p)=F(X^I_p,X^R_{p,t},X^T_{p,t},X^H_{p,t};Ω,W,Θ)`: los atributos habilitantes sí forman parte de la evaluación, pero `I_t` se observa ex post y no se reincorpora recursivamente.
-- La ecuación de `arg max` poblacional define el objetivo de referencia y **no afirma que la heurística voraz de EVA resuelva el óptimo global**.
-- `I_t(p,q)>0/<0` se interpreta como señal de complementariedad/sustitución **dentro de la función decisional**, no como prueba causal o económica de complementariedad.
-- H1–H3 se tratan como hipótesis diagnósticas falsables contrastadas descriptivamente, no como pruebas estadísticas de hipótesis nula.
+Además, `poblacion = pobNew` representa ocupados que **adquieren acceso respecto del estado anterior**. Por tanto:
 
-## 5. Hallazgo crítico: `P_t` es población ocupada modelada
+- `Delta P_t` = nueva ganancia marginal de acceso de población ocupada;
+- `P_t` = ganancia acumulada de acceso respecto de `G0`;
+- las 600.177 unidades finales NO son población total cubierta por la red y tampoco incluyen a quienes ya tenían acceso en `G0`;
+- `pobBeneficiada` es otra variable: ocupados que obtienen al menos un viaje OD nuevo viable, incluidos efectos de interconexión.
 
-La auditoría cruzada del código, la interfaz y la memoria técnica confirmó que el campo usado por el motor para cobertura es `h.properties.pob`.
+`A_P` debe expresarse como `ocupado-etapa`.
 
-Este campo corresponde a **población ocupada modelada**, asociada a los vectores OD laborales, y no a población total. La interfaz distingue `per` como “Personas (Censo 2024)” y `pob` como “Ocupados”. La memoria técnica identifica aproximadamente 3,44 millones de población empleada modelada como base de cobertura y demanda laboral.
+### OD
 
-Consecuencia científica:
+Configuración experimental base:
 
-- `P_t` debe interpretarse como cobertura/acceso de **población ocupada modelada**.
-- Las 600.177 unidades del estado final son **600.177 ocupados modelados con acceso bajo la definición EVA**, no 600.177 habitantes de población total.
-- `A_P` se expresa adecuadamente como `ocupado-etapa`.
-- Population-first agota esta métrica operacional; no demuestra cobertura completa de población total ni redundancia técnica de los proyectos restantes.
+- 1.589 hexágonos de aproximadamente 600 m;
+- acceso origen: 700 m;
+- acceso destino: 700 m;
+- tolerancia de empalme: 150 m;
+- comuna destino servida si una subred cubre al menos 40% de sus ocupados modelados;
+- se evalúan los diez principales destinos laborales por hexágono;
+- `porcProtegido = 0%`;
+- `aproxFinal = 0 m`;
+- `tiempoMax = 0`;
+- costo proxy: 100 MCLP/km.
 
-Esta corrección **no modifica ningún resultado numérico**: corrige la interpretación de una variable que el motor ya calculaba de manera consistente con la base OD.
+`Delta D_t` y `D_t` son un **proxy de habilitación funcional OD a nivel comunal**, no un ruteo puerta-a-puerta hacia lugares de trabajo individuales.
 
-### definición operacional vigente
-
-La configuración experimental utiliza los defaults del esquema de parámetros de `src/version.jsx`:
-
-- acceso origen `distOrigen = 700 m`;
-- acceso destino `distDestino = 700 m`;
-- tolerancia de empalme `connectTol = 150 m`;
-- cobertura mínima para que una subred “sirva” una comuna destino `habThreshold = 40%` de la población ocupada modelada de esa comuna;
-- diez principales destinos laborales por hexágono;
-- `porcProtegido = 0%` y `aproxFinal = 0 m` en la corrida base;
-- `tiempoMax = 0`, por lo que no se impone un límite temporal OD adicional;
-- costo proxy `100 MCLP/km`.
-
-Un hexágono gana acceso cuando su centroide queda a distancia `distOrigen` de un componente elegible. Un viaje laboral OD es viable cuando un componente accesible desde el origen sirve la comuna destino bajo el umbral anterior. Estas son métricas geométrico-topológicas, no ruteo arco-a-arco ni uso observado.
-
-## 6. Otros criterios y proxies auditados contra el motor
+## 7. Otros criterios auditados
 
 - `demandaHabilitada = flowEnabled`: viajes OD previamente no viables que pasan a ser viables.
-- La clave histórica `costoOD` **no es costo generalizado**. Codifica una tasa de habilitación OD: `habRate = flowEnabled/potentialFlow`, discretizada como `-round(habRate*30)`; para el score se usa su magnitud.
-- El costo de inversión es un proxy reproducible: longitud × costo unitario (`100 MCLP/km` por defecto).
-- El criterio de costo entra orientado como `costoInv = 1 - costo/max(costo)`; menor costo produce mayor contribución.
-- Factibilidad utiliza un proxy espacial asociado al número de pistas; no demuestra que una calle más ancha sea efectivamente más barata de intervenir.
-- `flowEnabled` se redondea a entero antes de retornar cada beneficio marginal. Esto explica la diferencia de un viaje entre 871.510 y 871.511 al sumar secuencias distintas.
+- `costoOD` es una clave histórica; actualmente codifica una tasa de habilitación OD discretizada `-round(30*habRate)`, no costo generalizado.
+- costo de inversión = longitud × costo unitario;
+- `costoInv = 1 - costo/max(costo)`;
+- factibilidad es un proxy espacial asociado al número de pistas;
+- `flowEnabled` se redondea a entero antes de retornar el beneficio marginal, lo que explica la diferencia 871.510/871.511 entre trayectorias.
 
-## 7. Correcciones realizadas en EVA
-
-Sin alterar pesos ni resultados experimentales:
-
-### `src/scenarios.jsx`
-
-Commit `ec0401b6b170f9f34fa2547917d79dd698823d7d`
-
-- `costoOD`: “tasa de habilitación OD”.
-- `demanda`: “volumen de demanda OD habilitada”.
-- `costoInv`: “eficiencia de costo (inverso normalizado)”.
-- factibilidad: “factibilidad espacial (proxy: número de pistas)”.
-- el escenario Eficiencia presupuestaria ya no afirma calcular una razón beneficio/costo.
-- escenarios temáticos usan “prioriza” en vez de afirmar optimización monoobjetivo.
-
-### capa temporal de compatibilidad metodológica
-
-`src/metodologia.jsx` conserva texto heredado desalineado para algunos criterios. La capa `src/methodology-corrections.jsx`, cargada después de `metodologia.jsx`, corrige la documentación sin alterar cálculos.
-
-Commits principales:
-
-- `3cfdb7034e8561a5cf717ef43b920c8184c89a86` — corrección de `costoOD` y score.
-- `68fe38bd35ea76534c47d41603dde441eef69326` — carga de la capa de compatibilidad.
-- `bbf588211320f8c558a59624a7ccc1d0730a5766` — semántica de población ocupada en fichas, escenarios, equidad, oportunidades y explicación automática del score.
-
-La última corrección reemplaza en la interfaz “población marginal” por “cobertura marginal de población ocupada” donde corresponde y evita frases como “beneficia X personas” cuando la variable es `pob`.
-
-**Antes de v3.13 estable debe consolidarse esta capa dentro de `metodologia.jsx` y `scenarios.jsx` y eliminarse la deuda de compatibilidad.** No cambiar el motor de `pob` a población total salvo que se decida explícitamente formular y recalibrar una métrica distinta; hacerlo ahora invalidaría la interpretación y reproducibilidad del experimento vigente.
-
-## 8. Resultados autoritativos
-
-Experimento principal: 124 proyectos elegibles, doce perfiles `W`, normalización fija `G0`, mismo conjunto final.
-
-Estado final común:
-
-- 600.177 ocupados modelados con acceso según EVA.
-- 105 componentes de red.
-- 43.887 MCLP de costo proxy acumulado.
+## 8. Resultados actualmente usados en el manuscrito
 
 Robustez de prioridad:
 
-- 90/124 proyectos cambian más de 20 posiciones entre escenarios.
-- 37 cambian más de 50; 17 más de 75; 4 más de 100.
-- I12 Las Rejas–Suiza–Departamental: Top-10 en 12/12 escenarios.
-- I26 San Pablo: Top-10 en 11/12.
+- 90/124 proyectos cambian más de 20 posiciones entre los doce perfiles;
+- 37 cambian más de 50; 17 más de 75; 4 más de 100;
+- I12 Las Rejas–Suiza–Departamental: Top-10 en 12/12;
+- I26 San Pablo: Top-10 en 11/12;
 - I14 Lo Ovalle: rango 4–124.
 
-Trayectorias:
+Cobertura y OD:
 
-- Educación superior: `I_P=0,886884`, mayor captura temprana de cobertura de población ocupada entre los doce perfiles.
-- Demanda potencial: `I_D=0,912585`, mayor captura temprana de habilitación OD.
-- Continuidad de red: `I_C=0,876568`, mayor índice normalizado de trayectoria topológica.
-
-Estas métricas **no son validadores externos independientes de W**: P, D y C guardan relación con criterios que participan en `S_t`. Deben interpretarse como consecuencias comparables de distintos perfiles de política, no como prueba de que un perfil sea intrínsecamente “mejor”.
-
-Fronteras dentro de los doce perfiles y resultados analizados:
-
-- En `(I_P,I_D)`: Educación superior y Demanda potencial.
-- Incluyendo topología: se agregan Integración metropolitana y Continuidad de red.
-- No afirmar dominancia universal en el espacio completo de ponderaciones.
-
-Suficiencia objetivo-específica:
-
-- Population-first: 42/124, 82 remanentes, 600.177 ocupados modelados con acceso, sin ganancia directa ni habilitada a un paso de esta métrica entre los remanentes.
-- OD-first: 52/124, 72 remanentes, 871.510/871.511 viajes OD/día, sin beneficio OD directo ni habilitado a un paso bajo la resolución usada.
-- La diferencia de un viaje se explica por redondeo entero de `flowEnabled` por etapa.
-
-Saturación práctica conjunta cobertura de población ocupada + OD:
-
-- 95%: 44–107 proyectos según `W`.
+- estado final: ganancia acumulada de acceso para 600.177 ocupados modelados;
+- Population-first: 42/124; 82 remanentes; sin ganancia directa ni habilitada a un paso de P;
+- OD-first: 52/124; 72 remanentes; 871.510/871.511 viajes OD/día; sin beneficio directo ni habilitado a un paso de D;
+- 95% conjunto P+OD: 44–107 proyectos según `W`;
 - 99%: 116–123 proyectos.
-- La cola indica **captura adicional lenta**. El salto 95→99% no prueba por sí mismo rendimientos marginales decrecientes en sentido económico o matemático y no equivale a beneficio cero.
 
-## 9. Escenarios `W`: alcance de la robustez
+La cola 95->99% indica captura adicional lenta; **no** demuestra por sí sola rendimientos marginales decrecientes en sentido económico/matemático y no equivale a beneficio cero.
 
-Los doce perfiles no son un muestreo exhaustivo del simplex de ponderaciones.
+P, D y C están relacionados con criterios que participan en `S_t`; no son validadores externos independientes de los perfiles `W`. Las fronteras de Pareto deben interpretarse como consecuencias comparables de las políticas evaluadas, no como prueba de que un perfil sea universalmente mejor.
 
-- Once escenarios genéricos fueron homologados con un piso de contexto común y elevan un foco temático.
-- RMC conserva los pesos institucionales provistos.
+Los doce `W` son perfiles predefinidos plausibles, no un muestreo exhaustivo del simplex de ponderaciones.
 
-Por tanto, la evidencia demuestra dependencia del estado bajo **doce perfiles de política predefinidos y plausibles**, no bajo todas las combinaciones posibles de pesos.
+## 9. Bloqueo técnico pendiente: métrica topológica C_t
 
-## 10. Estado editorial y bloqueo tipográfico
+**No congelar los resultados topológicos ni publicar v3.13.0 hasta resolver esto.**
 
-El manuscrito se mantiene en el límite editorial de EDTR: **20 páginas** en las últimas exportaciones PDF revisadas durante la auditoría.
+El motor principal, con perfil `general`, construye los componentes sobre `effExisting`, que excluye de la red efectiva tipologías `piloto`, `zona30` y `otro` antes de aplicar `buildComponents`.
 
-El resumen español estaba en 191 palabras antes de las últimas precisiones de terminología; debe volver a contarse antes del cierre, aunque los cambios fueron menores.
+En la capa experimental, `fixedStepRecord` parece registrar `componentes_red` mediante `window.ENGINE.buildComponents(window.existingFC, lockedGeoms, connectTol)`, es decir, usando la red existente completa en vez de la misma `effExisting` del motor.
 
-Figuras principales:
+Si se confirma, pueden cambiar:
 
-1. arquitectura general del método EVA;
-2. saturación práctica conjunta cobertura de población ocupada–OD;
-3. interacción dependiente del estado de C049 Federico Errázuriz;
-4. frontera cobertura de población ocupada–conexión entre doce escenarios;
-5. robustez de prioridad de proyectos.
+- `C_t`;
+- `A_C`;
+- `I_C`;
+- la afirmación de que Continuidad lidera la trayectoria topológica;
+- la frontera tridimensional que incluye la dimensión topológica;
+- el valor final de componentes informado en el paper.
 
-### bloqueo de Google Docs
+Esto no implica automáticamente que cambien P, D, los rankings multicriterio o Population-first/OD-first, pero debe verificarse empíricamente tras corregir el registro topológico.
 
-La exportación PDF de Google Docs muestra cuadrados vacíos en numerosos subíndices/superíndices matemáticos Unicode. Esto hace que la exportación directa desde Drive **no sea publicable**.
+Los valores topológicos actualmente escritos (`105 componentes`, `I_C=0,876568`, `3.913 componente-etapa`) son **provisionales hasta ese rerun**.
 
-Solución acordada:
+## 10. Correcciones de semántica/documentación en EVA
 
-- mantener Google Docs como fuente viva de contenido;
-- una vez congelado el texto científico, producir el DOCX de envío con expresiones matemáticas transformadas a objetos Word Math/OMML;
-- renderizar el DOCX/PDF resultante y revisar visualmente las 20 páginas;
-- recién entonces marcar el archivo como final.
+Commits principales:
 
-No degradar el manuscrito sustituyendo matemática por ASCII sólo para acomodar Google Docs.
+- `ec0401b6b170f9f34fa2547917d79dd698823d7d` — etiquetas OD, costo y factibilidad;
+- `3cfdb7034e8561a5cf717ef43b920c8184c89a86` — corrección de fichas heredadas de `costoOD` y score;
+- `68fe38bd35ea76534c47d41603dde441eef69326` — carga de `methodology-corrections.jsx`;
+- `bbf588211320f8c558a59624a7ccc1d0730a5766` — semántica de población ocupada en fichas, escenarios, equidad, oportunidades y explicación automática.
 
-## 11. Reproducibilidad y versión a congelar
+Estas correcciones no cambian intencionalmente pesos ni cálculos.
 
-Release estable/citable vigente:
+Antes de v3.13 estable, consolidar `methodology-corrections.jsx` dentro de `metodologia.jsx`/`scenarios.jsx` y eliminar la capa temporal. No sustituir `pob` por población total salvo rediseño metodológico explícito, porque eso alteraría el experimento.
 
-- EVA `v3.12.1`.
-- motor `v3.12.0`.
-- datos `2026.08`.
-- metodología `v2.3.0`.
+## 11. Reproducibilidad
+
+Release citable vigente:
+
+- EVA `v3.12.1`;
+- motor `v3.12.0`;
+- datos `2026.08`;
+- metodología `v2.3.0`;
 - DOI `10.5281/zenodo.22145509`.
 
-El paper utiliza código experimental que se identifica internamente como motor `3.13.0` y metodología `2.4.0`, pero **no existe todavía una release GitHub v3.13.0**.
+El paper usa código experimental identificado internamente como motor `3.13.0` y metodología `2.4.0`, pero todavía no existe una release pública GitHub v3.13.0.
 
 Workflow `Paper experiments`:
 
-- run #36, commit `3cfdb7034e8561a5cf717ef43b920c8184c89a86`: **success**.
-- run #37, commit `bbf588211320f8c558a59624a7ccc1d0730a5766`: iniciado correctamente después de las correcciones semánticas de población ocupada; al momento de esta actualización estaba `in_progress`.
+- run #36, commit `3cfdb7034e8561a5cf717ef43b920c8184c89a86`: **success**;
+- run #37, commit `bbf588211320f8c558a59624a7ccc1d0730a5766`: **success**.
 
-La rama `main` incluye correcciones de semántica/documentación posteriores a las corridas originales, pero no cambios deliberados en pesos o cálculos. Antes del envío se debe:
+La corrida #37 confirma que las correcciones semánticas de población ocupada no rompieron el workflow. Después de corregir la inconsistencia de `C_t` debe ejecutarse un nuevo rerun y comparar resultados.
 
-1. verificar que #37 concluya con éxito y que los resultados numéricos sean invariantes;
-2. consolidar la documentación metodológica heredada;
-3. ejecutar/verificar QA sobre el estado que se vaya a congelar;
-4. fijar un commit/tag de referencia;
-5. preferentemente publicar `v3.13.0` y archivarla; si no se publica, el artículo debe citar el SHA exacto y no presentar v3.13.0 como release archivada.
+## 12. Estado editorial
 
-## 12. Últimos commits relevantes
+La última exportación después de incorporar el marco SECTRA y compactar redundancias tiene **20 páginas exactas**.
 
-- `bbf588211320f8c558a59624a7ccc1d0730a5766` — Clarify employed-population semantics across EVA.
-- `68fe38bd35ea76534c47d41603dde441eef69326` — Load methodology compatibility corrections.
-- `3cfdb7034e8561a5cf717ef43b920c8184c89a86` — Correct stale OD and score methodology cards.
-- `ec0401b6b170f9f34fa2547917d79dd698823d7d` — Clarify OD, cost and feasibility criterion labels.
-- `5e7f7986376d9117ed48d18bed4dd4fabe6fee37` — Align EDTR figure numbering with current manuscript.
-- `ae4c6313bd41205edd277f68157cc830a2dd7fd8` — Document 12-scenario rank frontier and saturation results.
+El resumen se reescribió para mantener explícita la contribución general y quedó en aproximadamente 177 palabras. Su cierre sostiene que EVA justifica incorporar un **test de dependencia de secuencia** como etapa complementaria en la evaluación de planes maestros.
 
-## 13. Próximo cursor
+La sección 7.7 y las conclusiones ya expresan la inserción general:
+
+- evaluación convencional: proyecto/plan respecto de una base;
+- EVA: valor de cada intervención condicionado al estado anterior y trayectoria acumulada;
+- inserción PMTUM: después de conformar cartera y antes de cerrar programación, con reutilización durante seguimiento;
+- recomendación: test de dependencia de secuencia como diagnóstico estándar para carteras con interdependencias potenciales.
+
+El bloqueo tipográfico de Google Docs permanece: usar OMML/Word Math en el DOCX final y revisar visualmente las 20 páginas.
+
+## 13. Próximos pasos obligatorios
 
 Continuar en este orden:
 
-1. verificar conclusión y outputs del workflow #37;
-2. completar la lectura tipo **revisor 2**, especialmente validez de métricas, endogeneidad entre score y outcomes, validez externa y lenguaje causal;
-3. consolidar `methodology-corrections.jsx` dentro de `metodologia.jsx`/`scenarios.jsx` y eliminar la capa temporal;
-4. congelar el commit experimental reproducible y resolver release/tag v3.13.0;
-5. generar el nuevo DOCX EDTR con OMML;
-6. QA visual y editorial completo, máximo 20 páginas y resumen ≤200 palabras;
-7. sólo después declarar versión final de envío.
+1. corregir la inconsistencia `effExisting` versus `window.existingFC` en el registro de componentes de los experimentos;
+2. rerun completo de `Paper experiments` y comparar P, D, C, rankings y fronteras;
+3. actualizar el manuscrito si cambian los resultados topológicos;
+4. terminar lectura tipo **revisor 2**, con foco en validez externa, endogeneidad score/outcomes, causalidad y sensibilidad de parámetros;
+5. consolidar `methodology-corrections.jsx` dentro de las fuentes principales;
+6. congelar commit reproducible y resolver release/tag `v3.13.0`;
+7. generar DOCX EDTR con OMML;
+8. QA visual/editorial final: 20 páginas, resumen <=200 palabras;
+9. sólo entonces declarar versión final de envío.
