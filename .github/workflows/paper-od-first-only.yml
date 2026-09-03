@@ -1,0 +1,53 @@
+name: Paper OD-first only
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'experiments/paper-od-first-only.js'
+      - 'experiments/runner-od-first-only.html'
+      - 'scripts/run-paper-od-first-only.mjs'
+      - '.github/workflows/paper-od-first-only.yml'
+
+concurrency:
+  group: paper-od-first-only-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0 http-server@14.1.1
+          npx playwright install --with-deps chromium
+
+      - name: Start local server
+        run: |
+          npx http-server . -p 8080 > /tmp/eva-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8080/experiments/runner-od-first-only.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/eva-http.log
+          exit 1
+
+      - name: Run OD-first experiment
+        run: node scripts/run-paper-od-first-only.mjs
+
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: eva-paper-od-first-only
+          path: results/paper-od-first-only/
+          if-no-files-found: error
+          retention-days: 30
