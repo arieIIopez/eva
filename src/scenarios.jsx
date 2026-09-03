@@ -15,7 +15,11 @@
    sobre el cual se eleva el foco temático de cada escenario. Excepción:
    «Ponderación RMC» conserva los pesos entregados por la contraparte.
    «monumentos» permanece en 0 en todos: es un criterio informativo,
-   excluido del total en evaExplainScore
+   excluido del total en evaExplainScore.
+
+   NOTA DE COMPATIBILIDAD: `costoOD` es un identificador histórico. En el
+   motor vigente representa tasa de habilitación OD discretizada, no costo
+   generalizado de viaje. Se conserva la clave para no romper escenarios.
 ============================================================ */
 
 window.EVA_SCENARIOS = [
@@ -40,13 +44,13 @@ window.EVA_SCENARIOS = [
   {
     key: "demanda",
     nombre: "Demanda potencial",
-    desc: "Maximiza viajes OD habilitados. Favorece corredores que conectan pares origen-destino de alto flujo laboral.",
+    desc: "Prioriza viajes OD habilitados y corredores que conectan pares origen-destino de alto flujo laboral.",
     weights: { poblacion: 14, costoOD: 22, oportunidades: 6, equidad: 10, continuidad: 10, demanda: 35, ciclistas: 14, fractal: 6, estudiantes: 5, prioridadGore: 8, costoInv: 6, seguridad: 5, monumentos: 0, intermodal: 5, factibilidad: 5, parques: 4 },
   },
   {
     key: "ciclistas_biogeme",
     nombre: "Ciclistas inducidos (Biogeme)",
-    desc: "Maximiza los nuevos ciclistas diarios estimados por el modelo de elección modal «ciclo_todo_chile 41» (logit binario bici vs. no-bici estimado con Biogeme sobre 117.072 manzanas censales): concentra el peso en el ΔP(bici) que cada proyecto induce vía km de ciclovía a 500 m del origen. Se acompaña de demanda OD habilitada y continuidad de red para consolidar corredores donde el cambio modal es alcanzable.",
+    desc: "Prioriza los nuevos ciclistas diarios estimados por el modelo de elección modal «ciclo_todo_chile 41» (logit binario bici vs. no-bici estimado con Biogeme sobre 117.072 manzanas censales): concentra el peso en el ΔP(bici) que cada proyecto induce vía km de ciclovía a 500 m del origen. Se acompaña de demanda OD habilitada y continuidad de red para consolidar corredores donde el cambio modal es alcanzable.",
     weights: { poblacion: 12, costoOD: 8, oportunidades: 6, equidad: 10, continuidad: 12, demanda: 16, ciclistas: 45, fractal: 6, estudiantes: 5, prioridadGore: 8, costoInv: 6, seguridad: 5, monumentos: 0, intermodal: 8, factibilidad: 5, parques: 4 },
   },
   {
@@ -64,7 +68,7 @@ window.EVA_SCENARIOS = [
   {
     key: "eficiencia",
     nombre: "Eficiencia presupuestaria",
-    desc: "Favorece proyectos de mayor beneficio por peso invertido, incluida la factibilidad constructiva (calles más anchas son más baratas de intervenir). Útil para carteras con presupuesto restringido.",
+    desc: "Favorece simultáneamente proyectos con alto beneficio, menor costo proxy y mayor factibilidad espacial aproximada por el número de pistas. No calcula una razón beneficio/costo. Útil para explorar carteras con restricción presupuestaria.",
     weights: { poblacion: 18, costoOD: 8, oportunidades: 6, equidad: 10, continuidad: 10, demanda: 12, ciclistas: 8, fractal: 6, estudiantes: 5, prioridadGore: 8, costoInv: 35, seguridad: 5, monumentos: 0, intermodal: 5, factibilidad: 20, parques: 4 },
   },
   {
@@ -104,20 +108,20 @@ window.EVA_SCENARIO_MAP = Object.fromEntries(window.EVA_SCENARIOS.map(s => [s.ke
 window.evaExplainScore = function (p, weights, ranking) {
   const labels = {
     poblacion: "población marginal",
-    costoOD: "reducción de costo OD",
+    costoOD: "tasa de habilitación OD",
     oportunidades: "hexes beneficiados",
     equidad: "equidad territorial",
     continuidad: "continuidad de red",
-    demanda: "demanda OD habilitada",
+    demanda: "volumen de demanda OD habilitada",
     ciclistas: "ciclistas inducidos (logit Biogeme)",
     fractal: "conectividad fractal (red dendrítica Alameda)",
     estudiantes: "generación estudiantil",
     prioridadGore: "prioridad de inversión GORE",
     seguridad: "siniestralidad prevenible intervenida",
     intermodal: "intermodalidad bici-metro",
-    factibilidad: "factibilidad constructiva (ancho de vía)",
+    factibilidad: "factibilidad espacial (proxy: número de pistas)",
     parques: "atractor de parques (por tamaño)",
-    costoInv: "eficiencia económica",
+    costoInv: "eficiencia de costo (inverso normalizado)",
   };
   const totalW = (Object.values(weights).reduce((a, b) => a + b, 0) - (weights.monumentos || 0)) || 1;
   // aporte de cada criterio al score = w_i * norm_i / totalW
