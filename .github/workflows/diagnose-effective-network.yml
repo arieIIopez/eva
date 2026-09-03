@@ -1,0 +1,45 @@
+name: Diagnose effective network
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/diagnose-effective-network.mjs'
+      - '.github/workflows/diagnose-effective-network.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eva-diagnose-effective-network
+  cancel-in-progress: true
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start local server
+        run: |
+          python3 -m http.server 8080 > /tmp/eva-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/experiments/runner.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/eva-http.log
+          exit 1
+      - name: Diagnose raw vs effective topology
+        env:
+          EVA_DIAGNOSTIC_BASE_URL: http://127.0.0.1:8080/experiments/runner.html
+        run: node scripts/diagnose-effective-network.mjs
