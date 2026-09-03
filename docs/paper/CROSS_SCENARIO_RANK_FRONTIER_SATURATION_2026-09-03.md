@@ -148,8 +148,8 @@ Que `t*_D > t*_P` es sustantivo: agotar nueva cobertura poblacional no equivale 
 La versión de trabajo del Google Doc incorpora:
 
 - **Figura 2:** saturación práctica conjunta de población y conexión OD bajo los doce escenarios.
-- **Figura 4:** rango mínimo-máximo y posición media de los proyectos más sensibles a W.
-- **Figura 5:** frontera de compromiso población-conexión para los doce escenarios.
+- **Figura 4:** frontera de compromiso población-conexión para los doce escenarios.
+- **Figura 5:** rango mínimo-máximo y posición media de los proyectos más sensibles a W.
 
 La matriz completa 124 x 12 debe permanecer como dato reproducible/suplementario, no como figura principal por razones de legibilidad.
 
