@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="620" viewBox="0 0 850 620">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111}.label{font-size:11px}.axis{font-size:12px}.title{font-size:16px;font-weight:600}</style>
+<text class="title" x="20" y="25">Captura temprana de población y conexión OD</text>
+<line x1="95" y1="535" x2="805" y2="535" stroke="#111"/>
+<line x1="95" y1="50" x2="95" y2="535" stroke="#111"/>
+<circle cx="499.41151603799517" cy="223.93731389704178" r="5" fill="#222"/>
+<text class="label" x="506.41151603799517" y="218.93731389704178">Ponderación RMC</text>
+<circle cx="537.38684517445" cy="182.81711474425325" r="5" fill="#222"/>
+<text class="label" x="544.38684517445" y="177.81711474425325">Balanceado</text>
+<circle cx="407.417105614514" cy="483.16331650144764" r="5" fill="#222"/>
+<text class="label" x="414.417105614514" y="478.16331650144764">Equidad territorial</text>
+<circle cx="556.4466812389636" cy="101.83668349855236" r="5" fill="#222"/>
+<text class="label" x="563.4466812389636" y="96.83668349855236">Demanda potencial</text>
+<circle cx="438.57008888074625" cy="282.2795883834682" r="5" fill="#222"/>
+<text class="label" x="445.57008888074625" y="277.2795883834682">Ciclistas inducidos (Biogeme)</text>
+<circle cx="148.07453896885943" cy="373.75764732868515" r="5" fill="#222"/>
+<text class="label" x="155.07453896885943" y="368.75764732868515">Red dendrítica Alameda (fractal)</text>
+<circle cx="361.43744406689" cy="157.44280553505183" r="5" fill="#222"/>
+<text class="label" x="368.43744406689" y="152.44280553505183">Continuidad de red</text>
+<circle cx="367.13599701372385" cy="326.78069428612065" r="5" fill="#222"/>
+<text class="label" x="374.13599701372385" y="321.78069428612065">Eficiencia presupuestaria</text>
+<circle cx="751.9254610311406" cy="184.5617870331779" r="5" fill="#222"/>
+<text class="label" x="758.9254610311406" y="179.5617870331779">Educación superior</text>
+<circle cx="499.67524152540943" cy="135.76212554378867" r="5" fill="#222"/>
+<text class="label" x="506.67524152540943" y="130.76212554378867">Integración metropolitana</text>
+<circle cx="408.86124869730344" cy="297.91710357115954" r="5" fill="#222"/>
+<text class="label" x="415.86124869730344" y="292.91710357115954">Seguridad vial</text>
+<circle cx="414.31889718321594" cy="217.17423203658703" r="5" fill="#222"/>
+<text class="label" x="421.31889718321594" y="212.17423203658703">Intermodalidad bici-metro</text>
+<text class="axis" x="450.0" y="596" text-anchor="middle">Índice de captura temprana de población I_P →</text>
+<text class="axis" x="22" y="292.5" text-anchor="middle" transform="rotate(-90 22 292.5)">Índice de captura temprana de conexión OD I_D →</text>
+</svg>

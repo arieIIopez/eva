@@ -1,0 +1,181 @@
+scenario,scenario_label,metric,threshold_pct,step
+ponderacion_rmc,Ponderación RMC,Población marginal acumulada,50,9
+ponderacion_rmc,Ponderación RMC,Población marginal acumulada,75,20
+ponderacion_rmc,Ponderación RMC,Población marginal acumulada,90,38
+ponderacion_rmc,Ponderación RMC,Población marginal acumulada,95,59
+ponderacion_rmc,Ponderación RMC,Población marginal acumulada,99,120
+ponderacion_rmc,Ponderación RMC,Conexión OD / demanda habilitada,50,10
+ponderacion_rmc,Ponderación RMC,Conexión OD / demanda habilitada,75,14
+ponderacion_rmc,Ponderación RMC,Conexión OD / demanda habilitada,90,29
+ponderacion_rmc,Ponderación RMC,Conexión OD / demanda habilitada,95,38
+ponderacion_rmc,Ponderación RMC,Conexión OD / demanda habilitada,99,109
+ponderacion_rmc,Ponderación RMC,Conectividad topológica / reducción de componentes,50,14
+ponderacion_rmc,Ponderación RMC,Conectividad topológica / reducción de componentes,75,30
+ponderacion_rmc,Ponderación RMC,Conectividad topológica / reducción de componentes,90,61
+ponderacion_rmc,Ponderación RMC,Conectividad topológica / reducción de componentes,95,68
+ponderacion_rmc,Ponderación RMC,Conectividad topológica / reducción de componentes,99,82
+balanceado,Balanceado,Población marginal acumulada,50,11
+balanceado,Balanceado,Población marginal acumulada,75,19
+balanceado,Balanceado,Población marginal acumulada,90,35
+balanceado,Balanceado,Población marginal acumulada,95,47
+balanceado,Balanceado,Población marginal acumulada,99,118
+balanceado,Balanceado,Conexión OD / demanda habilitada,50,9
+balanceado,Balanceado,Conexión OD / demanda habilitada,75,14
+balanceado,Balanceado,Conexión OD / demanda habilitada,90,27
+balanceado,Balanceado,Conexión OD / demanda habilitada,95,38
+balanceado,Balanceado,Conexión OD / demanda habilitada,99,59
+balanceado,Balanceado,Conectividad topológica / reducción de componentes,50,13
+balanceado,Balanceado,Conectividad topológica / reducción de componentes,75,32
+balanceado,Balanceado,Conectividad topológica / reducción de componentes,90,48
+balanceado,Balanceado,Conectividad topológica / reducción de componentes,95,57
+balanceado,Balanceado,Conectividad topológica / reducción de componentes,99,57
+equidad,Equidad territorial,Población marginal acumulada,50,10
+equidad,Equidad territorial,Población marginal acumulada,75,25
+equidad,Equidad territorial,Población marginal acumulada,90,38
+equidad,Equidad territorial,Población marginal acumulada,95,94
+equidad,Equidad territorial,Población marginal acumulada,99,115
+equidad,Equidad territorial,Conexión OD / demanda habilitada,50,12
+equidad,Equidad territorial,Conexión OD / demanda habilitada,75,18
+equidad,Equidad territorial,Conexión OD / demanda habilitada,90,35
+equidad,Equidad territorial,Conexión OD / demanda habilitada,95,45
+equidad,Equidad territorial,Conexión OD / demanda habilitada,99,116
+equidad,Equidad territorial,Conectividad topológica / reducción de componentes,50,19
+equidad,Equidad territorial,Conectividad topológica / reducción de componentes,75,36
+equidad,Equidad territorial,Conectividad topológica / reducción de componentes,90,48
+equidad,Equidad territorial,Conectividad topológica / reducción de componentes,95,100
+equidad,Equidad territorial,Conectividad topológica / reducción de componentes,99,120
+demanda,Demanda potencial,Población marginal acumulada,50,12
+demanda,Demanda potencial,Población marginal acumulada,75,19
+demanda,Demanda potencial,Población marginal acumulada,90,36
+demanda,Demanda potencial,Población marginal acumulada,95,48
+demanda,Demanda potencial,Población marginal acumulada,99,118
+demanda,Demanda potencial,Conexión OD / demanda habilitada,50,9
+demanda,Demanda potencial,Conexión OD / demanda habilitada,75,14
+demanda,Demanda potencial,Conexión OD / demanda habilitada,90,26
+demanda,Demanda potencial,Conexión OD / demanda habilitada,95,35
+demanda,Demanda potencial,Conexión OD / demanda habilitada,99,47
+demanda,Demanda potencial,Conectividad topológica / reducción de componentes,50,14
+demanda,Demanda potencial,Conectividad topológica / reducción de componentes,75,30
+demanda,Demanda potencial,Conectividad topológica / reducción de componentes,90,46
+demanda,Demanda potencial,Conectividad topológica / reducción de componentes,95,49
+demanda,Demanda potencial,Conectividad topológica / reducción de componentes,99,67
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Población marginal acumulada,50,12
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Población marginal acumulada,75,22
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Población marginal acumulada,90,39
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Población marginal acumulada,95,70
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Población marginal acumulada,99,119
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conexión OD / demanda habilitada,50,10
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conexión OD / demanda habilitada,75,17
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conexión OD / demanda habilitada,90,30
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conexión OD / demanda habilitada,95,41
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conexión OD / demanda habilitada,99,79
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conectividad topológica / reducción de componentes,50,14
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conectividad topológica / reducción de componentes,75,31
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conectividad topológica / reducción de componentes,90,60
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conectividad topológica / reducción de componentes,95,62
+ciclistas_biogeme,Ciclistas inducidos (Biogeme),Conectividad topológica / reducción de componentes,99,66
+fractal_alameda,Red dendrítica Alameda (fractal),Población marginal acumulada,50,13
+fractal_alameda,Red dendrítica Alameda (fractal),Población marginal acumulada,75,20
+fractal_alameda,Red dendrítica Alameda (fractal),Población marginal acumulada,90,42
+fractal_alameda,Red dendrítica Alameda (fractal),Población marginal acumulada,95,108
+fractal_alameda,Red dendrítica Alameda (fractal),Población marginal acumulada,99,123
+fractal_alameda,Red dendrítica Alameda (fractal),Conexión OD / demanda habilitada,50,10
+fractal_alameda,Red dendrítica Alameda (fractal),Conexión OD / demanda habilitada,75,16
+fractal_alameda,Red dendrítica Alameda (fractal),Conexión OD / demanda habilitada,90,31
+fractal_alameda,Red dendrítica Alameda (fractal),Conexión OD / demanda habilitada,95,49
+fractal_alameda,Red dendrítica Alameda (fractal),Conexión OD / demanda habilitada,99,111
+fractal_alameda,Red dendrítica Alameda (fractal),Conectividad topológica / reducción de componentes,50,12
+fractal_alameda,Red dendrítica Alameda (fractal),Conectividad topológica / reducción de componentes,75,28
+fractal_alameda,Red dendrítica Alameda (fractal),Conectividad topológica / reducción de componentes,90,49
+fractal_alameda,Red dendrítica Alameda (fractal),Conectividad topológica / reducción de componentes,95,65
+fractal_alameda,Red dendrítica Alameda (fractal),Conectividad topológica / reducción de componentes,99,109
+continuidad,Continuidad de red,Población marginal acumulada,50,12
+continuidad,Continuidad de red,Población marginal acumulada,75,25
+continuidad,Continuidad de red,Población marginal acumulada,90,40
+continuidad,Continuidad de red,Población marginal acumulada,95,57
+continuidad,Continuidad de red,Población marginal acumulada,99,119
+continuidad,Continuidad de red,Conexión OD / demanda habilitada,50,9
+continuidad,Continuidad de red,Conexión OD / demanda habilitada,75,15
+continuidad,Continuidad de red,Conexión OD / demanda habilitada,90,28
+continuidad,Continuidad de red,Conexión OD / demanda habilitada,95,36
+continuidad,Continuidad de red,Conexión OD / demanda habilitada,99,57
+continuidad,Continuidad de red,Conectividad topológica / reducción de componentes,50,10
+continuidad,Continuidad de red,Conectividad topológica / reducción de componentes,75,27
+continuidad,Continuidad de red,Conectividad topológica / reducción de componentes,90,38
+continuidad,Continuidad de red,Conectividad topológica / reducción de componentes,95,39
+continuidad,Continuidad de red,Conectividad topológica / reducción de componentes,99,43
+eficiencia,Eficiencia presupuestaria,Población marginal acumulada,50,12
+eficiencia,Eficiencia presupuestaria,Población marginal acumulada,75,22
+eficiencia,Eficiencia presupuestaria,Población marginal acumulada,90,47
+eficiencia,Eficiencia presupuestaria,Población marginal acumulada,95,80
+eficiencia,Eficiencia presupuestaria,Población marginal acumulada,99,122
+eficiencia,Eficiencia presupuestaria,Conexión OD / demanda habilitada,50,10
+eficiencia,Eficiencia presupuestaria,Conexión OD / demanda habilitada,75,15
+eficiencia,Eficiencia presupuestaria,Conexión OD / demanda habilitada,90,31
+eficiencia,Eficiencia presupuestaria,Conexión OD / demanda habilitada,95,47
+eficiencia,Eficiencia presupuestaria,Conexión OD / demanda habilitada,99,98
+eficiencia,Eficiencia presupuestaria,Conectividad topológica / reducción de componentes,50,13
+eficiencia,Eficiencia presupuestaria,Conectividad topológica / reducción de componentes,75,38
+eficiencia,Eficiencia presupuestaria,Conectividad topológica / reducción de componentes,90,52
+eficiencia,Eficiencia presupuestaria,Conectividad topológica / reducción de componentes,95,77
+eficiencia,Eficiencia presupuestaria,Conectividad topológica / reducción de componentes,99,98
+educacion,Educación superior,Población marginal acumulada,50,9
+educacion,Educación superior,Población marginal acumulada,75,17
+educacion,Educación superior,Población marginal acumulada,90,34
+educacion,Educación superior,Población marginal acumulada,95,44
+educacion,Educación superior,Población marginal acumulada,99,117
+educacion,Educación superior,Conexión OD / demanda habilitada,50,10
+educacion,Educación superior,Conexión OD / demanda habilitada,75,15
+educacion,Educación superior,Conexión OD / demanda habilitada,90,28
+educacion,Educación superior,Conexión OD / demanda habilitada,95,37
+educacion,Educación superior,Conexión OD / demanda habilitada,99,53
+educacion,Educación superior,Conectividad topológica / reducción de componentes,50,18
+educacion,Educación superior,Conectividad topológica / reducción de componentes,75,36
+educacion,Educación superior,Conectividad topológica / reducción de componentes,90,49
+educacion,Educación superior,Conectividad topológica / reducción de componentes,95,53
+educacion,Educación superior,Conectividad topológica / reducción de componentes,99,63
+integracion,Integración metropolitana,Población marginal acumulada,50,12
+integracion,Integración metropolitana,Población marginal acumulada,75,21
+integracion,Integración metropolitana,Población marginal acumulada,90,37
+integracion,Integración metropolitana,Población marginal acumulada,95,44
+integracion,Integración metropolitana,Población marginal acumulada,99,118
+integracion,Integración metropolitana,Conexión OD / demanda habilitada,50,9
+integracion,Integración metropolitana,Conexión OD / demanda habilitada,75,15
+integracion,Integración metropolitana,Conexión OD / demanda habilitada,90,28
+integracion,Integración metropolitana,Conexión OD / demanda habilitada,95,35
+integracion,Integración metropolitana,Conexión OD / demanda habilitada,99,45
+integracion,Integración metropolitana,Conectividad topológica / reducción de componentes,50,11
+integracion,Integración metropolitana,Conectividad topológica / reducción de componentes,75,29
+integracion,Integración metropolitana,Conectividad topológica / reducción de componentes,90,43
+integracion,Integración metropolitana,Conectividad topológica / reducción de componentes,95,49
+integracion,Integración metropolitana,Conectividad topológica / reducción de componentes,99,52
+seguridad,Seguridad vial,Población marginal acumulada,50,11
+seguridad,Seguridad vial,Población marginal acumulada,75,24
+seguridad,Seguridad vial,Población marginal acumulada,90,37
+seguridad,Seguridad vial,Población marginal acumulada,95,51
+seguridad,Seguridad vial,Población marginal acumulada,99,116
+seguridad,Seguridad vial,Conexión OD / demanda habilitada,50,10
+seguridad,Seguridad vial,Conexión OD / demanda habilitada,75,16
+seguridad,Seguridad vial,Conexión OD / demanda habilitada,90,31
+seguridad,Seguridad vial,Conexión OD / demanda habilitada,95,40
+seguridad,Seguridad vial,Conexión OD / demanda habilitada,99,67
+seguridad,Seguridad vial,Conectividad topológica / reducción de componentes,50,15
+seguridad,Seguridad vial,Conectividad topológica / reducción de componentes,75,33
+seguridad,Seguridad vial,Conectividad topológica / reducción de componentes,90,44
+seguridad,Seguridad vial,Conectividad topológica / reducción de componentes,95,59
+seguridad,Seguridad vial,Conectividad topológica / reducción de componentes,99,62
+intermodal,Intermodalidad bici-metro,Población marginal acumulada,50,15
+intermodal,Intermodalidad bici-metro,Población marginal acumulada,75,22
+intermodal,Intermodalidad bici-metro,Población marginal acumulada,90,37
+intermodal,Intermodalidad bici-metro,Población marginal acumulada,95,53
+intermodal,Intermodalidad bici-metro,Población marginal acumulada,99,118
+intermodal,Intermodalidad bici-metro,Conexión OD / demanda habilitada,50,10
+intermodal,Intermodalidad bici-metro,Conexión OD / demanda habilitada,75,16
+intermodal,Intermodalidad bici-metro,Conexión OD / demanda habilitada,90,27
+intermodal,Intermodalidad bici-metro,Conexión OD / demanda habilitada,95,35
+intermodal,Intermodalidad bici-metro,Conexión OD / demanda habilitada,99,59
+intermodal,Intermodalidad bici-metro,Conectividad topológica / reducción de componentes,50,12
+intermodal,Intermodalidad bici-metro,Conectividad topológica / reducción de componentes,75,29
+intermodal,Intermodalidad bici-metro,Conectividad topológica / reducción de componentes,90,47
+intermodal,Intermodalidad bici-metro,Conectividad topológica / reducción de componentes,95,59
+intermodal,Intermodalidad bici-metro,Conectividad topológica / reducción de componentes,99,67

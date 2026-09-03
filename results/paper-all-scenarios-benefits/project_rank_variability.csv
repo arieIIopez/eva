@@ -1,0 +1,125 @@
+id,nombre,escala,rank_min,rank_max,rank_range,rank_mean,rank_median,rank_sd,top10_count,top20_count,top30_count,best_scenario,best_scenario_label,worst_scenario,worst_scenario_label
+I14,LO OVALLE,Intercomunal,4,124,120,34.916666666666664,11.5,36.28925078066813,5,7,7,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+I08,GENERAL OSCAR BONILLA,Intercomunal,5,116,111,33.083333333333336,33.5,27.90596809923561,3,3,5,continuidad,Continuidad,eficiencia,Eficiencia
+I25,SAN FRANCISCO,Intercomunal,5,113,108,25.666666666666668,19.0,26.951602714660382,2,7,11,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,9,110,101,41.25,36.5,23.53056522908024,1,1,3,equidad,Equidad,eficiencia,Eficiencia
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,22,122,100,59.583333333333336,48.0,28.25024581997277,0,0,1,equidad,Equidad,fractal_alameda,Fractal
+I06,DIAGONAL ORIENTE,Intercomunal,16,115,99,36.916666666666664,31.0,25.31619486064646,0,2,5,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,4,100,96,20.5,9.0,25.934211638940045,8,8,9,demanda,Demanda,equidad,Equidad
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,4,98,94,16.75,10.0,24.762623043611516,7,11,11,equidad,Equidad,eficiencia,Eficiencia
+I13,LO ESPEJO-RIQUELME,Intercomunal,25,114,89,47.833333333333336,48.0,22.322758690528275,0,0,3,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,32,119,87,74.25,70.0,22.18529918662356,0,0,0,eficiencia,Eficiencia,equidad,Equidad
+C085,LOS LIBERTADORES,Comunal,37,123,86,62,49.0,26.972207918522354,0,0,0,equidad,Equidad,fractal_alameda,Fractal
+C053,CONDELL,Comunal,23,108,85,41.166666666666664,39.5,21.613396051728866,0,0,4,demanda,Demanda,fractal_alameda,Fractal
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,29,113,84,53.5,47.0,24.924887161229034,0,0,2,continuidad,Continuidad,equidad,Equidad
+I24,RADAL,Intercomunal,27,111,84,51.083333333333336,51.0,21.88019779516528,0,0,3,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+C029,MARIA ELENA,Comunal,26,106,80,41.333333333333336,35.5,20.02220989024161,0,0,1,educacion,Educación,fractal_alameda,Fractal
+C026,LOS MAITENES,Comunal,39,116,77,59.083333333333336,56.5,19.198343389180454,0,0,0,continuidad,Continuidad,equidad,Equidad
+C050,MAR DE DRAKE,Comunal,42,118,76,78.41666666666667,79.5,23.848334439863,0,0,0,demanda,Demanda,equidad,Equidad
+C015,JOSE MANUEL GUZMAN,Comunal,42,117,75,70.58333333333333,65.5,20.67792032311008,0,0,0,eficiencia,Eficiencia,equidad,Equidad
+C056,TEMUCO - TORO MAZOTTE,Comunal,35,109,74,45.5,40.5,19.341234017852464,0,0,0,eficiencia,Eficiencia,equidad,Equidad
+C003,CONCHA Y TORO,Comunal,36,109,73,52.916666666666664,43.5,20.60120681470438,0,0,0,equidad,Equidad,fractal_alameda,Fractal
+I17,MATUCANA,Intercomunal,38,111,73,49.416666666666664,45.5,18.931712078473574,0,0,0,seguridad,Seguridad,equidad,Equidad
+I02,CARLOS VALDOVINOS,Intercomunal,36,107,71,49,44.5,18.0,0,0,0,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,23,90,67,45.083333333333336,42.5,14.963613274280455,0,0,1,eficiencia,Eficiencia,equidad,Equidad
+I18,NUEVA IMPERIAL,Intercomunal,46,112,66,58.75,54.0,17.243960295322726,0,0,0,intermodal,Intermodal,equidad,Equidad
+C063,LONGITUDINAL,Comunal,20,84,64,31.666666666666668,28.0,16.254913786982144,0,2,9,demanda,Demanda,fractal_alameda,Fractal
+I15,MARTINEZ DE ROZAS,Intercomunal,13,74,61,39.5,42.0,15.107944929738128,0,2,2,seguridad,Seguridad,eficiencia,Eficiencia
+C082,CAUPOLICAN,Comunal,30,90,60,59.083333333333336,55.0,15.887407662114743,0,0,1,equidad,Equidad,ciclistas_biogeme,Logit
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,56,115,59,100.08333333333333,103.0,13.937110731982994,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+I07,EL GUANACO,Intercomunal,48,106,58,64.33333333333333,61.5,14.777986631773926,0,0,0,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+C047,VIOLETA PARRA,Comunal,50,108,58,70.25,68.5,14.48059045757458,0,0,0,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,41,99,58,70.25,71.5,13.090231727004173,0,0,0,eficiencia,Eficiencia,equidad,Equidad
+C021,LAUTARO,Comunal,65,122,57,114.25,120.0,15.357544291541753,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,38,94,56,59.833333333333336,58.0,13.402943292011978,0,0,0,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+C077,RICARDO VIAL,Comunal,57,110,53,96.58333333333333,98.5,12.789698545661226,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C080,PARAGUAY,Comunal,61,112,51,82.75,82.0,12.709084677243021,0,0,0,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+C069,LOS OLMOS,Comunal,69,119,50,103.75,110.5,15.188400179084036,0,0,0,educacion,Educación,continuidad,Continuidad
+I31,FERNANDEZ ALBANO,Intercomunal,30,80,50,69.5,74.0,13.13709759929237,0,0,1,eficiencia,Eficiencia,intermodal,Intermodal
+C031,NECOCHEA,Comunal,61,111,50,99.91666666666667,104.5,13.009344931838633,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C007,EDUARDO CASTILLO VELASCO,Comunal,47,97,50,58.75,56.5,12.417225938187643,0,0,0,equidad,Equidad,eficiencia,Eficiencia
+C032,OBISPO MANUEL UMAÑA,Comunal,66,114,48,84,84.0,12.083045973594572,0,0,0,intermodal,Intermodal,equidad,Equidad
+C076,ISLA DECEPCION,Comunal,63,109,46,86.75,88.0,10.52873053443133,0,0,0,eficiencia,Eficiencia,seguridad,Seguridad
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,76,120,44,105.58333333333333,113.0,14.238787011383925,0,0,0,intermodal,Intermodal,continuidad,Continuidad
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,74,117,43,97.58333333333333,99.5,12.270957130105577,0,0,0,seguridad,Seguridad,eficiencia,Eficiencia
+C045,PORTO ALEGRE,Comunal,77,120,43,114,119.0,11.547005383792515,0,0,0,eficiencia,Eficiencia,equidad,Equidad
+C084,EL PINO - UNO SUR,Comunal,51,94,43,83.75,88.5,10.993369213606295,0,0,0,eficiencia,Eficiencia,seguridad,Seguridad
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,68,111,43,96.16666666666667,99.0,10.09812963980074,0,0,0,eficiencia,Eficiencia,seguridad,Seguridad
+C037,SAN ALFONSO,Comunal,55,98,43,81.91666666666667,85.0,10.003818715315111,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,52,95,43,76.75,79.0,10.001041612418845,0,0,0,seguridad,Seguridad,eficiencia,Eficiencia
+C012,GABRIELA ORIENTE,Comunal,73,115,42,107.66666666666667,113.0,11.960583412006104,0,0,0,eficiencia,Eficiencia,ponderacion_rmc,RMC
+C013,HEROES DE LA CONCEPCION,Comunal,72,114,42,104.58333333333333,108.0,11.19120438360213,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+I10,GRAN AVENIDA,Intercomunal,8,48,40,23.416666666666668,17.5,13.48121120506446,1,7,9,eficiencia,Eficiencia,demanda,Demanda
+C009,EL ROSAL - SANTA ELENA,Comunal,49,89,40,72.25,73.5,10.337028909056349,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C039,TUPUNGATO,Comunal,60,99,39,88.41666666666667,91.5,10.250677484385552,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C062,CORONA SUECA,Comunal,50,88,38,63.25,63.0,10.337028909056349,0,0,0,seguridad,Seguridad,eficiencia,Eficiencia
+C004,CONSISTORIAL,Comunal,80,118,38,104.66666666666667,108.0,10.241527663824812,0,0,0,ciclistas_biogeme,Logit,eficiencia,Eficiencia
+I09,GENERAL VELASQUEZ,Intercomunal,21,59,38,42.416666666666664,40.5,10.095034532988098,0,0,1,ponderacion_rmc,RMC,eficiencia,Eficiencia
+C006,DOMINGO TOCORNAL,Comunal,2,40,38,32.333333333333336,34.5,10.060925515191046,1,1,3,continuidad,Continuidad,ponderacion_rmc,RMC
+C023,AVENIDA DORSAL,Comunal,64,101,37,72.5,71.0,9.5,0,0,0,intermodal,Intermodal,eficiencia,Eficiencia
+C055,ARTURO PRAT,Comunal,69,106,37,92.16666666666667,95.0,9.007712744581106,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+EP-I34,VICUÑA MACKENNA,Intercomunal,2,37,35,17.916666666666668,19.0,10.103286044099162,3,10,10,ciclistas_biogeme,Logit,demanda,Demanda
+I32,EINSTEIN,Intercomunal,26,60,34,45.833333333333336,52.0,11.589027377461646,0,0,2,eficiencia,Eficiencia,demanda,Demanda
+C042,PRINCIPE DE GALES,Comunal,76,108,32,92.16666666666667,92.5,8.839620404117413,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+EP-I33,LA CHIMBA,Intercomunal,21,52,31,24.75,22.0,8.486508901387738,0,0,11,balanceado,Balanceado,eficiencia,Eficiencia
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,70,101,31,82.5,84.5,8.159861109929098,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C011,EYZAGUIRRE,Comunal,72,103,31,90.25,93.0,7.6498910667625415,0,0,0,seguridad,Seguridad,eficiencia,Eficiencia
+C035,PRODIVENCIA,Comunal,24,54,30,31.583333333333332,27.0,9.595644266483042,0,0,9,equidad,Equidad,ciclistas_biogeme,Logit
+C022,LLANURA  - EL DESIERTO,Comunal,38,68,30,58,60.5,8.916277250063503,0,0,0,continuidad,Continuidad,ponderacion_rmc,RMC
+C044,LOS CERRILLOS,Comunal,79,109,30,100.58333333333333,105.0,8.597076376432993,0,0,0,seguridad,Seguridad,ciclistas_biogeme,Logit
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,74,104,30,84.41666666666667,85.5,7.718574278251709,0,0,0,equidad,Equidad,seguridad,Seguridad
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,81,110,29,91.08333333333333,89.5,8.087627725249366,0,0,0,ponderacion_rmc,RMC,equidad,Equidad
+C079,LAS AMERICAS,Comunal,84,113,29,104.08333333333333,107.0,7.931564928954577,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,59,87,28,65.25,63.5,7.292976072907411,0,0,0,equidad,Equidad,eficiencia,Eficiencia
+C048,GENERAL ARRIAGADA,Comunal,88,115,27,109.16666666666667,113.5,8.008675851155976,0,0,0,ciclistas_biogeme,Logit,balanceado,Balanceado
+C072,COVADONGA,Comunal,77,104,27,91.41666666666667,94.5,7.815138443360354,0,0,0,seguridad,Seguridad,ciclistas_biogeme,Logit
+C001,SAN EUGENIO,Comunal,45,72,27,59.916666666666664,61.0,7.488416981504762,0,0,0,eficiencia,Eficiencia,ciclistas_biogeme,Logit
+C043,NEPTUNO,Comunal,34,61,27,50.416666666666664,51.0,7.204840194079409,0,0,0,eficiencia,Eficiencia,demanda,Demanda
+I01,BARÓN DE JURAS REALES,Intercomunal,11,38,27,19.25,18.0,6.179603547154137,0,10,11,fractal_alameda,Fractal,equidad,Equidad
+C034,PEDRO LEON UGALDE,Comunal,67,93,26,79,81.5,7.1297498787358125,0,0,0,eficiencia,Eficiencia,seguridad,Seguridad
+C028,MADRID,Comunal,66,90,24,78.41666666666667,81.0,6.512274734854344,0,0,0,eficiencia,Eficiencia,seguridad,Seguridad
+C068,SAN CARLOS,Comunal,5,28,23,10.166666666666666,8.5,5.654398484562458,10,11,12,demanda,Demanda,continuidad,Continuidad
+C065,NUEVA SAN MARTIN,Comunal,83,105,22,98.83333333333333,103.0,7.278201853632683,0,0,0,seguridad,Seguridad,ciclistas_biogeme,Logit
+C061,EL PINAR,Comunal,63,85,22,71.08333333333333,71.5,7.181670341145498,0,0,0,equidad,Equidad,eficiencia,Eficiencia
+C087,SALVADOR GUTIERREZ,Comunal,96,118,22,113.16666666666667,116.0,6.202598021976132,0,0,0,eficiencia,Eficiencia,ponderacion_rmc,RMC
+C074,URETA COX,Comunal,85,106,21,96.66666666666667,98.5,6.342099196813483,0,0,0,equidad,Equidad,seguridad,Seguridad
+C089,J J PEREZ,Comunal,19,40,21,25.833333333333332,24.0,5.669117117231649,0,2,10,equidad,Equidad,ciclistas_biogeme,Logit
+C046,EUCALIPTOS,Comunal,20,41,21,26.916666666666668,25.5,5.648869110027442,0,2,9,equidad,Equidad,ciclistas_biogeme,Logit
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,21,42,21,28,26.5,5.612486080160912,0,0,9,equidad,Equidad,ciclistas_biogeme,Logit
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,7,28,21,17.083333333333332,17.0,5.55965126804031,1,9,12,ponderacion_rmc,RMC,equidad,Equidad
+C078,WALDO TAFF,Comunal,57,78,21,63.25,62.5,5.539629951540085,0,0,0,fractal_alameda,Fractal,seguridad,Seguridad
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,2,23,21,13.166666666666666,14.0,5.047001309908907,3,11,12,eficiencia,Eficiencia,equidad,Equidad
+C071,BARROS ARANA,Comunal,83,102,19,93.25,94.5,5.448623679425842,0,0,0,equidad,Equidad,ciclistas_biogeme,Logit
+I29,SANTA ROSA,Intercomunal,14,33,19,27.5,29.0,5.423713365090993,0,2,8,equidad,Equidad,ponderacion_rmc,RMC
+C086,LA ESTRELLA,Comunal,21,40,19,23.583333333333332,22.0,5.024246764994286,0,0,11,demanda,Demanda,equidad,Equidad
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,84,102,18,94.75,97.5,6.622247856027942,0,0,0,equidad,Equidad,eficiencia,Eficiencia
+C054,VICTORIA,Comunal,82,100,18,93.16666666666667,95.5,5.639641438562877,0,0,0,equidad,Equidad,seguridad,Seguridad
+C088,ÑUBLE,Comunal,65,83,18,73.58333333333333,75.0,5.6044377257867914,0,0,0,intermodal,Intermodal,eficiencia,Eficiencia
+I26,SAN PABLO,Intercomunal,1,19,18,4.75,3.0,4.8498281756504875,11,12,12,eficiencia,Eficiencia,continuidad,Continuidad
+C066,CUATRO PONIENTE,Comunal,1,18,17,6.583333333333333,4.0,5.707572942055922,8,12,12,equidad,Equidad,fractal_alameda,Fractal
+C033,OBSERVATORIO,Comunal,61,78,17,67.75,69.0,4.798003056828261,0,0,0,equidad,Equidad,eficiencia,Eficiencia
+C008,EL CERRO,Comunal,96,112,16,107.33333333333333,109.5,5.022173057773121,0,0,0,equidad,Equidad,educacion,Educación
+I03,CARRASCAL,Intercomunal,30,46,16,34.583333333333336,32.5,4.8383594556649285,0,0,3,ciclistas_biogeme,Logit,equidad,Equidad
+C027,LOS PRESIDENTES,Comunal,95,111,16,106.83333333333333,108.5,4.543004390146336,0,0,0,equidad,Equidad,demanda,Demanda
+C017,LA PARINACOTA,Comunal,106,122,16,117.16666666666667,118.0,3.7155828016013257,0,0,0,equidad,Equidad,eficiencia,Eficiencia
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,64,79,15,70.83333333333333,71.0,5.413460589637238,0,0,0,equidad,Equidad,intermodal,Intermodal
+C041,VISTA HERMOSA,Comunal,104,119,15,115,117.0,4.795831523312719,0,0,0,eficiencia,Eficiencia,ponderacion_rmc,RMC
+C083,ORIENTAL-LAS PARCELAS,Comunal,47,62,15,55.666666666666664,56.0,4.459696053419884,0,0,0,eficiencia,Eficiencia,demanda,Demanda
+C030,MAULE,Comunal,69,83,14,77.75,80.0,4.95185150558186,0,0,0,equidad,Equidad,demanda,Demanda
+C014,JOSE DOMINGO CAÑAS,Comunal,42,56,14,49.083333333333336,50.0,4.751461763382811,0,0,0,equidad,Equidad,integracion,Integración
+I11,JOSE JOAQUIN PEREZ,Intercomunal,3,17,14,7.666666666666667,6.0,4.6785562825394,8,12,12,ponderacion_rmc,RMC,intermodal,Intermodal
+EP-I10,GRAN AVENIDA,Intercomunal,6,20,14,14.25,15.0,4.639055219905593,2,12,12,equidad,Equidad,intermodal,Intermodal
+C090,SANTO DOMINGO,Comunal,44,57,13,50.416666666666664,50.5,4.251633672941366,0,0,0,intermodal,Intermodal,demanda,Demanda
+I22,PEDRO FONTOVA,Intercomunal,3,16,13,8.666666666666666,9.5,4.0483192671637065,8,12,12,integracion,Integración,equidad,Equidad
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,3,14,11,7.416666666666667,7.5,3.121386800054674,10,12,12,demanda,Demanda,ciclistas_biogeme,Logit
+I16,MATTA-VESPUCIO NORTE,Intercomunal,2,12,10,6.583333333333333,6.5,3.6391009268163415,10,12,12,integracion,Integración,fractal_alameda,Fractal
+C060,ROJAS MAGALLANES,Comunal,25,35,10,32,34.0,3.4399612400917157,0,0,4,equidad,Equidad,demanda,Demanda
+I28,SANTA RAQUEL,Intercomunal,26,36,10,33,35.0,3.4399612400917157,0,0,3,equidad,Equidad,demanda,Demanda
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,1,10,9,2.4166666666666665,1.0,3.1743328257901515,12,12,12,ponderacion_rmc,RMC,equidad,Equidad
+I04,DEL FERROCARRIL,Intercomunal,6,15,9,10.333333333333334,11.0,3.064129385141706,6,12,12,continuidad,Continuidad,equidad,Equidad
+C073,LOS MORROS,Comunal,115,124,9,121.33333333333333,121.0,2.4608038433722332,0,0,0,equidad,Equidad,ponderacion_rmc,RMC
+I27,SANTA CECILIA - NONATO COO,Intercomunal,11,19,8,16.333333333333332,16.0,2.094967514996089,0,12,12,equidad,Equidad,ciclistas_biogeme,Logit
+I21,PEDRO DE VALDIVIA,Intercomunal,13,17,4,14.333333333333334,14.0,1.4337208778404378,0,12,12,ponderacion_rmc,RMC,equidad,Equidad
+C018,LA PRIMAVERA,Comunal,119,123,4,121.75,122.0,1.3616778865306827,0,0,0,fractal_alameda,Fractal,equidad,Equidad
+C016,JUANITA,Comunal,119,123,4,121.58333333333333,122.0,1.114924013354971,0,0,0,eficiencia,Eficiencia,balanceado,Balanceado
+C025,LOS DURAZNOS,Comunal,121,124,3,123.33333333333333,124.0,1.1055415967851332,0,0,0,fractal_alameda,Fractal,balanceado,Balanceado

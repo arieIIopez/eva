@@ -1,0 +1,1489 @@
+id,nombre,escala,scenario,scenario_label,rank
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,ponderacion_rmc,RMC,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,balanceado,Balanceado,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,equidad,Equidad,10
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,demanda,Demanda,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,ciclistas_biogeme,Logit,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,fractal_alameda,Fractal,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,continuidad,Continuidad,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,eficiencia,Eficiencia,9
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,educacion,Educación,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,integracion,Integración,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,seguridad,Seguridad,1
+I12,LAS REJAS - SUIZA - DEPARTAMENTAL,Intercomunal,intermodal,Intermodal,1
+I26,SAN PABLO,Intercomunal,ponderacion_rmc,RMC,2
+I26,SAN PABLO,Intercomunal,balanceado,Balanceado,3
+I26,SAN PABLO,Intercomunal,equidad,Equidad,2
+I26,SAN PABLO,Intercomunal,demanda,Demanda,10
+I26,SAN PABLO,Intercomunal,ciclistas_biogeme,Logit,3
+I26,SAN PABLO,Intercomunal,fractal_alameda,Fractal,2
+I26,SAN PABLO,Intercomunal,continuidad,Continuidad,19
+I26,SAN PABLO,Intercomunal,eficiencia,Eficiencia,1
+I26,SAN PABLO,Intercomunal,educacion,Educación,4
+I26,SAN PABLO,Intercomunal,integracion,Integración,5
+I26,SAN PABLO,Intercomunal,seguridad,Seguridad,4
+I26,SAN PABLO,Intercomunal,intermodal,Intermodal,2
+C066,CUATRO PONIENTE,Comunal,ponderacion_rmc,RMC,5
+C066,CUATRO PONIENTE,Comunal,balanceado,Balanceado,2
+C066,CUATRO PONIENTE,Comunal,equidad,Equidad,1
+C066,CUATRO PONIENTE,Comunal,demanda,Demanda,2
+C066,CUATRO PONIENTE,Comunal,ciclistas_biogeme,Logit,12
+C066,CUATRO PONIENTE,Comunal,fractal_alameda,Fractal,18
+C066,CUATRO PONIENTE,Comunal,continuidad,Continuidad,12
+C066,CUATRO PONIENTE,Comunal,eficiencia,Eficiencia,4
+C066,CUATRO PONIENTE,Comunal,educacion,Educación,2
+C066,CUATRO PONIENTE,Comunal,integracion,Integración,4
+C066,CUATRO PONIENTE,Comunal,seguridad,Seguridad,2
+C066,CUATRO PONIENTE,Comunal,intermodal,Intermodal,15
+I16,MATTA-VESPUCIO NORTE,Intercomunal,ponderacion_rmc,RMC,9
+I16,MATTA-VESPUCIO NORTE,Intercomunal,balanceado,Balanceado,5
+I16,MATTA-VESPUCIO NORTE,Intercomunal,equidad,Equidad,3
+I16,MATTA-VESPUCIO NORTE,Intercomunal,demanda,Demanda,8
+I16,MATTA-VESPUCIO NORTE,Intercomunal,ciclistas_biogeme,Logit,9
+I16,MATTA-VESPUCIO NORTE,Intercomunal,fractal_alameda,Fractal,12
+I16,MATTA-VESPUCIO NORTE,Intercomunal,continuidad,Continuidad,3
+I16,MATTA-VESPUCIO NORTE,Intercomunal,eficiencia,Eficiencia,12
+I16,MATTA-VESPUCIO NORTE,Intercomunal,educacion,Educación,3
+I16,MATTA-VESPUCIO NORTE,Intercomunal,integracion,Integración,2
+I16,MATTA-VESPUCIO NORTE,Intercomunal,seguridad,Seguridad,10
+I16,MATTA-VESPUCIO NORTE,Intercomunal,intermodal,Intermodal,3
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,ponderacion_rmc,RMC,4
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,balanceado,Balanceado,7
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,equidad,Equidad,8
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,demanda,Demanda,3
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,ciclistas_biogeme,Logit,14
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,fractal_alameda,Fractal,4
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,continuidad,Continuidad,8
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,eficiencia,Eficiencia,5
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,educacion,Educación,7
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,integracion,Integración,8
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,seguridad,Seguridad,12
+I30,WALKER - HUALLE - AGUIRRE,Intercomunal,intermodal,Intermodal,9
+I11,JOSE JOAQUIN PEREZ,Intercomunal,ponderacion_rmc,RMC,3
+I11,JOSE JOAQUIN PEREZ,Intercomunal,balanceado,Balanceado,4
+I11,JOSE JOAQUIN PEREZ,Intercomunal,equidad,Equidad,12
+I11,JOSE JOAQUIN PEREZ,Intercomunal,demanda,Demanda,11
+I11,JOSE JOAQUIN PEREZ,Intercomunal,ciclistas_biogeme,Logit,6
+I11,JOSE JOAQUIN PEREZ,Intercomunal,fractal_alameda,Fractal,3
+I11,JOSE JOAQUIN PEREZ,Intercomunal,continuidad,Continuidad,7
+I11,JOSE JOAQUIN PEREZ,Intercomunal,eficiencia,Eficiencia,3
+I11,JOSE JOAQUIN PEREZ,Intercomunal,educacion,Educación,6
+I11,JOSE JOAQUIN PEREZ,Intercomunal,integracion,Integración,15
+I11,JOSE JOAQUIN PEREZ,Intercomunal,seguridad,Seguridad,5
+I11,JOSE JOAQUIN PEREZ,Intercomunal,intermodal,Intermodal,17
+I22,PEDRO FONTOVA,Intercomunal,ponderacion_rmc,RMC,10
+I22,PEDRO FONTOVA,Intercomunal,balanceado,Balanceado,6
+I22,PEDRO FONTOVA,Intercomunal,equidad,Equidad,16
+I22,PEDRO FONTOVA,Intercomunal,demanda,Demanda,9
+I22,PEDRO FONTOVA,Intercomunal,ciclistas_biogeme,Logit,10
+I22,PEDRO FONTOVA,Intercomunal,fractal_alameda,Fractal,13
+I22,PEDRO FONTOVA,Intercomunal,continuidad,Continuidad,4
+I22,PEDRO FONTOVA,Intercomunal,eficiencia,Eficiencia,13
+I22,PEDRO FONTOVA,Intercomunal,educacion,Educación,5
+I22,PEDRO FONTOVA,Intercomunal,integracion,Integración,3
+I22,PEDRO FONTOVA,Intercomunal,seguridad,Seguridad,11
+I22,PEDRO FONTOVA,Intercomunal,intermodal,Intermodal,4
+C068,SAN CARLOS,Comunal,ponderacion_rmc,RMC,8
+C068,SAN CARLOS,Comunal,balanceado,Balanceado,9
+C068,SAN CARLOS,Comunal,equidad,Equidad,7
+C068,SAN CARLOS,Comunal,demanda,Demanda,5
+C068,SAN CARLOS,Comunal,ciclistas_biogeme,Logit,8
+C068,SAN CARLOS,Comunal,fractal_alameda,Fractal,10
+C068,SAN CARLOS,Comunal,continuidad,Continuidad,28
+C068,SAN CARLOS,Comunal,eficiencia,Eficiencia,7
+C068,SAN CARLOS,Comunal,educacion,Educación,10
+C068,SAN CARLOS,Comunal,integracion,Integración,10
+C068,SAN CARLOS,Comunal,seguridad,Seguridad,8
+C068,SAN CARLOS,Comunal,intermodal,Intermodal,12
+I04,DEL FERROCARRIL,Intercomunal,ponderacion_rmc,RMC,12
+I04,DEL FERROCARRIL,Intercomunal,balanceado,Balanceado,12
+I04,DEL FERROCARRIL,Intercomunal,equidad,Equidad,15
+I04,DEL FERROCARRIL,Intercomunal,demanda,Demanda,7
+I04,DEL FERROCARRIL,Intercomunal,ciclistas_biogeme,Logit,13
+I04,DEL FERROCARRIL,Intercomunal,fractal_alameda,Fractal,8
+I04,DEL FERROCARRIL,Intercomunal,continuidad,Continuidad,6
+I04,DEL FERROCARRIL,Intercomunal,eficiencia,Eficiencia,10
+I04,DEL FERROCARRIL,Intercomunal,educacion,Educación,13
+I04,DEL FERROCARRIL,Intercomunal,integracion,Integración,7
+I04,DEL FERROCARRIL,Intercomunal,seguridad,Seguridad,14
+I04,DEL FERROCARRIL,Intercomunal,intermodal,Intermodal,7
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,ponderacion_rmc,RMC,14
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,balanceado,Balanceado,13
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,equidad,Equidad,23
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,demanda,Demanda,14
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,ciclistas_biogeme,Logit,11
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,fractal_alameda,Fractal,9
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,continuidad,Continuidad,17
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,eficiencia,Eficiencia,2
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,educacion,Educación,16
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,integracion,Integración,16
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,seguridad,Seguridad,15
+EP-ALAMEDA-T3,ALAMEDA TRAMO 3,Intercomunal,intermodal,Intermodal,8
+EP-I10,GRAN AVENIDA,Intercomunal,ponderacion_rmc,RMC,19
+EP-I10,GRAN AVENIDA,Intercomunal,balanceado,Balanceado,15
+EP-I10,GRAN AVENIDA,Intercomunal,equidad,Equidad,6
+EP-I10,GRAN AVENIDA,Intercomunal,demanda,Demanda,17
+EP-I10,GRAN AVENIDA,Intercomunal,ciclistas_biogeme,Logit,18
+EP-I10,GRAN AVENIDA,Intercomunal,fractal_alameda,Fractal,15
+EP-I10,GRAN AVENIDA,Intercomunal,continuidad,Continuidad,14
+EP-I10,GRAN AVENIDA,Intercomunal,eficiencia,Eficiencia,11
+EP-I10,GRAN AVENIDA,Intercomunal,educacion,Educación,11
+EP-I10,GRAN AVENIDA,Intercomunal,integracion,Integración,19
+EP-I10,GRAN AVENIDA,Intercomunal,seguridad,Seguridad,6
+EP-I10,GRAN AVENIDA,Intercomunal,intermodal,Intermodal,20
+I21,PEDRO DE VALDIVIA,Intercomunal,ponderacion_rmc,RMC,13
+I21,PEDRO DE VALDIVIA,Intercomunal,balanceado,Balanceado,14
+I21,PEDRO DE VALDIVIA,Intercomunal,equidad,Equidad,17
+I21,PEDRO DE VALDIVIA,Intercomunal,demanda,Demanda,13
+I21,PEDRO DE VALDIVIA,Intercomunal,ciclistas_biogeme,Logit,17
+I21,PEDRO DE VALDIVIA,Intercomunal,fractal_alameda,Fractal,14
+I21,PEDRO DE VALDIVIA,Intercomunal,continuidad,Continuidad,13
+I21,PEDRO DE VALDIVIA,Intercomunal,eficiencia,Eficiencia,14
+I21,PEDRO DE VALDIVIA,Intercomunal,educacion,Educación,14
+I21,PEDRO DE VALDIVIA,Intercomunal,integracion,Integración,13
+I21,PEDRO DE VALDIVIA,Intercomunal,seguridad,Seguridad,16
+I21,PEDRO DE VALDIVIA,Intercomunal,intermodal,Intermodal,14
+I27,SANTA CECILIA - NONATO COO,Intercomunal,ponderacion_rmc,RMC,17
+I27,SANTA CECILIA - NONATO COO,Intercomunal,balanceado,Balanceado,16
+I27,SANTA CECILIA - NONATO COO,Intercomunal,equidad,Equidad,11
+I27,SANTA CECILIA - NONATO COO,Intercomunal,demanda,Demanda,16
+I27,SANTA CECILIA - NONATO COO,Intercomunal,ciclistas_biogeme,Logit,19
+I27,SANTA CECILIA - NONATO COO,Intercomunal,fractal_alameda,Fractal,16
+I27,SANTA CECILIA - NONATO COO,Intercomunal,continuidad,Continuidad,15
+I27,SANTA CECILIA - NONATO COO,Intercomunal,eficiencia,Eficiencia,16
+I27,SANTA CECILIA - NONATO COO,Intercomunal,educacion,Educación,15
+I27,SANTA CECILIA - NONATO COO,Intercomunal,integracion,Integración,18
+I27,SANTA CECILIA - NONATO COO,Intercomunal,seguridad,Seguridad,18
+I27,SANTA CECILIA - NONATO COO,Intercomunal,intermodal,Intermodal,19
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,ponderacion_rmc,RMC,11
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,balanceado,Balanceado,10
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,equidad,Equidad,4
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,demanda,Demanda,6
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,ciclistas_biogeme,Logit,7
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,fractal_alameda,Fractal,6
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,continuidad,Continuidad,10
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,eficiencia,Eficiencia,98
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,educacion,Educación,18
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,integracion,Integración,11
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,seguridad,Seguridad,7
+I19,PAC-LO ESPEJO-SN BDO,Intercomunal,intermodal,Intermodal,13
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,ponderacion_rmc,RMC,7
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,balanceado,Balanceado,19
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,equidad,Equidad,28
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,demanda,Demanda,18
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,ciclistas_biogeme,Logit,22
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,fractal_alameda,Fractal,20
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,continuidad,Continuidad,11
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,eficiencia,Eficiencia,15
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,educacion,Educación,12
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,integracion,Integración,14
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,seguridad,Seguridad,23
+I20,PAC - LO ESPEJO - EL BOSQUE,Intercomunal,intermodal,Intermodal,16
+EP-I34,VICUÑA MACKENNA,Intercomunal,ponderacion_rmc,RMC,18
+EP-I34,VICUÑA MACKENNA,Intercomunal,balanceado,Balanceado,20
+EP-I34,VICUÑA MACKENNA,Intercomunal,equidad,Equidad,33
+EP-I34,VICUÑA MACKENNA,Intercomunal,demanda,Demanda,37
+EP-I34,VICUÑA MACKENNA,Intercomunal,ciclistas_biogeme,Logit,2
+EP-I34,VICUÑA MACKENNA,Intercomunal,fractal_alameda,Fractal,19
+EP-I34,VICUÑA MACKENNA,Intercomunal,continuidad,Continuidad,20
+EP-I34,VICUÑA MACKENNA,Intercomunal,eficiencia,Eficiencia,18
+EP-I34,VICUÑA MACKENNA,Intercomunal,educacion,Educación,19
+EP-I34,VICUÑA MACKENNA,Intercomunal,integracion,Integración,20
+EP-I34,VICUÑA MACKENNA,Intercomunal,seguridad,Seguridad,3
+EP-I34,VICUÑA MACKENNA,Intercomunal,intermodal,Intermodal,6
+I01,BARÓN DE JURAS REALES,Intercomunal,ponderacion_rmc,RMC,16
+I01,BARÓN DE JURAS REALES,Intercomunal,balanceado,Balanceado,18
+I01,BARÓN DE JURAS REALES,Intercomunal,equidad,Equidad,38
+I01,BARÓN DE JURAS REALES,Intercomunal,demanda,Demanda,19
+I01,BARÓN DE JURAS REALES,Intercomunal,ciclistas_biogeme,Logit,20
+I01,BARÓN DE JURAS REALES,Intercomunal,fractal_alameda,Fractal,11
+I01,BARÓN DE JURAS REALES,Intercomunal,continuidad,Continuidad,18
+I01,BARÓN DE JURAS REALES,Intercomunal,eficiencia,Eficiencia,17
+I01,BARÓN DE JURAS REALES,Intercomunal,educacion,Educación,17
+I01,BARÓN DE JURAS REALES,Intercomunal,integracion,Integración,17
+I01,BARÓN DE JURAS REALES,Intercomunal,seguridad,Seguridad,22
+I01,BARÓN DE JURAS REALES,Intercomunal,intermodal,Intermodal,18
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,ponderacion_rmc,RMC,6
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,balanceado,Balanceado,8
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,equidad,Equidad,100
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,demanda,Demanda,4
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,ciclistas_biogeme,Logit,31
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,fractal_alameda,Fractal,5
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,continuidad,Continuidad,9
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,eficiencia,Eficiencia,6
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,educacion,Educación,25
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,integracion,Integración,9
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,seguridad,Seguridad,33
+C067,CARDENAL RAUL SILVA HENRIQUEZ,Comunal,intermodal,Intermodal,10
+I10,GRAN AVENIDA,Intercomunal,ponderacion_rmc,RMC,15
+I10,GRAN AVENIDA,Intercomunal,balanceado,Balanceado,29
+I10,GRAN AVENIDA,Intercomunal,equidad,Equidad,13
+I10,GRAN AVENIDA,Intercomunal,demanda,Demanda,48
+I10,GRAN AVENIDA,Intercomunal,ciclistas_biogeme,Logit,44
+I10,GRAN AVENIDA,Intercomunal,fractal_alameda,Fractal,42
+I10,GRAN AVENIDA,Intercomunal,continuidad,Continuidad,16
+I10,GRAN AVENIDA,Intercomunal,eficiencia,Eficiencia,8
+I10,GRAN AVENIDA,Intercomunal,educacion,Educación,24
+I10,GRAN AVENIDA,Intercomunal,integracion,Integración,12
+I10,GRAN AVENIDA,Intercomunal,seguridad,Seguridad,19
+I10,GRAN AVENIDA,Intercomunal,intermodal,Intermodal,11
+C086,LA ESTRELLA,Comunal,ponderacion_rmc,RMC,23
+C086,LA ESTRELLA,Comunal,balanceado,Balanceado,22
+C086,LA ESTRELLA,Comunal,equidad,Equidad,40
+C086,LA ESTRELLA,Comunal,demanda,Demanda,21
+C086,LA ESTRELLA,Comunal,ciclistas_biogeme,Logit,23
+C086,LA ESTRELLA,Comunal,fractal_alameda,Fractal,22
+C086,LA ESTRELLA,Comunal,continuidad,Continuidad,21
+C086,LA ESTRELLA,Comunal,eficiencia,Eficiencia,22
+C086,LA ESTRELLA,Comunal,educacion,Educación,21
+C086,LA ESTRELLA,Comunal,integracion,Integración,22
+C086,LA ESTRELLA,Comunal,seguridad,Seguridad,24
+C086,LA ESTRELLA,Comunal,intermodal,Intermodal,22
+EP-I33,LA CHIMBA,Intercomunal,ponderacion_rmc,RMC,22
+EP-I33,LA CHIMBA,Intercomunal,balanceado,Balanceado,21
+EP-I33,LA CHIMBA,Intercomunal,equidad,Equidad,29
+EP-I33,LA CHIMBA,Intercomunal,demanda,Demanda,22
+EP-I33,LA CHIMBA,Intercomunal,ciclistas_biogeme,Logit,21
+EP-I33,LA CHIMBA,Intercomunal,fractal_alameda,Fractal,21
+EP-I33,LA CHIMBA,Intercomunal,continuidad,Continuidad,22
+EP-I33,LA CHIMBA,Intercomunal,eficiencia,Eficiencia,52
+EP-I33,LA CHIMBA,Intercomunal,educacion,Educación,22
+EP-I33,LA CHIMBA,Intercomunal,integracion,Integración,23
+EP-I33,LA CHIMBA,Intercomunal,seguridad,Seguridad,21
+EP-I33,LA CHIMBA,Intercomunal,intermodal,Intermodal,21
+I25,SAN FRANCISCO,Intercomunal,ponderacion_rmc,RMC,20
+I25,SAN FRANCISCO,Intercomunal,balanceado,Balanceado,17
+I25,SAN FRANCISCO,Intercomunal,equidad,Equidad,18
+I25,SAN FRANCISCO,Intercomunal,demanda,Demanda,15
+I25,SAN FRANCISCO,Intercomunal,ciclistas_biogeme,Logit,5
+I25,SAN FRANCISCO,Intercomunal,fractal_alameda,Fractal,17
+I25,SAN FRANCISCO,Intercomunal,continuidad,Continuidad,25
+I25,SAN FRANCISCO,Intercomunal,eficiencia,Eficiencia,113
+I25,SAN FRANCISCO,Intercomunal,educacion,Educación,9
+I25,SAN FRANCISCO,Intercomunal,integracion,Integración,21
+I25,SAN FRANCISCO,Intercomunal,seguridad,Seguridad,25
+I25,SAN FRANCISCO,Intercomunal,intermodal,Intermodal,23
+C089,J J PEREZ,Comunal,ponderacion_rmc,RMC,25
+C089,J J PEREZ,Comunal,balanceado,Balanceado,23
+C089,J J PEREZ,Comunal,equidad,Equidad,19
+C089,J J PEREZ,Comunal,demanda,Demanda,24
+C089,J J PEREZ,Comunal,ciclistas_biogeme,Logit,40
+C089,J J PEREZ,Comunal,fractal_alameda,Fractal,23
+C089,J J PEREZ,Comunal,continuidad,Continuidad,23
+C089,J J PEREZ,Comunal,eficiencia,Eficiencia,19
+C089,J J PEREZ,Comunal,educacion,Educación,32
+C089,J J PEREZ,Comunal,integracion,Integración,24
+C089,J J PEREZ,Comunal,seguridad,Seguridad,30
+C089,J J PEREZ,Comunal,intermodal,Intermodal,28
+C046,EUCALIPTOS,Comunal,ponderacion_rmc,RMC,26
+C046,EUCALIPTOS,Comunal,balanceado,Balanceado,24
+C046,EUCALIPTOS,Comunal,equidad,Equidad,20
+C046,EUCALIPTOS,Comunal,demanda,Demanda,26
+C046,EUCALIPTOS,Comunal,ciclistas_biogeme,Logit,41
+C046,EUCALIPTOS,Comunal,fractal_alameda,Fractal,24
+C046,EUCALIPTOS,Comunal,continuidad,Continuidad,24
+C046,EUCALIPTOS,Comunal,eficiencia,Eficiencia,20
+C046,EUCALIPTOS,Comunal,educacion,Educación,33
+C046,EUCALIPTOS,Comunal,integracion,Integración,25
+C046,EUCALIPTOS,Comunal,seguridad,Seguridad,31
+C046,EUCALIPTOS,Comunal,intermodal,Intermodal,29
+I29,SANTA ROSA,Intercomunal,ponderacion_rmc,RMC,33
+I29,SANTA ROSA,Intercomunal,balanceado,Balanceado,32
+I29,SANTA ROSA,Intercomunal,equidad,Equidad,14
+I29,SANTA ROSA,Intercomunal,demanda,Demanda,28
+I29,SANTA ROSA,Intercomunal,ciclistas_biogeme,Logit,24
+I29,SANTA ROSA,Intercomunal,fractal_alameda,Fractal,29
+I29,SANTA ROSA,Intercomunal,continuidad,Continuidad,32
+I29,SANTA ROSA,Intercomunal,eficiencia,Eficiencia,29
+I29,SANTA ROSA,Intercomunal,educacion,Educación,30
+I29,SANTA ROSA,Intercomunal,integracion,Integración,32
+I29,SANTA ROSA,Intercomunal,seguridad,Seguridad,20
+I29,SANTA ROSA,Intercomunal,intermodal,Intermodal,27
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,ponderacion_rmc,RMC,27
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,balanceado,Balanceado,25
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,equidad,Equidad,21
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,demanda,Demanda,27
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,ciclistas_biogeme,Logit,42
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,fractal_alameda,Fractal,25
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,continuidad,Continuidad,26
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,eficiencia,Eficiencia,21
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,educacion,Educación,34
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,integracion,Integración,26
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,seguridad,Seguridad,32
+C052,BAQUEDANO - POSTALES ORIENTE,Comunal,intermodal,Intermodal,30
+C035,PRODIVENCIA,Comunal,ponderacion_rmc,RMC,28
+C035,PRODIVENCIA,Comunal,balanceado,Balanceado,26
+C035,PRODIVENCIA,Comunal,equidad,Equidad,24
+C035,PRODIVENCIA,Comunal,demanda,Demanda,29
+C035,PRODIVENCIA,Comunal,ciclistas_biogeme,Logit,54
+C035,PRODIVENCIA,Comunal,fractal_alameda,Fractal,49
+C035,PRODIVENCIA,Comunal,continuidad,Continuidad,27
+C035,PRODIVENCIA,Comunal,eficiencia,Eficiencia,25
+C035,PRODIVENCIA,Comunal,educacion,Educación,38
+C035,PRODIVENCIA,Comunal,integracion,Integración,27
+C035,PRODIVENCIA,Comunal,seguridad,Seguridad,27
+C035,PRODIVENCIA,Comunal,intermodal,Intermodal,25
+C063,LONGITUDINAL,Comunal,ponderacion_rmc,RMC,29
+C063,LONGITUDINAL,Comunal,balanceado,Balanceado,27
+C063,LONGITUDINAL,Comunal,equidad,Equidad,34
+C063,LONGITUDINAL,Comunal,demanda,Demanda,20
+C063,LONGITUDINAL,Comunal,ciclistas_biogeme,Logit,29
+C063,LONGITUDINAL,Comunal,fractal_alameda,Fractal,84
+C063,LONGITUDINAL,Comunal,continuidad,Continuidad,31
+C063,LONGITUDINAL,Comunal,eficiencia,Eficiencia,24
+C063,LONGITUDINAL,Comunal,educacion,Educación,20
+C063,LONGITUDINAL,Comunal,integracion,Integración,28
+C063,LONGITUDINAL,Comunal,seguridad,Seguridad,28
+C063,LONGITUDINAL,Comunal,intermodal,Intermodal,26
+C060,ROJAS MAGALLANES,Comunal,ponderacion_rmc,RMC,34
+C060,ROJAS MAGALLANES,Comunal,balanceado,Balanceado,30
+C060,ROJAS MAGALLANES,Comunal,equidad,Equidad,25
+C060,ROJAS MAGALLANES,Comunal,demanda,Demanda,35
+C060,ROJAS MAGALLANES,Comunal,ciclistas_biogeme,Logit,34
+C060,ROJAS MAGALLANES,Comunal,fractal_alameda,Fractal,32
+C060,ROJAS MAGALLANES,Comunal,continuidad,Continuidad,35
+C060,ROJAS MAGALLANES,Comunal,eficiencia,Eficiencia,27
+C060,ROJAS MAGALLANES,Comunal,educacion,Educación,28
+C060,ROJAS MAGALLANES,Comunal,integracion,Integración,35
+C060,ROJAS MAGALLANES,Comunal,seguridad,Seguridad,35
+C060,ROJAS MAGALLANES,Comunal,intermodal,Intermodal,34
+C006,DOMINGO TOCORNAL,Comunal,ponderacion_rmc,RMC,40
+C006,DOMINGO TOCORNAL,Comunal,balanceado,Balanceado,36
+C006,DOMINGO TOCORNAL,Comunal,equidad,Equidad,31
+C006,DOMINGO TOCORNAL,Comunal,demanda,Demanda,40
+C006,DOMINGO TOCORNAL,Comunal,ciclistas_biogeme,Logit,33
+C006,DOMINGO TOCORNAL,Comunal,fractal_alameda,Fractal,28
+C006,DOMINGO TOCORNAL,Comunal,continuidad,Continuidad,2
+C006,DOMINGO TOCORNAL,Comunal,eficiencia,Eficiencia,40
+C006,DOMINGO TOCORNAL,Comunal,educacion,Educación,40
+C006,DOMINGO TOCORNAL,Comunal,integracion,Integración,33
+C006,DOMINGO TOCORNAL,Comunal,seguridad,Seguridad,29
+C006,DOMINGO TOCORNAL,Comunal,intermodal,Intermodal,36
+I28,SANTA RAQUEL,Intercomunal,ponderacion_rmc,RMC,35
+I28,SANTA RAQUEL,Intercomunal,balanceado,Balanceado,31
+I28,SANTA RAQUEL,Intercomunal,equidad,Equidad,26
+I28,SANTA RAQUEL,Intercomunal,demanda,Demanda,36
+I28,SANTA RAQUEL,Intercomunal,ciclistas_biogeme,Logit,35
+I28,SANTA RAQUEL,Intercomunal,fractal_alameda,Fractal,33
+I28,SANTA RAQUEL,Intercomunal,continuidad,Continuidad,36
+I28,SANTA RAQUEL,Intercomunal,eficiencia,Eficiencia,28
+I28,SANTA RAQUEL,Intercomunal,educacion,Educación,29
+I28,SANTA RAQUEL,Intercomunal,integracion,Integración,36
+I28,SANTA RAQUEL,Intercomunal,seguridad,Seguridad,36
+I28,SANTA RAQUEL,Intercomunal,intermodal,Intermodal,35
+I08,GENERAL OSCAR BONILLA,Intercomunal,ponderacion_rmc,RMC,38
+I08,GENERAL OSCAR BONILLA,Intercomunal,balanceado,Balanceado,35
+I08,GENERAL OSCAR BONILLA,Intercomunal,equidad,Equidad,35
+I08,GENERAL OSCAR BONILLA,Intercomunal,demanda,Demanda,25
+I08,GENERAL OSCAR BONILLA,Intercomunal,ciclistas_biogeme,Logit,32
+I08,GENERAL OSCAR BONILLA,Intercomunal,fractal_alameda,Fractal,36
+I08,GENERAL OSCAR BONILLA,Intercomunal,continuidad,Continuidad,5
+I08,GENERAL OSCAR BONILLA,Intercomunal,eficiencia,Eficiencia,116
+I08,GENERAL OSCAR BONILLA,Intercomunal,educacion,Educación,27
+I08,GENERAL OSCAR BONILLA,Intercomunal,integracion,Integración,6
+I08,GENERAL OSCAR BONILLA,Intercomunal,seguridad,Seguridad,37
+I08,GENERAL OSCAR BONILLA,Intercomunal,intermodal,Intermodal,5
+I03,CARRASCAL,Intercomunal,ponderacion_rmc,RMC,31
+I03,CARRASCAL,Intercomunal,balanceado,Balanceado,38
+I03,CARRASCAL,Intercomunal,equidad,Equidad,46
+I03,CARRASCAL,Intercomunal,demanda,Demanda,33
+I03,CARRASCAL,Intercomunal,ciclistas_biogeme,Logit,30
+I03,CARRASCAL,Intercomunal,fractal_alameda,Fractal,31
+I03,CARRASCAL,Intercomunal,continuidad,Continuidad,30
+I03,CARRASCAL,Intercomunal,eficiencia,Eficiencia,37
+I03,CARRASCAL,Intercomunal,educacion,Educación,37
+I03,CARRASCAL,Intercomunal,integracion,Integración,30
+I03,CARRASCAL,Intercomunal,seguridad,Seguridad,40
+I03,CARRASCAL,Intercomunal,intermodal,Intermodal,32
+I14,LO OVALLE,Intercomunal,ponderacion_rmc,RMC,48
+I14,LO OVALLE,Intercomunal,balanceado,Balanceado,11
+I14,LO OVALLE,Intercomunal,equidad,Equidad,5
+I14,LO OVALLE,Intercomunal,demanda,Demanda,12
+I14,LO OVALLE,Intercomunal,ciclistas_biogeme,Logit,4
+I14,LO OVALLE,Intercomunal,fractal_alameda,Fractal,7
+I14,LO OVALLE,Intercomunal,continuidad,Continuidad,56
+I14,LO OVALLE,Intercomunal,eficiencia,Eficiencia,124
+I14,LO OVALLE,Intercomunal,educacion,Educación,8
+I14,LO OVALLE,Intercomunal,integracion,Integración,66
+I14,LO OVALLE,Intercomunal,seguridad,Seguridad,9
+I14,LO OVALLE,Intercomunal,intermodal,Intermodal,69
+I06,DIAGONAL ORIENTE,Intercomunal,ponderacion_rmc,RMC,24
+I06,DIAGONAL ORIENTE,Intercomunal,balanceado,Balanceado,28
+I06,DIAGONAL ORIENTE,Intercomunal,equidad,Equidad,54
+I06,DIAGONAL ORIENTE,Intercomunal,demanda,Demanda,31
+I06,DIAGONAL ORIENTE,Intercomunal,ciclistas_biogeme,Logit,16
+I06,DIAGONAL ORIENTE,Intercomunal,fractal_alameda,Fractal,26
+I06,DIAGONAL ORIENTE,Intercomunal,continuidad,Continuidad,34
+I06,DIAGONAL ORIENTE,Intercomunal,eficiencia,Eficiencia,115
+I06,DIAGONAL ORIENTE,Intercomunal,educacion,Educación,31
+I06,DIAGONAL ORIENTE,Intercomunal,integracion,Integración,34
+I06,DIAGONAL ORIENTE,Intercomunal,seguridad,Seguridad,17
+I06,DIAGONAL ORIENTE,Intercomunal,intermodal,Intermodal,33
+I15,MARTINEZ DE ROZAS,Intercomunal,ponderacion_rmc,RMC,32
+I15,MARTINEZ DE ROZAS,Intercomunal,balanceado,Balanceado,41
+I15,MARTINEZ DE ROZAS,Intercomunal,equidad,Equidad,39
+I15,MARTINEZ DE ROZAS,Intercomunal,demanda,Demanda,44
+I15,MARTINEZ DE ROZAS,Intercomunal,ciclistas_biogeme,Logit,15
+I15,MARTINEZ DE ROZAS,Intercomunal,fractal_alameda,Fractal,35
+I15,MARTINEZ DE ROZAS,Intercomunal,continuidad,Continuidad,44
+I15,MARTINEZ DE ROZAS,Intercomunal,eficiencia,Eficiencia,74
+I15,MARTINEZ DE ROZAS,Intercomunal,educacion,Educación,43
+I15,MARTINEZ DE ROZAS,Intercomunal,integracion,Integración,46
+I15,MARTINEZ DE ROZAS,Intercomunal,seguridad,Seguridad,13
+I15,MARTINEZ DE ROZAS,Intercomunal,intermodal,Intermodal,48
+C053,CONDELL,Comunal,ponderacion_rmc,RMC,44
+C053,CONDELL,Comunal,balanceado,Balanceado,40
+C053,CONDELL,Comunal,equidad,Equidad,27
+C053,CONDELL,Comunal,demanda,Demanda,23
+C053,CONDELL,Comunal,ciclistas_biogeme,Logit,28
+C053,CONDELL,Comunal,fractal_alameda,Fractal,108
+C053,CONDELL,Comunal,continuidad,Continuidad,46
+C053,CONDELL,Comunal,eficiencia,Eficiencia,33
+C053,CONDELL,Comunal,educacion,Educación,23
+C053,CONDELL,Comunal,integracion,Integración,39
+C053,CONDELL,Comunal,seguridad,Seguridad,41
+C053,CONDELL,Comunal,intermodal,Intermodal,42
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,ponderacion_rmc,RMC,36
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,balanceado,Balanceado,33
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,equidad,Equidad,9
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,demanda,Demanda,39
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,ciclistas_biogeme,Logit,26
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,fractal_alameda,Fractal,45
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,continuidad,Continuidad,52
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,eficiencia,Eficiencia,110
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,educacion,Educación,35
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,integracion,Integración,37
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,seguridad,Seguridad,49
+I05,DIAGONAL JOSE MARIA CARO,Intercomunal,intermodal,Intermodal,24
+C029,MARIA ELENA,Comunal,ponderacion_rmc,RMC,43
+C029,MARIA ELENA,Comunal,balanceado,Balanceado,34
+C029,MARIA ELENA,Comunal,equidad,Equidad,32
+C029,MARIA ELENA,Comunal,demanda,Demanda,34
+C029,MARIA ELENA,Comunal,ciclistas_biogeme,Logit,39
+C029,MARIA ELENA,Comunal,fractal_alameda,Fractal,106
+C029,MARIA ELENA,Comunal,continuidad,Continuidad,42
+C029,MARIA ELENA,Comunal,eficiencia,Eficiencia,31
+C029,MARIA ELENA,Comunal,educacion,Educación,26
+C029,MARIA ELENA,Comunal,integracion,Integración,38
+C029,MARIA ELENA,Comunal,seguridad,Seguridad,34
+C029,MARIA ELENA,Comunal,intermodal,Intermodal,37
+I09,GENERAL VELASQUEZ,Intercomunal,ponderacion_rmc,RMC,21
+I09,GENERAL VELASQUEZ,Intercomunal,balanceado,Balanceado,39
+I09,GENERAL VELASQUEZ,Intercomunal,equidad,Equidad,56
+I09,GENERAL VELASQUEZ,Intercomunal,demanda,Demanda,45
+I09,GENERAL VELASQUEZ,Intercomunal,ciclistas_biogeme,Logit,46
+I09,GENERAL VELASQUEZ,Intercomunal,fractal_alameda,Fractal,39
+I09,GENERAL VELASQUEZ,Intercomunal,continuidad,Continuidad,40
+I09,GENERAL VELASQUEZ,Intercomunal,eficiencia,Eficiencia,59
+I09,GENERAL VELASQUEZ,Intercomunal,educacion,Educación,39
+I09,GENERAL VELASQUEZ,Intercomunal,integracion,Integración,31
+I09,GENERAL VELASQUEZ,Intercomunal,seguridad,Seguridad,53
+I09,GENERAL VELASQUEZ,Intercomunal,intermodal,Intermodal,41
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,ponderacion_rmc,RMC,37
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,balanceado,Balanceado,43
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,equidad,Equidad,90
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,demanda,Demanda,41
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,ciclistas_biogeme,Logit,47
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,fractal_alameda,Fractal,38
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,continuidad,Continuidad,45
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,eficiencia,Eficiencia,23
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,educacion,Educación,42
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,integracion,Integración,41
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,seguridad,Seguridad,45
+I23,PETERSEN - VICUÑA MACKENNA,Intercomunal,intermodal,Intermodal,49
+C056,TEMUCO - TORO MAZOTTE,Comunal,ponderacion_rmc,RMC,41
+C056,TEMUCO - TORO MAZOTTE,Comunal,balanceado,Balanceado,42
+C056,TEMUCO - TORO MAZOTTE,Comunal,equidad,Equidad,109
+C056,TEMUCO - TORO MAZOTTE,Comunal,demanda,Demanda,38
+C056,TEMUCO - TORO MAZOTTE,Comunal,ciclistas_biogeme,Logit,37
+C056,TEMUCO - TORO MAZOTTE,Comunal,fractal_alameda,Fractal,37
+C056,TEMUCO - TORO MAZOTTE,Comunal,continuidad,Continuidad,41
+C056,TEMUCO - TORO MAZOTTE,Comunal,eficiencia,Eficiencia,35
+C056,TEMUCO - TORO MAZOTTE,Comunal,educacion,Educación,41
+C056,TEMUCO - TORO MAZOTTE,Comunal,integracion,Integración,40
+C056,TEMUCO - TORO MAZOTTE,Comunal,seguridad,Seguridad,46
+C056,TEMUCO - TORO MAZOTTE,Comunal,intermodal,Intermodal,39
+I32,EINSTEIN,Intercomunal,ponderacion_rmc,RMC,52
+I32,EINSTEIN,Intercomunal,balanceado,Balanceado,53
+I32,EINSTEIN,Intercomunal,equidad,Equidad,44
+I32,EINSTEIN,Intercomunal,demanda,Demanda,60
+I32,EINSTEIN,Intercomunal,ciclistas_biogeme,Logit,52
+I32,EINSTEIN,Intercomunal,fractal_alameda,Fractal,34
+I32,EINSTEIN,Intercomunal,continuidad,Continuidad,37
+I32,EINSTEIN,Intercomunal,eficiencia,Eficiencia,26
+I32,EINSTEIN,Intercomunal,educacion,Educación,55
+I32,EINSTEIN,Intercomunal,integracion,Integración,57
+I32,EINSTEIN,Intercomunal,seguridad,Seguridad,26
+I32,EINSTEIN,Intercomunal,intermodal,Intermodal,54
+I13,LO ESPEJO-RIQUELME,Intercomunal,ponderacion_rmc,RMC,47
+I13,LO ESPEJO-RIQUELME,Intercomunal,balanceado,Balanceado,49
+I13,LO ESPEJO-RIQUELME,Intercomunal,equidad,Equidad,57
+I13,LO ESPEJO-RIQUELME,Intercomunal,demanda,Demanda,30
+I13,LO ESPEJO-RIQUELME,Intercomunal,ciclistas_biogeme,Logit,25
+I13,LO ESPEJO-RIQUELME,Intercomunal,fractal_alameda,Fractal,27
+I13,LO ESPEJO-RIQUELME,Intercomunal,continuidad,Continuidad,33
+I13,LO ESPEJO-RIQUELME,Intercomunal,eficiencia,Eficiencia,114
+I13,LO ESPEJO-RIQUELME,Intercomunal,educacion,Educación,49
+I13,LO ESPEJO-RIQUELME,Intercomunal,integracion,Integración,49
+I13,LO ESPEJO-RIQUELME,Intercomunal,seguridad,Seguridad,44
+I13,LO ESPEJO-RIQUELME,Intercomunal,intermodal,Intermodal,50
+I02,CARLOS VALDOVINOS,Intercomunal,ponderacion_rmc,RMC,42
+I02,CARLOS VALDOVINOS,Intercomunal,balanceado,Balanceado,46
+I02,CARLOS VALDOVINOS,Intercomunal,equidad,Equidad,41
+I02,CARLOS VALDOVINOS,Intercomunal,demanda,Demanda,51
+I02,CARLOS VALDOVINOS,Intercomunal,ciclistas_biogeme,Logit,36
+I02,CARLOS VALDOVINOS,Intercomunal,fractal_alameda,Fractal,41
+I02,CARLOS VALDOVINOS,Intercomunal,continuidad,Continuidad,49
+I02,CARLOS VALDOVINOS,Intercomunal,eficiencia,Eficiencia,107
+I02,CARLOS VALDOVINOS,Intercomunal,educacion,Educación,47
+I02,CARLOS VALDOVINOS,Intercomunal,integracion,Integración,47
+I02,CARLOS VALDOVINOS,Intercomunal,seguridad,Seguridad,43
+I02,CARLOS VALDOVINOS,Intercomunal,intermodal,Intermodal,38
+C014,JOSE DOMINGO CAÑAS,Comunal,ponderacion_rmc,RMC,46
+C014,JOSE DOMINGO CAÑAS,Comunal,balanceado,Balanceado,50
+C014,JOSE DOMINGO CAÑAS,Comunal,equidad,Equidad,42
+C014,JOSE DOMINGO CAÑAS,Comunal,demanda,Demanda,55
+C014,JOSE DOMINGO CAÑAS,Comunal,ciclistas_biogeme,Logit,45
+C014,JOSE DOMINGO CAÑAS,Comunal,fractal_alameda,Fractal,44
+C014,JOSE DOMINGO CAÑAS,Comunal,continuidad,Continuidad,50
+C014,JOSE DOMINGO CAÑAS,Comunal,eficiencia,Eficiencia,43
+C014,JOSE DOMINGO CAÑAS,Comunal,educacion,Educación,51
+C014,JOSE DOMINGO CAÑAS,Comunal,integracion,Integración,56
+C014,JOSE DOMINGO CAÑAS,Comunal,seguridad,Seguridad,55
+C014,JOSE DOMINGO CAÑAS,Comunal,intermodal,Intermodal,52
+I17,MATUCANA,Intercomunal,ponderacion_rmc,RMC,39
+I17,MATUCANA,Intercomunal,balanceado,Balanceado,45
+I17,MATUCANA,Intercomunal,equidad,Equidad,111
+I17,MATUCANA,Intercomunal,demanda,Demanda,50
+I17,MATUCANA,Intercomunal,ciclistas_biogeme,Logit,43
+I17,MATUCANA,Intercomunal,fractal_alameda,Fractal,40
+I17,MATUCANA,Intercomunal,continuidad,Continuidad,47
+I17,MATUCANA,Intercomunal,eficiencia,Eficiencia,46
+I17,MATUCANA,Intercomunal,educacion,Educación,46
+I17,MATUCANA,Intercomunal,integracion,Integración,48
+I17,MATUCANA,Intercomunal,seguridad,Seguridad,38
+I17,MATUCANA,Intercomunal,intermodal,Intermodal,40
+C090,SANTO DOMINGO,Comunal,ponderacion_rmc,RMC,45
+C090,SANTO DOMINGO,Comunal,balanceado,Balanceado,51
+C090,SANTO DOMINGO,Comunal,equidad,Equidad,50
+C090,SANTO DOMINGO,Comunal,demanda,Demanda,57
+C090,SANTO DOMINGO,Comunal,ciclistas_biogeme,Logit,55
+C090,SANTO DOMINGO,Comunal,fractal_alameda,Fractal,46
+C090,SANTO DOMINGO,Comunal,continuidad,Continuidad,51
+C090,SANTO DOMINGO,Comunal,eficiencia,Eficiencia,48
+C090,SANTO DOMINGO,Comunal,educacion,Educación,48
+C090,SANTO DOMINGO,Comunal,integracion,Integración,53
+C090,SANTO DOMINGO,Comunal,seguridad,Seguridad,57
+C090,SANTO DOMINGO,Comunal,intermodal,Intermodal,44
+C043,NEPTUNO,Comunal,ponderacion_rmc,RMC,50
+C043,NEPTUNO,Comunal,balanceado,Balanceado,52
+C043,NEPTUNO,Comunal,equidad,Equidad,43
+C043,NEPTUNO,Comunal,demanda,Demanda,61
+C043,NEPTUNO,Comunal,ciclistas_biogeme,Logit,56
+C043,NEPTUNO,Comunal,fractal_alameda,Fractal,47
+C043,NEPTUNO,Comunal,continuidad,Continuidad,53
+C043,NEPTUNO,Comunal,eficiencia,Eficiencia,34
+C043,NEPTUNO,Comunal,educacion,Educación,50
+C043,NEPTUNO,Comunal,integracion,Integración,54
+C043,NEPTUNO,Comunal,seguridad,Seguridad,60
+C043,NEPTUNO,Comunal,intermodal,Intermodal,45
+I24,RADAL,Intercomunal,ponderacion_rmc,RMC,30
+I24,RADAL,Intercomunal,balanceado,Balanceado,37
+I24,RADAL,Intercomunal,equidad,Equidad,45
+I24,RADAL,Intercomunal,demanda,Demanda,58
+I24,RADAL,Intercomunal,ciclistas_biogeme,Logit,27
+I24,RADAL,Intercomunal,fractal_alameda,Fractal,30
+I24,RADAL,Intercomunal,continuidad,Continuidad,59
+I24,RADAL,Intercomunal,eficiencia,Eficiencia,111
+I24,RADAL,Intercomunal,educacion,Educación,60
+I24,RADAL,Intercomunal,integracion,Integración,60
+I24,RADAL,Intercomunal,seguridad,Seguridad,39
+I24,RADAL,Intercomunal,intermodal,Intermodal,57
+C003,CONCHA Y TORO,Comunal,ponderacion_rmc,RMC,82
+C003,CONCHA Y TORO,Comunal,balanceado,Balanceado,44
+C003,CONCHA Y TORO,Comunal,equidad,Equidad,36
+C003,CONCHA Y TORO,Comunal,demanda,Demanda,49
+C003,CONCHA Y TORO,Comunal,ciclistas_biogeme,Logit,60
+C003,CONCHA Y TORO,Comunal,fractal_alameda,Fractal,109
+C003,CONCHA Y TORO,Comunal,continuidad,Continuidad,43
+C003,CONCHA Y TORO,Comunal,eficiencia,Eficiencia,39
+C003,CONCHA Y TORO,Comunal,educacion,Educación,45
+C003,CONCHA Y TORO,Comunal,integracion,Integración,43
+C003,CONCHA Y TORO,Comunal,seguridad,Seguridad,42
+C003,CONCHA Y TORO,Comunal,intermodal,Intermodal,43
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,ponderacion_rmc,RMC,70
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,balanceado,Balanceado,71
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,equidad,Equidad,113
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,demanda,Demanda,32
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,ciclistas_biogeme,Logit,58
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,fractal_alameda,Fractal,62
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,continuidad,Continuidad,29
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,eficiencia,Eficiencia,36
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,educacion,Educación,36
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,integracion,Integración,29
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,seguridad,Seguridad,75
+C070,MENDOZA (EX-CORONEL ROBLES),Comunal,intermodal,Intermodal,31
+C083,ORIENTAL-LAS PARCELAS,Comunal,ponderacion_rmc,RMC,56
+C083,ORIENTAL-LAS PARCELAS,Comunal,balanceado,Balanceado,55
+C083,ORIENTAL-LAS PARCELAS,Comunal,equidad,Equidad,55
+C083,ORIENTAL-LAS PARCELAS,Comunal,demanda,Demanda,62
+C083,ORIENTAL-LAS PARCELAS,Comunal,ciclistas_biogeme,Logit,49
+C083,ORIENTAL-LAS PARCELAS,Comunal,fractal_alameda,Fractal,51
+C083,ORIENTAL-LAS PARCELAS,Comunal,continuidad,Continuidad,61
+C083,ORIENTAL-LAS PARCELAS,Comunal,eficiencia,Eficiencia,47
+C083,ORIENTAL-LAS PARCELAS,Comunal,educacion,Educación,59
+C083,ORIENTAL-LAS PARCELAS,Comunal,integracion,Integración,59
+C083,ORIENTAL-LAS PARCELAS,Comunal,seguridad,Seguridad,58
+C083,ORIENTAL-LAS PARCELAS,Comunal,intermodal,Intermodal,56
+C022,LLANURA  - EL DESIERTO,Comunal,ponderacion_rmc,RMC,68
+C022,LLANURA  - EL DESIERTO,Comunal,balanceado,Balanceado,57
+C022,LLANURA  - EL DESIERTO,Comunal,equidad,Equidad,48
+C022,LLANURA  - EL DESIERTO,Comunal,demanda,Demanda,67
+C022,LLANURA  - EL DESIERTO,Comunal,ciclistas_biogeme,Logit,62
+C022,LLANURA  - EL DESIERTO,Comunal,fractal_alameda,Fractal,65
+C022,LLANURA  - EL DESIERTO,Comunal,continuidad,Continuidad,38
+C022,LLANURA  - EL DESIERTO,Comunal,eficiencia,Eficiencia,50
+C022,LLANURA  - EL DESIERTO,Comunal,educacion,Educación,63
+C022,LLANURA  - EL DESIERTO,Comunal,integracion,Integración,52
+C022,LLANURA  - EL DESIERTO,Comunal,seguridad,Seguridad,59
+C022,LLANURA  - EL DESIERTO,Comunal,intermodal,Intermodal,67
+I18,NUEVA IMPERIAL,Intercomunal,ponderacion_rmc,RMC,53
+I18,NUEVA IMPERIAL,Intercomunal,balanceado,Balanceado,54
+I18,NUEVA IMPERIAL,Intercomunal,equidad,Equidad,112
+I18,NUEVA IMPERIAL,Intercomunal,demanda,Demanda,59
+I18,NUEVA IMPERIAL,Intercomunal,ciclistas_biogeme,Logit,51
+I18,NUEVA IMPERIAL,Intercomunal,fractal_alameda,Fractal,48
+I18,NUEVA IMPERIAL,Intercomunal,continuidad,Continuidad,55
+I18,NUEVA IMPERIAL,Intercomunal,eficiencia,Eficiencia,71
+I18,NUEVA IMPERIAL,Intercomunal,educacion,Educación,54
+I18,NUEVA IMPERIAL,Intercomunal,integracion,Integración,55
+I18,NUEVA IMPERIAL,Intercomunal,seguridad,Seguridad,47
+I18,NUEVA IMPERIAL,Intercomunal,intermodal,Intermodal,46
+C007,EDUARDO CASTILLO VELASCO,Comunal,ponderacion_rmc,RMC,57
+C007,EDUARDO CASTILLO VELASCO,Comunal,balanceado,Balanceado,56
+C007,EDUARDO CASTILLO VELASCO,Comunal,equidad,Equidad,47
+C007,EDUARDO CASTILLO VELASCO,Comunal,demanda,Demanda,64
+C007,EDUARDO CASTILLO VELASCO,Comunal,ciclistas_biogeme,Logit,53
+C007,EDUARDO CASTILLO VELASCO,Comunal,fractal_alameda,Fractal,52
+C007,EDUARDO CASTILLO VELASCO,Comunal,continuidad,Continuidad,60
+C007,EDUARDO CASTILLO VELASCO,Comunal,eficiencia,Eficiencia,97
+C007,EDUARDO CASTILLO VELASCO,Comunal,educacion,Educación,58
+C007,EDUARDO CASTILLO VELASCO,Comunal,integracion,Integración,58
+C007,EDUARDO CASTILLO VELASCO,Comunal,seguridad,Seguridad,48
+C007,EDUARDO CASTILLO VELASCO,Comunal,intermodal,Intermodal,55
+C082,CAUPOLICAN,Comunal,ponderacion_rmc,RMC,49
+C082,CAUPOLICAN,Comunal,balanceado,Balanceado,62
+C082,CAUPOLICAN,Comunal,equidad,Equidad,30
+C082,CAUPOLICAN,Comunal,demanda,Demanda,53
+C082,CAUPOLICAN,Comunal,ciclistas_biogeme,Logit,90
+C082,CAUPOLICAN,Comunal,fractal_alameda,Fractal,56
+C082,CAUPOLICAN,Comunal,continuidad,Continuidad,54
+C082,CAUPOLICAN,Comunal,eficiencia,Eficiencia,53
+C082,CAUPOLICAN,Comunal,educacion,Educación,56
+C082,CAUPOLICAN,Comunal,integracion,Integración,50
+C082,CAUPOLICAN,Comunal,seguridad,Seguridad,88
+C082,CAUPOLICAN,Comunal,intermodal,Intermodal,68
+C026,LOS MAITENES,Comunal,ponderacion_rmc,RMC,61
+C026,LOS MAITENES,Comunal,balanceado,Balanceado,59
+C026,LOS MAITENES,Comunal,equidad,Equidad,116
+C026,LOS MAITENES,Comunal,demanda,Demanda,47
+C026,LOS MAITENES,Comunal,ciclistas_biogeme,Logit,66
+C026,LOS MAITENES,Comunal,fractal_alameda,Fractal,43
+C026,LOS MAITENES,Comunal,continuidad,Continuidad,39
+C026,LOS MAITENES,Comunal,eficiencia,Eficiencia,54
+C026,LOS MAITENES,Comunal,educacion,Educación,53
+C026,LOS MAITENES,Comunal,integracion,Integración,45
+C026,LOS MAITENES,Comunal,seguridad,Seguridad,67
+C026,LOS MAITENES,Comunal,intermodal,Intermodal,59
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,ponderacion_rmc,RMC,109
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,balanceado,Balanceado,48
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,equidad,Equidad,22
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,demanda,Demanda,46
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,ciclistas_biogeme,Logit,79
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,fractal_alameda,Fractal,122
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,continuidad,Continuidad,48
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,eficiencia,Eficiencia,38
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,educacion,Educación,52
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,integracion,Integración,42
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,seguridad,Seguridad,62
+C010,ESQ BLANCA - ALBERTO LLONA,Comunal,intermodal,Intermodal,47
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,ponderacion_rmc,RMC,51
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,balanceado,Balanceado,58
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,equidad,Equidad,49
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,demanda,Demanda,56
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,ciclistas_biogeme,Logit,38
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,fractal_alameda,Fractal,50
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,continuidad,Continuidad,58
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,eficiencia,Eficiencia,94
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,educacion,Educación,61
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,integracion,Integración,68
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,seguridad,Seguridad,65
+C058,ANTONIO EBNER-BARROS ARANA,Comunal,intermodal,Intermodal,70
+C001,SAN EUGENIO,Comunal,ponderacion_rmc,RMC,66
+C001,SAN EUGENIO,Comunal,balanceado,Balanceado,61
+C001,SAN EUGENIO,Comunal,equidad,Equidad,51
+C001,SAN EUGENIO,Comunal,demanda,Demanda,70
+C001,SAN EUGENIO,Comunal,ciclistas_biogeme,Logit,72
+C001,SAN EUGENIO,Comunal,fractal_alameda,Fractal,55
+C001,SAN EUGENIO,Comunal,continuidad,Continuidad,64
+C001,SAN EUGENIO,Comunal,eficiencia,Eficiencia,45
+C001,SAN EUGENIO,Comunal,educacion,Educación,62
+C001,SAN EUGENIO,Comunal,integracion,Integración,61
+C001,SAN EUGENIO,Comunal,seguridad,Seguridad,54
+C001,SAN EUGENIO,Comunal,intermodal,Intermodal,58
+C085,LOS LIBERTADORES,Comunal,ponderacion_rmc,RMC,110
+C085,LOS LIBERTADORES,Comunal,balanceado,Balanceado,47
+C085,LOS LIBERTADORES,Comunal,equidad,Equidad,37
+C085,LOS LIBERTADORES,Comunal,demanda,Demanda,43
+C085,LOS LIBERTADORES,Comunal,ciclistas_biogeme,Logit,70
+C085,LOS LIBERTADORES,Comunal,fractal_alameda,Fractal,123
+C085,LOS LIBERTADORES,Comunal,continuidad,Continuidad,78
+C085,LOS LIBERTADORES,Comunal,eficiencia,Eficiencia,44
+C085,LOS LIBERTADORES,Comunal,educacion,Educación,44
+C085,LOS LIBERTADORES,Comunal,integracion,Integración,44
+C085,LOS LIBERTADORES,Comunal,seguridad,Seguridad,51
+C085,LOS LIBERTADORES,Comunal,intermodal,Intermodal,53
+C062,CORONA SUECA,Comunal,ponderacion_rmc,RMC,55
+C062,CORONA SUECA,Comunal,balanceado,Balanceado,63
+C062,CORONA SUECA,Comunal,equidad,Equidad,52
+C062,CORONA SUECA,Comunal,demanda,Demanda,66
+C062,CORONA SUECA,Comunal,ciclistas_biogeme,Logit,57
+C062,CORONA SUECA,Comunal,fractal_alameda,Fractal,54
+C062,CORONA SUECA,Comunal,continuidad,Continuidad,63
+C062,CORONA SUECA,Comunal,eficiencia,Eficiencia,88
+C062,CORONA SUECA,Comunal,educacion,Educación,67
+C062,CORONA SUECA,Comunal,integracion,Integración,72
+C062,CORONA SUECA,Comunal,seguridad,Seguridad,50
+C062,CORONA SUECA,Comunal,intermodal,Intermodal,72
+C078,WALDO TAFF,Comunal,ponderacion_rmc,RMC,60
+C078,WALDO TAFF,Comunal,balanceado,Balanceado,64
+C078,WALDO TAFF,Comunal,equidad,Equidad,58
+C078,WALDO TAFF,Comunal,demanda,Demanda,68
+C078,WALDO TAFF,Comunal,ciclistas_biogeme,Logit,63
+C078,WALDO TAFF,Comunal,fractal_alameda,Fractal,57
+C078,WALDO TAFF,Comunal,continuidad,Continuidad,66
+C078,WALDO TAFF,Comunal,eficiencia,Eficiencia,58
+C078,WALDO TAFF,Comunal,educacion,Educación,65
+C078,WALDO TAFF,Comunal,integracion,Integración,62
+C078,WALDO TAFF,Comunal,seguridad,Seguridad,78
+C078,WALDO TAFF,Comunal,intermodal,Intermodal,60
+I07,EL GUANACO,Intercomunal,ponderacion_rmc,RMC,54
+I07,EL GUANACO,Intercomunal,balanceado,Balanceado,60
+I07,EL GUANACO,Intercomunal,equidad,Equidad,53
+I07,EL GUANACO,Intercomunal,demanda,Demanda,63
+I07,EL GUANACO,Intercomunal,ciclistas_biogeme,Logit,48
+I07,EL GUANACO,Intercomunal,fractal_alameda,Fractal,53
+I07,EL GUANACO,Intercomunal,continuidad,Continuidad,65
+I07,EL GUANACO,Intercomunal,eficiencia,Eficiencia,106
+I07,EL GUANACO,Intercomunal,educacion,Educación,68
+I07,EL GUANACO,Intercomunal,integracion,Integración,73
+I07,EL GUANACO,Intercomunal,seguridad,Seguridad,56
+I07,EL GUANACO,Intercomunal,intermodal,Intermodal,73
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,ponderacion_rmc,RMC,63
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,balanceado,Balanceado,66
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,equidad,Equidad,59
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,demanda,Demanda,69
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,ciclistas_biogeme,Logit,59
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,fractal_alameda,Fractal,59
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,continuidad,Continuidad,67
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,eficiencia,Eficiencia,87
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,educacion,Educación,66
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,integracion,Integración,63
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,seguridad,Seguridad,64
+C024,LOS ARRAYANES - LOS COPIHUES,Comunal,intermodal,Intermodal,61
+C033,OBSERVATORIO,Comunal,ponderacion_rmc,RMC,71
+C033,OBSERVATORIO,Comunal,balanceado,Balanceado,70
+C033,OBSERVATORIO,Comunal,equidad,Equidad,61
+C033,OBSERVATORIO,Comunal,demanda,Demanda,71
+C033,OBSERVATORIO,Comunal,ciclistas_biogeme,Logit,68
+C033,OBSERVATORIO,Comunal,fractal_alameda,Fractal,61
+C033,OBSERVATORIO,Comunal,continuidad,Continuidad,70
+C033,OBSERVATORIO,Comunal,eficiencia,Eficiencia,78
+C033,OBSERVATORIO,Comunal,educacion,Educación,70
+C033,OBSERVATORIO,Comunal,integracion,Integración,65
+C033,OBSERVATORIO,Comunal,seguridad,Seguridad,66
+C033,OBSERVATORIO,Comunal,intermodal,Intermodal,62
+I31,FERNANDEZ ALBANO,Intercomunal,ponderacion_rmc,RMC,73
+I31,FERNANDEZ ALBANO,Intercomunal,balanceado,Balanceado,78
+I31,FERNANDEZ ALBANO,Intercomunal,equidad,Equidad,67
+I31,FERNANDEZ ALBANO,Intercomunal,demanda,Demanda,75
+I31,FERNANDEZ ALBANO,Intercomunal,ciclistas_biogeme,Logit,69
+I31,FERNANDEZ ALBANO,Intercomunal,fractal_alameda,Fractal,68
+I31,FERNANDEZ ALBANO,Intercomunal,continuidad,Continuidad,76
+I31,FERNANDEZ ALBANO,Intercomunal,eficiencia,Eficiencia,30
+I31,FERNANDEZ ALBANO,Intercomunal,educacion,Educación,79
+I31,FERNANDEZ ALBANO,Intercomunal,integracion,Integración,78
+I31,FERNANDEZ ALBANO,Intercomunal,seguridad,Seguridad,61
+I31,FERNANDEZ ALBANO,Intercomunal,intermodal,Intermodal,80
+C047,VIOLETA PARRA,Comunal,ponderacion_rmc,RMC,58
+C047,VIOLETA PARRA,Comunal,balanceado,Balanceado,68
+C047,VIOLETA PARRA,Comunal,equidad,Equidad,60
+C047,VIOLETA PARRA,Comunal,demanda,Demanda,65
+C047,VIOLETA PARRA,Comunal,ciclistas_biogeme,Logit,50
+C047,VIOLETA PARRA,Comunal,fractal_alameda,Fractal,58
+C047,VIOLETA PARRA,Comunal,continuidad,Continuidad,69
+C047,VIOLETA PARRA,Comunal,eficiencia,Eficiencia,108
+C047,VIOLETA PARRA,Comunal,educacion,Educación,73
+C047,VIOLETA PARRA,Comunal,integracion,Integración,75
+C047,VIOLETA PARRA,Comunal,seguridad,Seguridad,84
+C047,VIOLETA PARRA,Comunal,intermodal,Intermodal,75
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,ponderacion_rmc,RMC,64
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,balanceado,Balanceado,65
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,equidad,Equidad,99
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,demanda,Demanda,72
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,ciclistas_biogeme,Logit,83
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,fractal_alameda,Fractal,60
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,continuidad,Continuidad,68
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,eficiencia,Eficiencia,41
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,educacion,Educación,72
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,integracion,Integración,74
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,seguridad,Seguridad,71
+C40,VICUÑA MACKENNA - SAN MARTIN,Comunal,intermodal,Intermodal,74
+C015,JOSE MANUEL GUZMAN,Comunal,ponderacion_rmc,RMC,59
+C015,JOSE MANUEL GUZMAN,Comunal,balanceado,Balanceado,67
+C015,JOSE MANUEL GUZMAN,Comunal,equidad,Equidad,117
+C015,JOSE MANUEL GUZMAN,Comunal,demanda,Demanda,52
+C015,JOSE MANUEL GUZMAN,Comunal,ciclistas_biogeme,Logit,93
+C015,JOSE MANUEL GUZMAN,Comunal,fractal_alameda,Fractal,70
+C015,JOSE MANUEL GUZMAN,Comunal,continuidad,Continuidad,57
+C015,JOSE MANUEL GUZMAN,Comunal,eficiencia,Eficiencia,42
+C015,JOSE MANUEL GUZMAN,Comunal,educacion,Educación,57
+C015,JOSE MANUEL GUZMAN,Comunal,integracion,Integración,64
+C015,JOSE MANUEL GUZMAN,Comunal,seguridad,Seguridad,98
+C015,JOSE MANUEL GUZMAN,Comunal,intermodal,Intermodal,71
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,ponderacion_rmc,RMC,67
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,balanceado,Balanceado,76
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,equidad,Equidad,64
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,demanda,Demanda,73
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,ciclistas_biogeme,Logit,67
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,fractal_alameda,Fractal,64
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,continuidad,Continuidad,73
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,eficiencia,Eficiencia,64
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,educacion,Educación,77
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,integracion,Integración,77
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,seguridad,Seguridad,69
+C005,CORONEL ALEJANDRO SEPULVEDA,Comunal,intermodal,Intermodal,79
+C061,EL PINAR,Comunal,ponderacion_rmc,RMC,79
+C061,EL PINAR,Comunal,balanceado,Balanceado,72
+C061,EL PINAR,Comunal,equidad,Equidad,63
+C061,EL PINAR,Comunal,demanda,Demanda,77
+C061,EL PINAR,Comunal,ciclistas_biogeme,Logit,78
+C061,EL PINAR,Comunal,fractal_alameda,Fractal,63
+C061,EL PINAR,Comunal,continuidad,Continuidad,72
+C061,EL PINAR,Comunal,eficiencia,Eficiencia,85
+C061,EL PINAR,Comunal,educacion,Educación,71
+C061,EL PINAR,Comunal,integracion,Integración,67
+C061,EL PINAR,Comunal,seguridad,Seguridad,63
+C061,EL PINAR,Comunal,intermodal,Intermodal,63
+C009,EL ROSAL - SANTA ELENA,Comunal,ponderacion_rmc,RMC,65
+C009,EL ROSAL - SANTA ELENA,Comunal,balanceado,Balanceado,69
+C009,EL ROSAL - SANTA ELENA,Comunal,equidad,Equidad,62
+C009,EL ROSAL - SANTA ELENA,Comunal,demanda,Demanda,80
+C009,EL ROSAL - SANTA ELENA,Comunal,ciclistas_biogeme,Logit,89
+C009,EL ROSAL - SANTA ELENA,Comunal,fractal_alameda,Fractal,85
+C009,EL ROSAL - SANTA ELENA,Comunal,continuidad,Continuidad,71
+C009,EL ROSAL - SANTA ELENA,Comunal,eficiencia,Eficiencia,49
+C009,EL ROSAL - SANTA ELENA,Comunal,educacion,Educación,76
+C009,EL ROSAL - SANTA ELENA,Comunal,integracion,Integración,76
+C009,EL ROSAL - SANTA ELENA,Comunal,seguridad,Seguridad,68
+C009,EL ROSAL - SANTA ELENA,Comunal,intermodal,Intermodal,77
+C023,AVENIDA DORSAL,Comunal,ponderacion_rmc,RMC,69
+C023,AVENIDA DORSAL,Comunal,balanceado,Balanceado,73
+C023,AVENIDA DORSAL,Comunal,equidad,Equidad,65
+C023,AVENIDA DORSAL,Comunal,demanda,Demanda,74
+C023,AVENIDA DORSAL,Comunal,ciclistas_biogeme,Logit,65
+C023,AVENIDA DORSAL,Comunal,fractal_alameda,Fractal,66
+C023,AVENIDA DORSAL,Comunal,continuidad,Continuidad,74
+C023,AVENIDA DORSAL,Comunal,eficiencia,Eficiencia,101
+C023,AVENIDA DORSAL,Comunal,educacion,Educación,74
+C023,AVENIDA DORSAL,Comunal,integracion,Integración,69
+C023,AVENIDA DORSAL,Comunal,seguridad,Seguridad,76
+C023,AVENIDA DORSAL,Comunal,intermodal,Intermodal,64
+C088,ÑUBLE,Comunal,ponderacion_rmc,RMC,72
+C088,ÑUBLE,Comunal,balanceado,Balanceado,75
+C088,ÑUBLE,Comunal,equidad,Equidad,66
+C088,ÑUBLE,Comunal,demanda,Demanda,78
+C088,ÑUBLE,Comunal,ciclistas_biogeme,Logit,75
+C088,ÑUBLE,Comunal,fractal_alameda,Fractal,67
+C088,ÑUBLE,Comunal,continuidad,Continuidad,75
+C088,ÑUBLE,Comunal,eficiencia,Eficiencia,83
+C088,ÑUBLE,Comunal,educacion,Educación,75
+C088,ÑUBLE,Comunal,integracion,Integración,70
+C088,ÑUBLE,Comunal,seguridad,Seguridad,82
+C088,ÑUBLE,Comunal,intermodal,Intermodal,65
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,ponderacion_rmc,RMC,62
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,balanceado,Balanceado,101
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,equidad,Equidad,119
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,demanda,Demanda,54
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,ciclistas_biogeme,Logit,64
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,fractal_alameda,Fractal,76
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,continuidad,Continuidad,62
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,eficiencia,Eficiencia,32
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,educacion,Educación,64
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,integracion,Integración,90
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,seguridad,Seguridad,89
+C049,FEDERICO ERRÁZURIZ (EX SERRANO),Comunal,intermodal,Intermodal,78
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,ponderacion_rmc,RMC,85
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,balanceado,Balanceado,80
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,equidad,Equidad,68
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,demanda,Demanda,79
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,ciclistas_biogeme,Logit,76
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,fractal_alameda,Fractal,69
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,continuidad,Continuidad,77
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,eficiencia,Eficiencia,95
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,educacion,Educación,80
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,integracion,Integración,79
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,seguridad,Seguridad,52
+C051,JOSE MIGUEL INFANTE - DOMINGO STA MARIA,Comunal,intermodal,Intermodal,81
+C030,MAULE,Comunal,ponderacion_rmc,RMC,77
+C030,MAULE,Comunal,balanceado,Balanceado,82
+C030,MAULE,Comunal,equidad,Equidad,69
+C030,MAULE,Comunal,demanda,Demanda,83
+C030,MAULE,Comunal,ciclistas_biogeme,Logit,74
+C030,MAULE,Comunal,fractal_alameda,Fractal,72
+C030,MAULE,Comunal,continuidad,Continuidad,80
+C030,MAULE,Comunal,eficiencia,Eficiencia,82
+C030,MAULE,Comunal,educacion,Educación,82
+C030,MAULE,Comunal,integracion,Integración,80
+C030,MAULE,Comunal,seguridad,Seguridad,70
+C030,MAULE,Comunal,intermodal,Intermodal,82
+C028,MADRID,Comunal,ponderacion_rmc,RMC,75
+C028,MADRID,Comunal,balanceado,Balanceado,83
+C028,MADRID,Comunal,equidad,Equidad,70
+C028,MADRID,Comunal,demanda,Demanda,82
+C028,MADRID,Comunal,ciclistas_biogeme,Logit,73
+C028,MADRID,Comunal,fractal_alameda,Fractal,74
+C028,MADRID,Comunal,continuidad,Continuidad,81
+C028,MADRID,Comunal,eficiencia,Eficiencia,66
+C028,MADRID,Comunal,educacion,Educación,83
+C028,MADRID,Comunal,integracion,Integración,81
+C028,MADRID,Comunal,seguridad,Seguridad,90
+C028,MADRID,Comunal,intermodal,Intermodal,83
+C050,MAR DE DRAKE,Comunal,ponderacion_rmc,RMC,111
+C050,MAR DE DRAKE,Comunal,balanceado,Balanceado,74
+C050,MAR DE DRAKE,Comunal,equidad,Equidad,118
+C050,MAR DE DRAKE,Comunal,demanda,Demanda,42
+C050,MAR DE DRAKE,Comunal,ciclistas_biogeme,Logit,81
+C050,MAR DE DRAKE,Comunal,fractal_alameda,Fractal,111
+C050,MAR DE DRAKE,Comunal,continuidad,Continuidad,79
+C050,MAR DE DRAKE,Comunal,eficiencia,Eficiencia,62
+C050,MAR DE DRAKE,Comunal,educacion,Educación,81
+C050,MAR DE DRAKE,Comunal,integracion,Integración,51
+C050,MAR DE DRAKE,Comunal,seguridad,Seguridad,80
+C050,MAR DE DRAKE,Comunal,intermodal,Intermodal,51
+C034,PEDRO LEON UGALDE,Comunal,ponderacion_rmc,RMC,76
+C034,PEDRO LEON UGALDE,Comunal,balanceado,Balanceado,84
+C034,PEDRO LEON UGALDE,Comunal,equidad,Equidad,71
+C034,PEDRO LEON UGALDE,Comunal,demanda,Demanda,81
+C034,PEDRO LEON UGALDE,Comunal,ciclistas_biogeme,Logit,71
+C034,PEDRO LEON UGALDE,Comunal,fractal_alameda,Fractal,73
+C034,PEDRO LEON UGALDE,Comunal,continuidad,Continuidad,82
+C034,PEDRO LEON UGALDE,Comunal,eficiencia,Eficiencia,67
+C034,PEDRO LEON UGALDE,Comunal,educacion,Educación,84
+C034,PEDRO LEON UGALDE,Comunal,integracion,Integración,82
+C034,PEDRO LEON UGALDE,Comunal,seguridad,Seguridad,93
+C034,PEDRO LEON UGALDE,Comunal,intermodal,Intermodal,84
+C037,SAN ALFONSO,Comunal,ponderacion_rmc,RMC,83
+C037,SAN ALFONSO,Comunal,balanceado,Balanceado,79
+C037,SAN ALFONSO,Comunal,equidad,Equidad,73
+C037,SAN ALFONSO,Comunal,demanda,Demanda,87
+C037,SAN ALFONSO,Comunal,ciclistas_biogeme,Logit,98
+C037,SAN ALFONSO,Comunal,fractal_alameda,Fractal,78
+C037,SAN ALFONSO,Comunal,continuidad,Continuidad,86
+C037,SAN ALFONSO,Comunal,eficiencia,Eficiencia,55
+C037,SAN ALFONSO,Comunal,educacion,Educación,87
+C037,SAN ALFONSO,Comunal,integracion,Integración,85
+C037,SAN ALFONSO,Comunal,seguridad,Seguridad,85
+C037,SAN ALFONSO,Comunal,intermodal,Intermodal,87
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,ponderacion_rmc,RMC,80
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,balanceado,Balanceado,85
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,equidad,Equidad,72
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,demanda,Demanda,89
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,ciclistas_biogeme,Logit,101
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,fractal_alameda,Fractal,79
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,continuidad,Continuidad,85
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,eficiencia,Eficiencia,70
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,educacion,Educación,86
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,integracion,Integración,84
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,seguridad,Seguridad,73
+C019,LAS HIJUELAS SUR - LIBERTADOR BERNARDO OHIGGINS,Comunal,intermodal,Intermodal,86
+C080,PARAGUAY,Comunal,ponderacion_rmc,RMC,74
+C080,PARAGUAY,Comunal,balanceado,Balanceado,81
+C080,PARAGUAY,Comunal,equidad,Equidad,101
+C080,PARAGUAY,Comunal,demanda,Demanda,76
+C080,PARAGUAY,Comunal,ciclistas_biogeme,Logit,61
+C080,PARAGUAY,Comunal,fractal_alameda,Fractal,71
+C080,PARAGUAY,Comunal,continuidad,Continuidad,83
+C080,PARAGUAY,Comunal,eficiencia,Eficiencia,112
+C080,PARAGUAY,Comunal,educacion,Educación,85
+C080,PARAGUAY,Comunal,integracion,Integración,83
+C080,PARAGUAY,Comunal,seguridad,Seguridad,81
+C080,PARAGUAY,Comunal,intermodal,Intermodal,85
+C084,EL PINO - UNO SUR,Comunal,ponderacion_rmc,RMC,89
+C084,EL PINO - UNO SUR,Comunal,balanceado,Balanceado,90
+C084,EL PINO - UNO SUR,Comunal,equidad,Equidad,76
+C084,EL PINO - UNO SUR,Comunal,demanda,Demanda,86
+C084,EL PINO - UNO SUR,Comunal,ciclistas_biogeme,Logit,82
+C084,EL PINO - UNO SUR,Comunal,fractal_alameda,Fractal,80
+C084,EL PINO - UNO SUR,Comunal,continuidad,Continuidad,89
+C084,EL PINO - UNO SUR,Comunal,eficiencia,Eficiencia,51
+C084,EL PINO - UNO SUR,Comunal,educacion,Educación,90
+C084,EL PINO - UNO SUR,Comunal,integracion,Integración,88
+C084,EL PINO - UNO SUR,Comunal,seguridad,Seguridad,94
+C084,EL PINO - UNO SUR,Comunal,intermodal,Intermodal,90
+C032,OBISPO MANUEL UMAÑA,Comunal,ponderacion_rmc,RMC,87
+C032,OBISPO MANUEL UMAÑA,Comunal,balanceado,Balanceado,77
+C032,OBISPO MANUEL UMAÑA,Comunal,equidad,Equidad,114
+C032,OBISPO MANUEL UMAÑA,Comunal,demanda,Demanda,84
+C032,OBISPO MANUEL UMAÑA,Comunal,ciclistas_biogeme,Logit,86
+C032,OBISPO MANUEL UMAÑA,Comunal,fractal_alameda,Fractal,75
+C032,OBISPO MANUEL UMAÑA,Comunal,continuidad,Continuidad,84
+C032,OBISPO MANUEL UMAÑA,Comunal,eficiencia,Eficiencia,90
+C032,OBISPO MANUEL UMAÑA,Comunal,educacion,Educación,78
+C032,OBISPO MANUEL UMAÑA,Comunal,integracion,Integración,71
+C032,OBISPO MANUEL UMAÑA,Comunal,seguridad,Seguridad,96
+C032,OBISPO MANUEL UMAÑA,Comunal,intermodal,Intermodal,66
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,ponderacion_rmc,RMC,78
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,balanceado,Balanceado,86
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,equidad,Equidad,74
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,demanda,Demanda,85
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,ciclistas_biogeme,Logit,85
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,fractal_alameda,Fractal,77
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,continuidad,Continuidad,87
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,eficiencia,Eficiencia,75
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,educacion,Educación,88
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,integracion,Integración,86
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,seguridad,Seguridad,104
+C020,LATINOAMERICA - PINTOR MURILLO - FRANCISCO TOLEDO,Comunal,intermodal,Intermodal,88
+C076,ISLA DECEPCION,Comunal,ponderacion_rmc,RMC,86
+C076,ISLA DECEPCION,Comunal,balanceado,Balanceado,88
+C076,ISLA DECEPCION,Comunal,equidad,Equidad,75
+C076,ISLA DECEPCION,Comunal,demanda,Demanda,91
+C076,ISLA DECEPCION,Comunal,ciclistas_biogeme,Logit,95
+C076,ISLA DECEPCION,Comunal,fractal_alameda,Fractal,81
+C076,ISLA DECEPCION,Comunal,continuidad,Continuidad,88
+C076,ISLA DECEPCION,Comunal,eficiencia,Eficiencia,63
+C076,ISLA DECEPCION,Comunal,educacion,Educación,89
+C076,ISLA DECEPCION,Comunal,integracion,Integración,87
+C076,ISLA DECEPCION,Comunal,seguridad,Seguridad,109
+C076,ISLA DECEPCION,Comunal,intermodal,Intermodal,89
+C039,TUPUNGATO,Comunal,ponderacion_rmc,RMC,91
+C039,TUPUNGATO,Comunal,balanceado,Balanceado,94
+C039,TUPUNGATO,Comunal,equidad,Equidad,77
+C039,TUPUNGATO,Comunal,demanda,Demanda,94
+C039,TUPUNGATO,Comunal,ciclistas_biogeme,Logit,99
+C039,TUPUNGATO,Comunal,fractal_alameda,Fractal,83
+C039,TUPUNGATO,Comunal,continuidad,Continuidad,91
+C039,TUPUNGATO,Comunal,eficiencia,Eficiencia,60
+C039,TUPUNGATO,Comunal,educacion,Educación,92
+C039,TUPUNGATO,Comunal,integracion,Integración,91
+C039,TUPUNGATO,Comunal,seguridad,Seguridad,97
+C039,TUPUNGATO,Comunal,intermodal,Intermodal,92
+C011,EYZAGUIRRE,Comunal,ponderacion_rmc,RMC,93
+C011,EYZAGUIRRE,Comunal,balanceado,Balanceado,93
+C011,EYZAGUIRRE,Comunal,equidad,Equidad,79
+C011,EYZAGUIRRE,Comunal,demanda,Demanda,92
+C011,EYZAGUIRRE,Comunal,ciclistas_biogeme,Logit,91
+C011,EYZAGUIRRE,Comunal,fractal_alameda,Fractal,86
+C011,EYZAGUIRRE,Comunal,continuidad,Continuidad,93
+C011,EYZAGUIRRE,Comunal,eficiencia,Eficiencia,103
+C011,EYZAGUIRRE,Comunal,educacion,Educación,94
+C011,EYZAGUIRRE,Comunal,integracion,Integración,93
+C011,EYZAGUIRRE,Comunal,seguridad,Seguridad,72
+C011,EYZAGUIRRE,Comunal,intermodal,Intermodal,94
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,ponderacion_rmc,RMC,81
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,balanceado,Balanceado,87
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,equidad,Equidad,110
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,demanda,Demanda,88
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,ciclistas_biogeme,Logit,87
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,fractal_alameda,Fractal,82
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,continuidad,Continuidad,90
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,eficiencia,Eficiencia,92
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,educacion,Educación,91
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,integracion,Integración,89
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,seguridad,Seguridad,105
+C057,PADRE VICENTE IRARRAZABAL - MANUEL CHACON,Comunal,intermodal,Intermodal,91
+C072,COVADONGA,Comunal,ponderacion_rmc,RMC,95
+C072,COVADONGA,Comunal,balanceado,Balanceado,96
+C072,COVADONGA,Comunal,equidad,Equidad,80
+C072,COVADONGA,Comunal,demanda,Demanda,98
+C072,COVADONGA,Comunal,ciclistas_biogeme,Logit,104
+C072,COVADONGA,Comunal,fractal_alameda,Fractal,88
+C072,COVADONGA,Comunal,continuidad,Continuidad,94
+C072,COVADONGA,Comunal,eficiencia,Eficiencia,81
+C072,COVADONGA,Comunal,educacion,Educación,95
+C072,COVADONGA,Comunal,integracion,Integración,94
+C072,COVADONGA,Comunal,seguridad,Seguridad,77
+C072,COVADONGA,Comunal,intermodal,Intermodal,95
+C042,PRINCIPE DE GALES,Comunal,ponderacion_rmc,RMC,88
+C042,PRINCIPE DE GALES,Comunal,balanceado,Balanceado,89
+C042,PRINCIPE DE GALES,Comunal,equidad,Equidad,78
+C042,PRINCIPE DE GALES,Comunal,demanda,Demanda,101
+C042,PRINCIPE DE GALES,Comunal,ciclistas_biogeme,Logit,108
+C042,PRINCIPE DE GALES,Comunal,fractal_alameda,Fractal,93
+C042,PRINCIPE DE GALES,Comunal,continuidad,Continuidad,92
+C042,PRINCIPE DE GALES,Comunal,eficiencia,Eficiencia,76
+C042,PRINCIPE DE GALES,Comunal,educacion,Educación,93
+C042,PRINCIPE DE GALES,Comunal,integracion,Integración,92
+C042,PRINCIPE DE GALES,Comunal,seguridad,Seguridad,103
+C042,PRINCIPE DE GALES,Comunal,intermodal,Intermodal,93
+C055,ARTURO PRAT,Comunal,ponderacion_rmc,RMC,92
+C055,ARTURO PRAT,Comunal,balanceado,Balanceado,95
+C055,ARTURO PRAT,Comunal,equidad,Equidad,81
+C055,ARTURO PRAT,Comunal,demanda,Demanda,100
+C055,ARTURO PRAT,Comunal,ciclistas_biogeme,Logit,106
+C055,ARTURO PRAT,Comunal,fractal_alameda,Fractal,90
+C055,ARTURO PRAT,Comunal,continuidad,Continuidad,95
+C055,ARTURO PRAT,Comunal,eficiencia,Eficiencia,69
+C055,ARTURO PRAT,Comunal,educacion,Educación,96
+C055,ARTURO PRAT,Comunal,integracion,Integración,95
+C055,ARTURO PRAT,Comunal,seguridad,Seguridad,91
+C055,ARTURO PRAT,Comunal,intermodal,Intermodal,96
+C054,VICTORIA,Comunal,ponderacion_rmc,RMC,84
+C054,VICTORIA,Comunal,balanceado,Balanceado,91
+C054,VICTORIA,Comunal,equidad,Equidad,82
+C054,VICTORIA,Comunal,demanda,Demanda,95
+C054,VICTORIA,Comunal,ciclistas_biogeme,Logit,94
+C054,VICTORIA,Comunal,fractal_alameda,Fractal,87
+C054,VICTORIA,Comunal,continuidad,Continuidad,96
+C054,VICTORIA,Comunal,eficiencia,Eficiencia,99
+C054,VICTORIA,Comunal,educacion,Educación,97
+C054,VICTORIA,Comunal,integracion,Integración,96
+C054,VICTORIA,Comunal,seguridad,Seguridad,100
+C054,VICTORIA,Comunal,intermodal,Intermodal,97
+C071,BARROS ARANA,Comunal,ponderacion_rmc,RMC,90
+C071,BARROS ARANA,Comunal,balanceado,Balanceado,92
+C071,BARROS ARANA,Comunal,equidad,Equidad,83
+C071,BARROS ARANA,Comunal,demanda,Demanda,97
+C071,BARROS ARANA,Comunal,ciclistas_biogeme,Logit,102
+C071,BARROS ARANA,Comunal,fractal_alameda,Fractal,89
+C071,BARROS ARANA,Comunal,continuidad,Continuidad,97
+C071,BARROS ARANA,Comunal,eficiencia,Eficiencia,89
+C071,BARROS ARANA,Comunal,educacion,Educación,98
+C071,BARROS ARANA,Comunal,integracion,Integración,97
+C071,BARROS ARANA,Comunal,seguridad,Seguridad,87
+C071,BARROS ARANA,Comunal,intermodal,Intermodal,98
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,ponderacion_rmc,RMC,97
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,balanceado,Balanceado,98
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,equidad,Equidad,84
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,demanda,Demanda,93
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,ciclistas_biogeme,Logit,84
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,fractal_alameda,Fractal,91
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,continuidad,Continuidad,100
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,eficiencia,Eficiencia,102
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,educacion,Educación,101
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,integracion,Integración,100
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,seguridad,Seguridad,86
+C081,SAN GREGORIO - DIEGO MEZA,Comunal,intermodal,Intermodal,101
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,ponderacion_rmc,RMC,96
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,balanceado,Balanceado,102
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,equidad,Equidad,86
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,demanda,Demanda,99
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,ciclistas_biogeme,Logit,100
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,fractal_alameda,Fractal,94
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,continuidad,Continuidad,99
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,eficiencia,Eficiencia,68
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,educacion,Educación,100
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,integracion,Integración,99
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,seguridad,Seguridad,111
+C038,TALCAHUANO - SANTA INES - LOS EDILES,Comunal,intermodal,Intermodal,100
+C077,RICARDO VIAL,Comunal,ponderacion_rmc,RMC,94
+C077,RICARDO VIAL,Comunal,balanceado,Balanceado,97
+C077,RICARDO VIAL,Comunal,equidad,Equidad,108
+C077,RICARDO VIAL,Comunal,demanda,Demanda,103
+C077,RICARDO VIAL,Comunal,ciclistas_biogeme,Logit,110
+C077,RICARDO VIAL,Comunal,fractal_alameda,Fractal,95
+C077,RICARDO VIAL,Comunal,continuidad,Continuidad,98
+C077,RICARDO VIAL,Comunal,eficiencia,Eficiencia,57
+C077,RICARDO VIAL,Comunal,educacion,Educación,99
+C077,RICARDO VIAL,Comunal,integracion,Integración,98
+C077,RICARDO VIAL,Comunal,seguridad,Seguridad,101
+C077,RICARDO VIAL,Comunal,intermodal,Intermodal,99
+C074,URETA COX,Comunal,ponderacion_rmc,RMC,98
+C074,URETA COX,Comunal,balanceado,Balanceado,99
+C074,URETA COX,Comunal,equidad,Equidad,85
+C074,URETA COX,Comunal,demanda,Demanda,96
+C074,URETA COX,Comunal,ciclistas_biogeme,Logit,92
+C074,URETA COX,Comunal,fractal_alameda,Fractal,92
+C074,URETA COX,Comunal,continuidad,Continuidad,101
+C074,URETA COX,Comunal,eficiencia,Eficiencia,86
+C074,URETA COX,Comunal,educacion,Educación,102
+C074,URETA COX,Comunal,integracion,Integración,101
+C074,URETA COX,Comunal,seguridad,Seguridad,106
+C074,URETA COX,Comunal,intermodal,Intermodal,102
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,ponderacion_rmc,RMC,99
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,balanceado,Balanceado,100
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,equidad,Equidad,91
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,demanda,Demanda,90
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,ciclistas_biogeme,Logit,77
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,fractal_alameda,Fractal,96
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,continuidad,Continuidad,106
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,eficiencia,Eficiencia,117
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,educacion,Educación,107
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,integracion,Integración,106
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,seguridad,Seguridad,74
+C064,SILVA CARVALLO - SANTA ELENA,Comunal,intermodal,Intermodal,108
+C065,NUEVA SAN MARTIN,Comunal,ponderacion_rmc,RMC,102
+C065,NUEVA SAN MARTIN,Comunal,balanceado,Balanceado,103
+C065,NUEVA SAN MARTIN,Comunal,equidad,Equidad,87
+C065,NUEVA SAN MARTIN,Comunal,demanda,Demanda,104
+C065,NUEVA SAN MARTIN,Comunal,ciclistas_biogeme,Logit,105
+C065,NUEVA SAN MARTIN,Comunal,fractal_alameda,Fractal,97
+C065,NUEVA SAN MARTIN,Comunal,continuidad,Continuidad,103
+C065,NUEVA SAN MARTIN,Comunal,eficiencia,Eficiencia,91
+C065,NUEVA SAN MARTIN,Comunal,educacion,Educación,104
+C065,NUEVA SAN MARTIN,Comunal,integracion,Integración,103
+C065,NUEVA SAN MARTIN,Comunal,seguridad,Seguridad,83
+C065,NUEVA SAN MARTIN,Comunal,intermodal,Intermodal,104
+C031,NECOCHEA,Comunal,ponderacion_rmc,RMC,101
+C031,NECOCHEA,Comunal,balanceado,Balanceado,106
+C031,NECOCHEA,Comunal,equidad,Equidad,88
+C031,NECOCHEA,Comunal,demanda,Demanda,105
+C031,NECOCHEA,Comunal,ciclistas_biogeme,Logit,111
+C031,NECOCHEA,Comunal,fractal_alameda,Fractal,99
+C031,NECOCHEA,Comunal,continuidad,Continuidad,104
+C031,NECOCHEA,Comunal,eficiencia,Eficiencia,61
+C031,NECOCHEA,Comunal,educacion,Educación,105
+C031,NECOCHEA,Comunal,integracion,Integración,104
+C031,NECOCHEA,Comunal,seguridad,Seguridad,110
+C031,NECOCHEA,Comunal,intermodal,Intermodal,105
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,ponderacion_rmc,RMC,105
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,balanceado,Balanceado,104
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,equidad,Equidad,107
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,demanda,Demanda,107
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,ciclistas_biogeme,Logit,115
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,fractal_alameda,Fractal,98
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,continuidad,Continuidad,102
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,eficiencia,Eficiencia,56
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,educacion,Educación,103
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,integracion,Integración,102
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,seguridad,Seguridad,99
+C036,RIO REFUGIO - SALAR SURIRE,Comunal,intermodal,Intermodal,103
+C044,LOS CERRILLOS,Comunal,ponderacion_rmc,RMC,104
+C044,LOS CERRILLOS,Comunal,balanceado,Balanceado,105
+C044,LOS CERRILLOS,Comunal,equidad,Equidad,89
+C044,LOS CERRILLOS,Comunal,demanda,Demanda,106
+C044,LOS CERRILLOS,Comunal,ciclistas_biogeme,Logit,109
+C044,LOS CERRILLOS,Comunal,fractal_alameda,Fractal,100
+C044,LOS CERRILLOS,Comunal,continuidad,Continuidad,105
+C044,LOS CERRILLOS,Comunal,eficiencia,Eficiencia,93
+C044,LOS CERRILLOS,Comunal,educacion,Educación,106
+C044,LOS CERRILLOS,Comunal,integracion,Integración,105
+C044,LOS CERRILLOS,Comunal,seguridad,Seguridad,79
+C044,LOS CERRILLOS,Comunal,intermodal,Intermodal,106
+C069,LOS OLMOS,Comunal,ponderacion_rmc,RMC,112
+C069,LOS OLMOS,Comunal,balanceado,Balanceado,112
+C069,LOS OLMOS,Comunal,equidad,Equidad,94
+C069,LOS OLMOS,Comunal,demanda,Demanda,109
+C069,LOS OLMOS,Comunal,ciclistas_biogeme,Logit,96
+C069,LOS OLMOS,Comunal,fractal_alameda,Fractal,115
+C069,LOS OLMOS,Comunal,continuidad,Continuidad,119
+C069,LOS OLMOS,Comunal,eficiencia,Eficiencia,80
+C069,LOS OLMOS,Comunal,educacion,Educación,69
+C069,LOS OLMOS,Comunal,integracion,Integración,118
+C069,LOS OLMOS,Comunal,seguridad,Seguridad,114
+C069,LOS OLMOS,Comunal,intermodal,Intermodal,107
+C079,LAS AMERICAS,Comunal,ponderacion_rmc,RMC,103
+C079,LAS AMERICAS,Comunal,balanceado,Balanceado,107
+C079,LAS AMERICAS,Comunal,equidad,Equidad,92
+C079,LAS AMERICAS,Comunal,demanda,Demanda,110
+C079,LAS AMERICAS,Comunal,ciclistas_biogeme,Logit,113
+C079,LAS AMERICAS,Comunal,fractal_alameda,Fractal,101
+C079,LAS AMERICAS,Comunal,continuidad,Continuidad,107
+C079,LAS AMERICAS,Comunal,eficiencia,Eficiencia,84
+C079,LAS AMERICAS,Comunal,educacion,Educación,108
+C079,LAS AMERICAS,Comunal,integracion,Integración,107
+C079,LAS AMERICAS,Comunal,seguridad,Seguridad,108
+C079,LAS AMERICAS,Comunal,intermodal,Intermodal,109
+C013,HEROES DE LA CONCEPCION,Comunal,ponderacion_rmc,RMC,106
+C013,HEROES DE LA CONCEPCION,Comunal,balanceado,Balanceado,108
+C013,HEROES DE LA CONCEPCION,Comunal,equidad,Equidad,93
+C013,HEROES DE LA CONCEPCION,Comunal,demanda,Demanda,112
+C013,HEROES DE LA CONCEPCION,Comunal,ciclistas_biogeme,Logit,114
+C013,HEROES DE LA CONCEPCION,Comunal,fractal_alameda,Fractal,102
+C013,HEROES DE LA CONCEPCION,Comunal,continuidad,Continuidad,108
+C013,HEROES DE LA CONCEPCION,Comunal,eficiencia,Eficiencia,72
+C013,HEROES DE LA CONCEPCION,Comunal,educacion,Educación,109
+C013,HEROES DE LA CONCEPCION,Comunal,integracion,Integración,108
+C013,HEROES DE LA CONCEPCION,Comunal,seguridad,Seguridad,113
+C013,HEROES DE LA CONCEPCION,Comunal,intermodal,Intermodal,110
+C004,CONSISTORIAL,Comunal,ponderacion_rmc,RMC,107
+C004,CONSISTORIAL,Comunal,balanceado,Balanceado,109
+C004,CONSISTORIAL,Comunal,equidad,Equidad,97
+C004,CONSISTORIAL,Comunal,demanda,Demanda,102
+C004,CONSISTORIAL,Comunal,ciclistas_biogeme,Logit,80
+C004,CONSISTORIAL,Comunal,fractal_alameda,Fractal,103
+C004,CONSISTORIAL,Comunal,continuidad,Continuidad,111
+C004,CONSISTORIAL,Comunal,eficiencia,Eficiencia,118
+C004,CONSISTORIAL,Comunal,educacion,Educación,113
+C004,CONSISTORIAL,Comunal,integracion,Integración,111
+C004,CONSISTORIAL,Comunal,seguridad,Seguridad,92
+C004,CONSISTORIAL,Comunal,intermodal,Intermodal,113
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,ponderacion_rmc,RMC,113
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,balanceado,Balanceado,113
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,equidad,Equidad,98
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,demanda,Demanda,113
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,ciclistas_biogeme,Logit,97
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,fractal_alameda,Fractal,116
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,continuidad,Continuidad,120
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,eficiencia,Eficiencia,79
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,educacion,Educación,110
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,integracion,Integración,117
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,seguridad,Seguridad,115
+C002,CAPITAN IGNACIO CARRERA PINTO,Comunal,intermodal,Intermodal,76
+C027,LOS PRESIDENTES,Comunal,ponderacion_rmc,RMC,108
+C027,LOS PRESIDENTES,Comunal,balanceado,Balanceado,110
+C027,LOS PRESIDENTES,Comunal,equidad,Equidad,95
+C027,LOS PRESIDENTES,Comunal,demanda,Demanda,111
+C027,LOS PRESIDENTES,Comunal,ciclistas_biogeme,Logit,107
+C027,LOS PRESIDENTES,Comunal,fractal_alameda,Fractal,104
+C027,LOS PRESIDENTES,Comunal,continuidad,Continuidad,109
+C027,LOS PRESIDENTES,Comunal,eficiencia,Eficiencia,105
+C027,LOS PRESIDENTES,Comunal,educacion,Educación,111
+C027,LOS PRESIDENTES,Comunal,integracion,Integración,109
+C027,LOS PRESIDENTES,Comunal,seguridad,Seguridad,102
+C027,LOS PRESIDENTES,Comunal,intermodal,Intermodal,111
+C008,EL CERRO,Comunal,ponderacion_rmc,RMC,100
+C008,EL CERRO,Comunal,balanceado,Balanceado,111
+C008,EL CERRO,Comunal,equidad,Equidad,96
+C008,EL CERRO,Comunal,demanda,Demanda,108
+C008,EL CERRO,Comunal,ciclistas_biogeme,Logit,103
+C008,EL CERRO,Comunal,fractal_alameda,Fractal,105
+C008,EL CERRO,Comunal,continuidad,Continuidad,110
+C008,EL CERRO,Comunal,eficiencia,Eficiencia,109
+C008,EL CERRO,Comunal,educacion,Educación,112
+C008,EL CERRO,Comunal,integracion,Integración,110
+C008,EL CERRO,Comunal,seguridad,Seguridad,112
+C008,EL CERRO,Comunal,intermodal,Intermodal,112
+C012,GABRIELA ORIENTE,Comunal,ponderacion_rmc,RMC,115
+C012,GABRIELA ORIENTE,Comunal,balanceado,Balanceado,114
+C012,GABRIELA ORIENTE,Comunal,equidad,Equidad,102
+C012,GABRIELA ORIENTE,Comunal,demanda,Demanda,115
+C012,GABRIELA ORIENTE,Comunal,ciclistas_biogeme,Logit,112
+C012,GABRIELA ORIENTE,Comunal,fractal_alameda,Fractal,113
+C012,GABRIELA ORIENTE,Comunal,continuidad,Continuidad,113
+C012,GABRIELA ORIENTE,Comunal,eficiencia,Eficiencia,73
+C012,GABRIELA ORIENTE,Comunal,educacion,Educación,114
+C012,GABRIELA ORIENTE,Comunal,integracion,Integración,112
+C012,GABRIELA ORIENTE,Comunal,seguridad,Seguridad,95
+C012,GABRIELA ORIENTE,Comunal,intermodal,Intermodal,114
+C048,GENERAL ARRIAGADA,Comunal,ponderacion_rmc,RMC,114
+C048,GENERAL ARRIAGADA,Comunal,balanceado,Balanceado,115
+C048,GENERAL ARRIAGADA,Comunal,equidad,Equidad,103
+C048,GENERAL ARRIAGADA,Comunal,demanda,Demanda,114
+C048,GENERAL ARRIAGADA,Comunal,ciclistas_biogeme,Logit,88
+C048,GENERAL ARRIAGADA,Comunal,fractal_alameda,Fractal,112
+C048,GENERAL ARRIAGADA,Comunal,continuidad,Continuidad,114
+C048,GENERAL ARRIAGADA,Comunal,eficiencia,Eficiencia,100
+C048,GENERAL ARRIAGADA,Comunal,educacion,Educación,115
+C048,GENERAL ARRIAGADA,Comunal,integracion,Integración,113
+C048,GENERAL ARRIAGADA,Comunal,seguridad,Seguridad,107
+C048,GENERAL ARRIAGADA,Comunal,intermodal,Intermodal,115
+C087,SALVADOR GUTIERREZ,Comunal,ponderacion_rmc,RMC,118
+C087,SALVADOR GUTIERREZ,Comunal,balanceado,Balanceado,116
+C087,SALVADOR GUTIERREZ,Comunal,equidad,Equidad,104
+C087,SALVADOR GUTIERREZ,Comunal,demanda,Demanda,116
+C087,SALVADOR GUTIERREZ,Comunal,ciclistas_biogeme,Logit,116
+C087,SALVADOR GUTIERREZ,Comunal,fractal_alameda,Fractal,114
+C087,SALVADOR GUTIERREZ,Comunal,continuidad,Continuidad,115
+C087,SALVADOR GUTIERREZ,Comunal,eficiencia,Eficiencia,96
+C087,SALVADOR GUTIERREZ,Comunal,educacion,Educación,116
+C087,SALVADOR GUTIERREZ,Comunal,integracion,Integración,114
+C087,SALVADOR GUTIERREZ,Comunal,seguridad,Seguridad,117
+C087,SALVADOR GUTIERREZ,Comunal,intermodal,Intermodal,116
+C045,PORTO ALEGRE,Comunal,ponderacion_rmc,RMC,117
+C045,PORTO ALEGRE,Comunal,balanceado,Balanceado,119
+C045,PORTO ALEGRE,Comunal,equidad,Equidad,120
+C045,PORTO ALEGRE,Comunal,demanda,Demanda,119
+C045,PORTO ALEGRE,Comunal,ciclistas_biogeme,Logit,118
+C045,PORTO ALEGRE,Comunal,fractal_alameda,Fractal,110
+C045,PORTO ALEGRE,Comunal,continuidad,Continuidad,112
+C045,PORTO ALEGRE,Comunal,eficiencia,Eficiencia,77
+C045,PORTO ALEGRE,Comunal,educacion,Educación,119
+C045,PORTO ALEGRE,Comunal,integracion,Integración,119
+C045,PORTO ALEGRE,Comunal,seguridad,Seguridad,119
+C045,PORTO ALEGRE,Comunal,intermodal,Intermodal,119
+C021,LAUTARO,Comunal,ponderacion_rmc,RMC,116
+C021,LAUTARO,Comunal,balanceado,Balanceado,121
+C021,LAUTARO,Comunal,equidad,Equidad,121
+C021,LAUTARO,Comunal,demanda,Demanda,120
+C021,LAUTARO,Comunal,ciclistas_biogeme,Logit,122
+C021,LAUTARO,Comunal,fractal_alameda,Fractal,107
+C021,LAUTARO,Comunal,continuidad,Continuidad,117
+C021,LAUTARO,Comunal,eficiencia,Eficiencia,65
+C021,LAUTARO,Comunal,educacion,Educación,121
+C021,LAUTARO,Comunal,integracion,Integración,120
+C021,LAUTARO,Comunal,seguridad,Seguridad,121
+C021,LAUTARO,Comunal,intermodal,Intermodal,120
+C041,VISTA HERMOSA,Comunal,ponderacion_rmc,RMC,119
+C041,VISTA HERMOSA,Comunal,balanceado,Balanceado,117
+C041,VISTA HERMOSA,Comunal,equidad,Equidad,105
+C041,VISTA HERMOSA,Comunal,demanda,Demanda,117
+C041,VISTA HERMOSA,Comunal,ciclistas_biogeme,Logit,117
+C041,VISTA HERMOSA,Comunal,fractal_alameda,Fractal,117
+C041,VISTA HERMOSA,Comunal,continuidad,Continuidad,116
+C041,VISTA HERMOSA,Comunal,eficiencia,Eficiencia,104
+C041,VISTA HERMOSA,Comunal,educacion,Educación,118
+C041,VISTA HERMOSA,Comunal,integracion,Integración,115
+C041,VISTA HERMOSA,Comunal,seguridad,Seguridad,118
+C041,VISTA HERMOSA,Comunal,intermodal,Intermodal,117
+C017,LA PARINACOTA,Comunal,ponderacion_rmc,RMC,120
+C017,LA PARINACOTA,Comunal,balanceado,Balanceado,118
+C017,LA PARINACOTA,Comunal,equidad,Equidad,106
+C017,LA PARINACOTA,Comunal,demanda,Demanda,118
+C017,LA PARINACOTA,Comunal,ciclistas_biogeme,Logit,119
+C017,LA PARINACOTA,Comunal,fractal_alameda,Fractal,118
+C017,LA PARINACOTA,Comunal,continuidad,Continuidad,118
+C017,LA PARINACOTA,Comunal,eficiencia,Eficiencia,122
+C017,LA PARINACOTA,Comunal,educacion,Educación,117
+C017,LA PARINACOTA,Comunal,integracion,Integración,116
+C017,LA PARINACOTA,Comunal,seguridad,Seguridad,116
+C017,LA PARINACOTA,Comunal,intermodal,Intermodal,118
+C073,LOS MORROS,Comunal,ponderacion_rmc,RMC,124
+C073,LOS MORROS,Comunal,balanceado,Balanceado,120
+C073,LOS MORROS,Comunal,equidad,Equidad,115
+C073,LOS MORROS,Comunal,demanda,Demanda,121
+C073,LOS MORROS,Comunal,ciclistas_biogeme,Logit,123
+C073,LOS MORROS,Comunal,fractal_alameda,Fractal,124
+C073,LOS MORROS,Comunal,continuidad,Continuidad,124
+C073,LOS MORROS,Comunal,eficiencia,Eficiencia,123
+C073,LOS MORROS,Comunal,educacion,Educación,120
+C073,LOS MORROS,Comunal,integracion,Integración,121
+C073,LOS MORROS,Comunal,seguridad,Seguridad,120
+C073,LOS MORROS,Comunal,intermodal,Intermodal,121
+C016,JUANITA,Comunal,ponderacion_rmc,RMC,122
+C016,JUANITA,Comunal,balanceado,Balanceado,123
+C016,JUANITA,Comunal,equidad,Equidad,122
+C016,JUANITA,Comunal,demanda,Demanda,123
+C016,JUANITA,Comunal,ciclistas_biogeme,Logit,121
+C016,JUANITA,Comunal,fractal_alameda,Fractal,120
+C016,JUANITA,Comunal,continuidad,Continuidad,121
+C016,JUANITA,Comunal,eficiencia,Eficiencia,119
+C016,JUANITA,Comunal,educacion,Educación,122
+C016,JUANITA,Comunal,integracion,Integración,122
+C016,JUANITA,Comunal,seguridad,Seguridad,122
+C016,JUANITA,Comunal,intermodal,Intermodal,122
+C018,LA PRIMAVERA,Comunal,ponderacion_rmc,RMC,121
+C018,LA PRIMAVERA,Comunal,balanceado,Balanceado,122
+C018,LA PRIMAVERA,Comunal,equidad,Equidad,123
+C018,LA PRIMAVERA,Comunal,demanda,Demanda,122
+C018,LA PRIMAVERA,Comunal,ciclistas_biogeme,Logit,120
+C018,LA PRIMAVERA,Comunal,fractal_alameda,Fractal,119
+C018,LA PRIMAVERA,Comunal,continuidad,Continuidad,122
+C018,LA PRIMAVERA,Comunal,eficiencia,Eficiencia,120
+C018,LA PRIMAVERA,Comunal,educacion,Educación,123
+C018,LA PRIMAVERA,Comunal,integracion,Integración,123
+C018,LA PRIMAVERA,Comunal,seguridad,Seguridad,123
+C018,LA PRIMAVERA,Comunal,intermodal,Intermodal,123
+C025,LOS DURAZNOS,Comunal,ponderacion_rmc,RMC,123
+C025,LOS DURAZNOS,Comunal,balanceado,Balanceado,124
+C025,LOS DURAZNOS,Comunal,equidad,Equidad,124
+C025,LOS DURAZNOS,Comunal,demanda,Demanda,124
+C025,LOS DURAZNOS,Comunal,ciclistas_biogeme,Logit,124
+C025,LOS DURAZNOS,Comunal,fractal_alameda,Fractal,121
+C025,LOS DURAZNOS,Comunal,continuidad,Continuidad,123
+C025,LOS DURAZNOS,Comunal,eficiencia,Eficiencia,121
+C025,LOS DURAZNOS,Comunal,educacion,Educación,124
+C025,LOS DURAZNOS,Comunal,integracion,Integración,124
+C025,LOS DURAZNOS,Comunal,seguridad,Seguridad,124
+C025,LOS DURAZNOS,Comunal,intermodal,Intermodal,124

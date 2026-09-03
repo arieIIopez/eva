@@ -1,0 +1,13 @@
+scenario,scenario_label,joint_50_step,joint_75_step,joint_90_step,joint_95_step,joint_99_step
+ponderacion_rmc,RMC,10,20,38,59,120
+balanceado,Balanceado,11,19,35,47,118
+equidad,Equidad,12,25,38,94,116
+demanda,Demanda potencial,12,19,36,48,118
+ciclistas_biogeme,Logit / Biogeme,12,22,39,70,119
+fractal_alameda,Dendrítica Alameda,13,20,42,108,123
+continuidad,Continuidad,12,25,40,57,119
+eficiencia,Eficiencia,12,22,47,80,122
+educacion,Educación superior,10,17,34,44,117
+integracion,Integración,12,21,37,44,118
+seguridad,Seguridad,11,24,37,51,116
+intermodal,Intermodalidad,15,22,37,53,118
