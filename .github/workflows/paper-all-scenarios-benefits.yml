@@ -1,0 +1,65 @@
+name: Paper all scenarios benefits
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/paper-all-scenarios-benefits.js'
+      - 'experiments/runner-all-scenarios-benefits.html'
+      - 'scripts/run-paper-all-scenarios-benefits.mjs'
+      - '.github/workflows/paper-all-scenarios-benefits.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eva-paper-all-scenarios-benefits
+  cancel-in-progress: true
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+
+      - name: Start local server
+        run: |
+          python3 -m http.server 8080 > /tmp/eva-http.log 2>&1 &
+          echo $! > /tmp/eva-http.pid
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/experiments/runner-all-scenarios-benefits.html >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/eva-http.log
+          exit 1
+
+      - name: Run all scenario benefit experiment
+        env:
+          EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner-all-scenarios-benefits.html
+        run: node scripts/run-paper-all-scenarios-benefits.mjs
+
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eva-paper-all-scenarios-benefits
+          path: |
+            results/paper-all-scenarios-benefits/**
+            /tmp/eva-http.log
+          if-no-files-found: warn
+          retention-days: 30
