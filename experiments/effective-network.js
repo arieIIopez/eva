@@ -7,6 +7,10 @@
    DEMANDA_MODAL and component diagnostics), otherwise one iteration can
    mix different network states.
 
+   This helper is the shared experimental source of truth for the effective
+   existing network used by every paper runner. Changes here must rerun any
+   experiment whose outcomes depend on the network state.
+
    This helper is experimental only: it does not change the public app.
 ============================================================ */
 (function () {
