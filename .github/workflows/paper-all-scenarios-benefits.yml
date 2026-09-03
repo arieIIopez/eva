@@ -9,6 +9,7 @@ on:
       - 'experiments/runner-all-scenarios-benefits.html'
       - 'scripts/run-paper-all-scenarios-benefits.mjs'
       - 'scripts/analyze-paper-all-scenarios.py'
+      - 'scripts/analyze-saturation-population-od.py'
       - '.github/workflows/paper-all-scenarios-benefits.yml'
 
 permissions:
@@ -54,8 +55,11 @@ jobs:
           EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner-all-scenarios-benefits.html
         run: node scripts/run-paper-all-scenarios-benefits.mjs
 
-      - name: Build rank, frontier and saturation products
+      - name: Build rank and frontier products
         run: python3 scripts/analyze-paper-all-scenarios.py
+
+      - name: Build monotonic population-OD saturation products
+        run: python3 scripts/analyze-saturation-population-od.py
 
       - name: Publish reproducible outputs to main
         run: |
