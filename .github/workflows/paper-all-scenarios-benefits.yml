@@ -5,6 +5,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'experiments/effective-network.js'
       - 'experiments/paper-all-scenarios-benefits.js'
       - 'experiments/runner-all-scenarios-benefits.html'
       - 'scripts/run-paper-all-scenarios-benefits.mjs'
