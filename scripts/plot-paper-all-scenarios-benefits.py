@@ -3,7 +3,8 @@
 
 Lee results/paper-all-scenarios-benefits/ y genera figuras separadas:
 - matriz 124 proyectos x 12 escenarios;
-- posiciones de proyectos robustos/polarizados;
+- matriz anotada de proyectos robustos/polarizados;
+- posiciones de proyectos robustos/polarizados como diagnóstico alternativo;
 - frontera población-habilitación OD;
 - saturación práctica conjunta al 95%;
 - curvas exactas de captura conjunta y punto de rodilla endógeno;
@@ -40,9 +41,9 @@ SCENARIOS = [
 
 rank = pd.read_csv(BASE / "project_rank_matrix_12_scenarios.csv")
 summary = pd.read_csv(BASE / "scenario_benefit_summary.csv")
+rank_cols = [f"seq_{key}" for key, _ in SCENARIOS]
 
 # 1) Matriz completa 124 x 12 (suplemento).
-rank_cols = [f"seq_{key}" for key, _ in SCENARIOS]
 rank_plot = rank.sort_values(["rank_median", "rank_mean", "rank_range"]).reset_index(drop=True)
 fig, ax = plt.subplots(figsize=(11, 25))
 im = ax.imshow(rank_plot[rank_cols].to_numpy(float), aspect="auto")
@@ -67,6 +68,29 @@ robust = rank.sort_values(
 polar = rank.sort_values(["rank_range", "rank_sd"], ascending=[False, False]).head(6)
 ids = list(dict.fromkeys(list(robust["id"]) + list(polar["id"])))
 sel = rank.set_index("id").loc[ids].reset_index()
+
+# 2a) Matriz anotada: preferida para el cuerpo del artículo porque los escenarios
+# son categorías y no forman un eje continuo.
+mat = sel[rank_cols].to_numpy(float)
+fig, ax = plt.subplots(figsize=(12.2, 6.8))
+im = ax.imshow(mat, aspect="auto")
+ax.set_xticks(range(len(SCENARIOS)))
+ax.set_xticklabels([label for _, label in SCENARIOS], rotation=38, ha="right")
+ax.set_yticks(range(len(sel)))
+ax.set_yticklabels([f"{r.id} · {r.nombre}" for _, r in sel.iterrows()], fontsize=8)
+for i in range(mat.shape[0]):
+    for j in range(mat.shape[1]):
+        ax.text(j, i, f"{int(mat[i, j])}", ha="center", va="center", fontsize=7)
+ax.set_xlabel("Escenario predefinido EVA")
+ax.set_ylabel("Proyecto")
+ax.set_title("Posición exacta de prioridades robustas y polarizadas")
+cbar = fig.colorbar(im, ax=ax, fraction=0.028, pad=0.02)
+cbar.set_label("Posición en la secuencia")
+fig.tight_layout()
+fig.savefig(OUT / "rank_selected_annotated_12x12.png", dpi=240, bbox_inches="tight")
+plt.close(fig)
+
+# 2b) Trayectorias categóricas como diagnóstico alternativo/suplementario.
 fig, ax = plt.subplots(figsize=(12.5, 7.2))
 x = list(range(len(SCENARIOS)))
 for _, r in sel.iterrows():
