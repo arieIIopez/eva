@@ -8,10 +8,11 @@ on:
       - 'experiments/paper-all-scenarios-benefits.js'
       - 'experiments/runner-all-scenarios-benefits.html'
       - 'scripts/run-paper-all-scenarios-benefits.mjs'
+      - 'scripts/analyze-paper-all-scenarios.py'
       - '.github/workflows/paper-all-scenarios-benefits.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: eva-paper-all-scenarios-benefits
@@ -52,6 +53,21 @@ jobs:
         env:
           EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner-all-scenarios-benefits.html
         run: node scripts/run-paper-all-scenarios-benefits.mjs
+
+      - name: Build rank, frontier and saturation products
+        run: python3 scripts/analyze-paper-all-scenarios.py
+
+      - name: Publish reproducible outputs to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/paper-all-scenarios-benefits/
+          if git diff --cached --quiet; then
+            echo "No output changes to publish"
+          else
+            git commit -m "Update 12-scenario benefit and rank outputs"
+            git push
+          fi
 
       - name: Upload outputs
         if: always()
