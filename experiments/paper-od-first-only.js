@@ -1,0 +1,28 @@
+/* EVA EDTR · OD-first puro: habilitación funcional marginal + puente de un paso + detención. */
+(function(){
+'use strict';
+const base=window.EVA_PAPER_EXPERIMENTS;if(!base||!base.evaluateState||!base.rootCfg)throw new Error('requiere paper-experiments-fast.js');
+const num=v=>Number.isFinite(+v)?+v:0,norm=v=>String(v==null?'':v).trim().toLowerCase();
+const portfolio=()=> (window.FC_RAW&&window.FC_RAW['Plan Maestro'])||window.projectsFC;
+const geom=id=>(portfolio().features||[]).find(f=>f.properties&&f.properties.id===id);
+const CR=['poblacion','costoOD','oportunidades','equidad','continuidad','demanda','ciclistas','fractal','estudiantes','prioridadGore','costoInv','seguridad','monumentos','intermodal','factibilidad','parques'];
+const W=()=>Object.fromEntries(CR.map(k=>[k,k==='monumentos'?0:1]));
+function Eids(){return new Set((portfolio().features||[]).filter(f=>['comunal','intercomunal'].includes(norm(f.properties&&f.properties.escala))).map(f=>f.properties.id));}
+function setRoot(r){if(r&&window.FRACTAL&&window.FRACTAL.setRootConfig)window.FRACTAL.setRootConfig(r);}
+function evalState(locked,params,root,E){setRoot(root);const s=base.evaluateState(locked||[],W(),params),L=new Set((locked||[]).map(f=>f.properties&&f.properties.id));return (s.enriched||[]).filter(p=>E.has(p.id)&&!L.has(p.id));}
+function demandValue(p){return num(p&&p.demandaHabilitada);}
+function bestDemand(a){let b=null;for(const p of a||[]){const v=demandValue(p);if(!b||v>b.v+1e-12||(Math.abs(v-b.v)<=1e-12&&String(p.id).localeCompare(String(b.p.id))<0))b={p,v};}return b||{p:null,v:0};}
+async function bestBridge(state,locked,params,root,E){let best=null,n=0;for(const p of state){const g=geom(p.id);if(!g)continue;const nxt=evalState([...locked,g],params,root,E),q=bestDemand(nxt),c={p,next:q.v,next_id:q.p&&q.p.id};n++;if(!best||c.next>best.next+1e-12||(Math.abs(c.next-best.next)<=1e-12&&String(p.id).localeCompare(String(best.p.id))<0))best=c;if(window.evaYield&&n%5===0)await window.evaYield();}return{best,tested:n};}
+function components(locked,params){return window.ENGINE.buildComponents(window.existingFC,locked||[],num(params.connectTol)||150).count;}
+async function run(opts){opts=opts||{};const epsilon=opts.epsilon==null?0:+opts.epsilon,fullRef=opts.fullDemandReference==null?871511:+opts.fullDemandReference,params={...(window.PARAM_DEFAULTS||{}),perfil:'general',segKSI:false},root=base.rootCfg('Alameda',100,0.5),E=Eids(),locked=[],rows=[];let stop_reason=null,stop_state=null;console.log(`[paper-od-fast] inicio ${E.size}`);
+for(let step=1;step<=E.size;step++){
+ const state=evalState(locked,params,root,E);if(!state.length){stop_reason='portfolio_exhausted';break;}
+ const direct=bestDemand(state);let chosen=direct.p,type='direct_od',bridge_next=0,bridge_next_id=null,tested=0;
+ if(direct.v<=epsilon){const scan=await bestBridge(state,locked,params,root,E);tested=scan.tested;if(scan.best&&scan.best.next>epsilon){chosen=scan.best.p;type='one_step_od_enabler';bridge_next=scan.best.next;bridge_next_id=scan.best.next_id;}else{stop_reason='no_direct_or_one_step_od_gain';stop_state={next_step:step,remaining_projects:state.length,max_direct_od:direct.v,best_one_step_enabled_od:scan.best?scan.best.next:0,best_one_step_enabler_id:scan.best&&scan.best.p&&scan.best.p.id};break;}}
+ const g=geom(chosen.id);locked.push(g);const prev=rows.at(-1)||{},r={step,id:chosen.id,nombre:chosen.nombre,decision_type:type,demanda_habilitada:demandValue(chosen),cum_demand:num(prev.cum_demand)+demandValue(chosen),bridge_next_od:bridge_next,bridge_next_id,enablers_tested:tested,poblacion_marginal:num(chosen.poblacion),cum_population:num(prev.cum_population)+num(chosen.poblacion),ciclistas_inducidos:num(chosen.ciclistasInducidos),componentes_red:components(locked,params),costo_mclp:num(chosen.costo),cum_cost_mclp:num(prev.cum_cost_mclp)+num(chosen.costo)};rows.push(r);
+ console.log(`[paper-od-fast] ${step} ${chosen.id} ${type} dD=${r.demanda_habilitada}${bridge_next?` -> ${bridge_next}`:''}`);if(window.evaYield)await window.evaYield();
+}
+const last=rows.at(-1)||{},remaining=[...E].filter(id=>!new Set(rows.map(r=>r.id)).has(id)),D=num(last.cum_demand),horizon=E.size,curve=Array.from({length:horizon},(_,i)=>i<rows.length?num(rows[i].cum_demand):D),area=curve.reduce((a,b)=>a+b,0),threshold=p=>{const x=rows.find(r=>num(r.cum_demand)>=p*fullRef);return x?x.step:null;};
+return{generated_at:new Date().toISOString(),design:{eligible_projects:E.size,epsilon,full_demand_reference:fullRef,reference_source:'completed full-portfolio RMC/Balanceado runs; final marginal OD sum = 871511 trips/day',rule:'max DeltaD; if all zero, exhaustive one-step bridge; otherwise stop',metric_definition:'DeltaD counts OD trips not viable in G_t that become viable in T_p(G_t)',optimality_note:'greedy OD-first with one-step enabling; not global optimum'},rows,summary:{steps_executed:rows.length,stop_reason,stop_state,remaining_projects:remaining.length,demand_at_stop:D,demand_fraction_of_full:D/fullRef,demand_area_horizon_124:area,demand_capture_index:area/(fullRef*horizon),step_50:threshold(.5),step_75:threshold(.75),step_90:threshold(.9),step_95:threshold(.95),step_99:threshold(.99),one_step_enablers_executed:rows.filter(r=>r.decision_type==='one_step_od_enabler').length,population_at_stop:num(last.cum_population),cost_at_stop_mclp:num(last.cum_cost_mclp)},remaining_project_ids:remaining};}
+window.EVA_PAPER_EXPERIMENTS.runODFirstOnly=run;
+})();
