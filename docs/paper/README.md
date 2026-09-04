@@ -9,13 +9,16 @@ Esta carpeta reúne la documentación científica, metodológica y computacional
 1. **[Suplemento técnico completo de cálculos](./SUPLEMENTO_TECNICO_CALCULOS_EDTR_2026-09-04.md)**  
    Explica la arquitectura matemática de EVA, construcción de `G_0`, conjunto factible, normalización, score, doce perfiles de política, algoritmo secuencial, métricas de trayectoria, saturación P–OD, suficiencia Population-first/OD-first, interacciones, Pareto, sensibilidad, figuras y trazabilidad archivo por archivo.
 
-2. **[Referencias APA 7 con DOI](./REFERENCIAS_APA_DOI.md)**  
+2. **[Anexo: diccionario de métricas y cálculo del score](./ANEXO_DICCIONARIO_METRICAS_Y_SCORE_EDTR.md)**  
+   Conecta las 16 claves de ponderación con sus campos brutos, transformaciones exactas de normalización, ecuaciones y cautelas. Incluye las fórmulas de población ocupada, habilitación OD, equidad, logit de ciclistas inducidos, estrategia dendrítica y descomposición del score.
+
+3. **[Referencias APA 7 con DOI](./REFERENCIAS_APA_DOI.md)**  
    Bibliografía del paper y del suplemento con enlaces DOI persistentes; incluye la referencia citable de EVA y la fuente institucional PMTUM.
 
-3. **[Cursor científico vigente](./CURRENT_STATE_EDTR_2026-09-04.md)**  
+4. **[Cursor científico vigente](./CURRENT_STATE_EDTR_2026-09-04.md)**  
    Estado de avance, correcciones cerradas, cifras autoritativas y próximos pasos. Este archivo prevalece sobre cursores anteriores.
 
-4. **[Ecuaciones en LaTeX](./EQUATIONS_LATEX_2026-09-01.tex)**  
+5. **[Ecuaciones en LaTeX](./EQUATIONS_LATEX_2026-09-01.tex)**  
    Archivo histórico de apoyo. Para la formulación vigente debe preferirse el suplemento técnico y el manuscrito actual, porque algunas ecuaciones fueron refinadas después del 1 de septiembre.
 
 ## Resultado principal reproducible
