@@ -12,7 +12,7 @@ on:
       - '.github/workflows/paper-experiments.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: eva-paper-experiments
@@ -53,6 +53,19 @@ jobs:
         env:
           EVA_EXPERIMENT_BASE_URL: http://127.0.0.1:8080/experiments/runner.html
         run: node scripts/run-paper-experiments.mjs
+
+      - name: Persist experiment outputs
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/paper-experiments/
+          if git diff --cached --quiet; then
+            echo "No experiment output changes to commit"
+          else
+            git commit -m "Update corrected paper experiment outputs"
+            git push
+          fi
 
       - name: Upload experiment outputs
         if: always()
