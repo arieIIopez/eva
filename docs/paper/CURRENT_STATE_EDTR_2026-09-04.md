@@ -2,145 +2,179 @@
 
 Fecha de corte: 2026-09-04
 
-Este archivo es el **cursor autoritativo de reanudación** del paper EVA para EDTR y **supersede** `docs/paper/CURRENT_STATE_EDTR_2026-09-03.md` y, para cifras topológicas y umbrales, `docs/paper/CROSS_SCENARIO_RANK_FRONTIER_SATURATION_2026-09-03.md`.
+Este archivo es el **cursor autoritativo de reanudación** del paper EVA para EDTR. Supersede `CURRENT_STATE_EDTR_2026-09-03.md` y, para topología/umbrales, `CROSS_SCENARIO_RANK_FRONTIER_SATURATION_2026-09-03.md`.
 
-## 1. Manuscrito vivo
+## 1. Manuscrito vivo y archivo Word
 
-- Google Doc: `EDTR - Evaluación de trayectorias de implementación en redes de transporte - Método EVA`
-- ID: `1d4W7EdCoJDnU1rHB7Z4Y9wy-cU4JnjcaswqS5RtZUIs`
-- Título: **Evaluación de trayectorias de implementación en redes de transporte: método EVA para la secuenciación dependiente del estado**.
-- La última exportación PDF verificada antes de esta corrección tenía 20 páginas exactas; después de los cambios del 4 de septiembre debe volver a exportarse y comprobar que sigue dentro del límite EDTR.
+Título: **Evaluación de trayectorias de implementación en redes de transporte: método EVA para la secuenciación dependiente del estado**.
 
-## 2. Corrección cerrada: definición de red efectiva y topología
+Google Doc de trabajo principal:
 
-El bloqueo sobre `C_t` quedó resuelto.
+- ID `1d4W7EdCoJDnU1rHB7Z4Y9wy-cU4JnjcaswqS5RtZUIs`.
 
-La capa experimental contiene `experiments/effective-network.js`, que replica para el perfil `general` la definición funcional del motor: excluye de la red existente los ejes con `tipoNorm` `piloto`, `zona30` y `otro` y sustituye `window.existingFC` por esa red efectiva antes de ejecutar los experimentos. Los runners cargan y aplican esta capa antes de marcar el entorno como listo.
+Durante el 4 de septiembre se generó además un Word de revisión con las ecuaciones preservadas en LaTeX, se corrigieron problemas de paginación heredados de Google Docs y se verificaron visualmente **20 páginas**, dentro del máximo editorial trabajado para EDTR.
 
-Commits de trazabilidad:
+## 2. Paquete documental para revisores
 
-- `48ddf2144166f636d84b24c2cc1eaa1f972451f7` — alinea el runner de 12 escenarios con la red efectiva;
-- `3b0898e30bdb70cf14c177e12c6930617bc340e4` — fuerza rerun del análisis de 12 escenarios cuando cambia la red efectiva;
-- `bd7be8a91cacc7bd834ac663eefa80fdc4f408cf` — activa experimentos desde el estado común de red efectiva;
-- `376a5e355d7086371fa89ca827262c7c089e4897` — GitHub Actions persiste las salidas corregidas de los 12 escenarios.
+La entrada recomendada es `docs/paper/README.md`.
 
-Por tanto, las cifras previas `105 componentes`, `I_C=0,876568` y `3.913 componente-etapa` deben considerarse **obsoletas**.
+Documentos nuevos y vigentes:
 
-## 3. Resultados autoritativos después del rerun
+1. `docs/paper/SUPLEMENTO_TECNICO_CALCULOS_EDTR_2026-09-04.md` — explicación extensa y reproducible de todo el cálculo del paper: formulación, datos, red efectiva, normalización, perfiles W, algoritmo, trayectorias, suficiencia, interacciones, Pareto, sensibilidad, QA y figuras.
+2. `docs/paper/ANEXO_DICCIONARIO_METRICAS_Y_SCORE_EDTR.md` — diccionario de las 16 claves del score, campos brutos, transformaciones exactas, ecuaciones y cautelas.
+3. `docs/paper/REFERENCIAS_APA_DOI.md` — bibliografía APA 7 con DOI enlazado, software EVA/Zenodo y fuente PMTUM.
+4. `docs/paper/README.md` — índice de lectura para un revisor y mapa de experimentos/resultados.
 
-Fuente principal: `results/paper-all-scenarios-benefits/scenario_benefit_summary.csv`, generado 2026-09-03T18:28:53Z y persistido en el commit `376a5e355d7086371fa89ca827262c7c089e4897`.
+El README de `results/paper-all-scenarios-benefits/` fue corregido para eliminar la interpretación antigua de que el umbral 95% “identifica rendimientos decrecientes”. La redacción vigente distingue concentración temprana/cola lenta de suficiencia objetivo-específica.
 
-Estado común de la cartera completa:
+## 3. Corrección cerrada: definición de red efectiva
 
-- 124 proyectos elegibles = 88 comunales + 36 intercomunales;
-- ganancia acumulada final de acceso: 600.177 ocupados modelados;
-- `G0` efectivo: 142 componentes;
-- estado final: **107 componentes**;
-- reducción final común: 35 componentes;
-- costo acumulado proxy: 43.887 MCLP.
+La capa `experiments/effective-network.js` replica el perfil `general` del motor y excluye `piloto`, `zona30` y `otro` antes de ejecutar cualquier módulo científico.
 
-Captura temprana:
+Trazabilidad principal:
 
-- Educación superior: `I_P = 0,886870`;
-- Demanda potencial: `I_D = 0,912567`;
-- Continuidad de red: **`A_C = 3909 componente-etapa`, `I_C = 0,900691`**;
-- Integración metropolitana: `I_C = 0,874885`;
-- Demanda potencial: `I_C = 0,863134`.
+- `48ddf2144166f636d84b24c2cc1eaa1f972451f7` — alinea runner de 12 escenarios;
+- `3b0898e30bdb70cf14c177e12c6930617bc340e4` — fuerza rerun cuando cambia red efectiva;
+- `bd7be8a91cacc7bd834ac663eefa80fdc4f408cf` — estado común de experimentos;
+- `376a5e355d7086371fa89ca827262c7c089e4897` — GitHub Actions persiste resultados corregidos.
+
+Cifras antiguas `105 componentes`, `I_C=0,876568` y `3.913 componente-etapa` son **obsoletas para el resultado final del paper**.
+
+## 4. Snapshot autoritativo del experimento principal
+
+Fuente: `results/paper-all-scenarios-benefits/`, commit `376a5e355d7086371fa89ca827262c7c089e4897`.
+
+- universo modelado: 133 proyectos;
+- elegibles: 124 = 88 comunales + 36 intercomunales;
+- red existente fuente: 601 ejes;
+- red efectiva `G0`: 576 ejes;
+- `G0`: 142 componentes;
+- estado final común: 107 componentes;
+- reducción final: 35;
+- nuevo acceso final común: 600.177 ocupados modelados;
+- costo proxy final común: 43.887 MCLP.
+
+Resultados líderes:
+
+- Educación superior: `I_P=0,886870`;
+- Demanda potencial: `I_D=0,912567`;
+- Continuidad de red: `A_C=3909 componente-etapa`, `I_C=0,900691`.
 
 Fronteras:
 
-- 2D `(I_P,I_D)`: sólo **Educación superior** y **Demanda potencial**;
-- 3D `(I_P,I_D,I_C)`: se mantienen además **Integración metropolitana** y **Continuidad de red**.
+- 2D `(I_P,I_D)`: Educación superior y Demanda potencial;
+- 3D `(I_P,I_D,I_C)`: se agregan Integración metropolitana y Continuidad de red.
 
-La corrección modifica valores topológicos, pero no cambia la composición cualitativa de la frontera 3D.
+## 5. Umbral práctico conjunto P–OD
 
-## 4. Umbral práctico conjunto población + OD
+Con `C_PD,W(t)=min(P_t/P_H,D_t/D_H)`, 95%:
 
-Con `C_PD,W(t)=min(P_t/P_H,D_t/D_H)`, el 95% se alcanza en:
+| Escenario | Etapa |
+|---|---:|
+| Educación | 44 |
+| Integración | 44 |
+| Balanceado | 47 |
+| Demanda | 48 |
+| Seguridad | 51 |
+| Intermodal | 53 |
+| Continuidad | 57 |
+| RMC | 59 |
+| Ciclistas | 70 |
+| Eficiencia | 80 |
+| Equidad | 94 |
+| Dendrítica Alameda | 108 |
 
-- Educación superior: 44;
-- Integración metropolitana: 44;
-- Balanceado: 47;
-- Demanda potencial: 48;
-- Seguridad vial: 51;
-- Intermodalidad bici-metro: 53;
-- Continuidad de red: 57;
-- RMC: 59;
-- Ciclistas: 70;
-- Eficiencia presupuestaria: **80**;
-- Equidad territorial: **94**;
-- Dendrítica Alameda: **108**.
+El 99% requiere 116–123 proyectos. Esto es **captura práctica**, no condición de beneficio marginal nulo.
 
-El 99% exige entre 116 y 123 proyectos según escenario. El umbral de 95% es descriptivo y no equivale a suficiencia ni a beneficio marginal nulo.
+## 6. Tres escenarios de referencia
 
-## 5. Tres escenarios de referencia: cifras que deben usarse
+Usar las cifras del rerun de 12 escenarios:
 
-Las cifras de `results/paper-full-portfolio-scenarios/population_trajectory_summary.csv` fueron generadas el 2 de septiembre y quedaron anteriores a la unificación de red efectiva. Para el manuscrito, RMC, Balanceado y Ciclistas deben leerse desde el rerun de los 12 escenarios:
+- Balanceado: `A_P=64.498.446`, `I_P=0,866659`;
+- RMC: `A_P=64.232.198`, `I_P=0,863081`;
+- Ciclistas: `A_P=63.805.634`, `I_P=0,857350`.
 
-- Balanceado: `A_P = 64.498.446 ocupado-etapa`, `I_P = 0,866659`;
-- RMC: `A_P = 64.232.198`, `I_P = 0,863081`;
-- Ciclistas: `A_P = 63.805.634`, `I_P = 0,857350`.
+Población acumulada al proyecto 10: 283.945, 319.070 y 274.191 respectivamente. Hitos 50%: 11, 9 y 12.
 
-Los hitos de 50% permanecen 11, 9 y 12, respectivamente; las poblaciones acumuladas al proyecto 10 usadas en el texto permanecen 283.945, 319.070 y 274.191.
+Population-first: `A_P=68.838.193`, `I_P≈0,925`; ventajas sobre Balanceado/RMC/Ciclistas: 6,73%, 7,17% y 7,89%.
 
-Population-first mantiene `A_P = 68.838.193` e `I_P ≈ 0,925`; frente a las cifras autoritativas anteriores supera a Balanceado en 6,73%, a RMC en 7,17% y a Ciclistas en 7,89%.
+## 7. Suficiencia objetivo-específica
 
-## 6. Suficiencia objetivo-específica
+Population-first:
 
-Sin cambios sustantivos:
+- `t*_P=42`;
+- 82 proyectos remanentes;
+- 600.177 ocupados con nuevo acceso;
+- no existe ganancia directa ni habilitada a un paso al detenerse;
+- `A_P=68.838.193` sobre horizonte común 124;
+- `I_P=0,924972`;
+- ningún habilitador de un paso fue ejecutado antes del stop.
 
-- Population-first: `t*_P = 42`, 82 proyectos remanentes, 600.177 ocupados modelados con nuevo acceso, sin ganancia directa ni habilitada a un paso para P;
-- OD-first: `t*_D = 52`, 72 remanentes, 871.510/871.511 viajes OD/día, sin ganancia directa ni habilitada a un paso para D.
+OD-first:
 
-No declarar innecesarios los proyectos restantes. La suficiencia es específica al resultado y al horizonte de habilitación de un paso.
+- `t*_D=52`;
+- 72 remanentes;
+- 871.510/871.511 viajes OD/día;
+- no existe ganancia directa ni habilitada a un paso al detenerse;
+- área 99.097.405 viaje-etapa;
+- índice 0,916134;
+- ningún habilitador de un paso fue ejecutado.
 
-## 7. Versionamiento y cita reproducible
+Nunca describir los remanentes como innecesarios: la suficiencia es específica a métrica y profundidad de habilitación.
 
-Release pública citable vigente:
+## 8. Diagnósticos históricos preservados
+
+Los experimentos de interacción, trayectoria adaptativa, normalización y rollout continúan siendo útiles para el mecanismo que prueban, pero algunos se generaron antes de la corrección topológica. Por tanto:
+
+- pueden usarse para cambios de ranking, signos/magnitud de interacción y comparación score vs outcomes;
+- **no** deben usarse como fuente de topología final si reportan 105 componentes.
+
+Diagnóstico RMC 30 etapas: 3.255 interacciones dirigidas, 421 positivas, 179 negativas, 2.655 nulas; media absoluta 0,00471. Ejemplos I26→C049, C068→C006 e I10→I14 permanecen como evidencia de dependencia del estado.
+
+## 9. Versionamiento y cita
+
+Release pública citable:
 
 - EVA `v3.12.1`;
 - motor `v3.12.0`;
 - datos `2026.08`;
 - metodología `v2.3.0`;
-- DOI `10.5281/zenodo.22145509`.
+- DOI https://doi.org/10.5281/zenodo.22145509.
 
-**No existe todavía una release pública v3.13.0.** El manuscrito ya fue corregido para no presentar `3.13.0` como release publicada. Los experimentos del artículo deben identificarse como desarrollo posterior y congelarse por commit; el snapshot de resultados de 12 escenarios actualmente citado es `376a5e355d7086371fa89ca827262c7c089e4897`.
+**No existe todavía release pública v3.13.0.** El paper usa una rama de desarrollo posterior congelada por commit. No declarar v3.13.0 publicada hasta crear efectivamente tag/release y, si corresponde, depósito Zenodo.
 
-Antes del envío conviene crear tag/release reproducible y, si corresponde, nuevo depósito Zenodo.
+## 10. Interpretación científica que debe preservarse
 
-## 8. Correcciones aplicadas al Google Doc el 4 de septiembre
+- EVA es una **capa de evaluación de trayectoria**, no un optimizador global nuevo.
+- La novedad no es que “el orden importa”, sino la articulación auditable de estado, transformación, factibilidad, preferencias, normalización, resultados públicos e interacciones.
+- `S_t` es valor decisional, no bienestar social.
+- `I_t(p,q)` es señal dentro del modelo, no causalidad o complementariedad económica.
+- P, D y C no son validadores externos independientes de W.
+- Normalización científica fija en `G0`.
+- `I_C` es índice de trayectoria topológica, no una proporción necesariamente monótona de captura.
+- No hay W universalmente superior sin declarar el resultado relevante.
+- La validación empírica es ciclable; la transferibilidad es arquitectónica.
 
-Se corrigieron directamente en el manuscrito:
+## 11. Estado editorial y técnico al cierre de esta actualización
 
-- resumen español: `I_C=0,901`;
-- abstract inglés: `I_C=0.901`;
-- §7.6: `A_C=3.909 componente-etapa; I_C=0,901`;
-- §7.6: umbrales 95% Eficiencia=80, Equidad=94 y Dendrítica=108;
-- §7.2: `A_P` e `I_P` de Balanceado/RMC/Ciclistas alineados al rerun de 12 escenarios;
-- §7.3: porcentajes de ventaja de Population-first actualizados a 6,73%, 7,17% y 7,89%;
-- §5.5: reemplazada la afirmación de “versión experimental 3.13.0” publicada por referencia explícita al desarrollo posterior y al commit reproducible `376a5e...`;
-- §7.7: eliminado doble punto tipográfico.
+Completado:
 
-## 9. Interpretación científica que debe preservarse
+- manuscrito actualizado con cifras topológicas corregidas;
+- Word de revisión regenerado con ecuaciones LaTeX y 20 páginas verificadas;
+- paquete GitHub extenso para revisión externa;
+- bibliografía APA/DOI;
+- figuras reproducibles enlazadas desde el suplemento;
+- aclaración de datasets históricos versus autoritativos;
+- README de resultados corregido semánticamente.
 
-- EVA es una **capa de evaluación de trayectoria** para carteras interdependientes, no un nuevo optimizador global.
-- El mismo conjunto final puede producir trayectorias de beneficio materialmente distintas.
-- `S_t` es una función decisional, no bienestar social.
-- P, D y C no son validadores externos independientes de W; se usan como resultados comparables y deben interpretarse con esa endogeneidad.
-- La normalización científica permanece fija en `G0`.
-- La reducción de componentes se analiza separadamente porque `C_t` puede ser no monótono.
-- No existe un W universalmente superior sin declarar previamente el resultado público relevante.
-- La validación empírica es ciclable; la transferibilidad a otros modos es arquitectónica y requiere redefinir/validar la capa sectorial.
+## 12. Próximos pasos
 
-## 10. Próximos pasos obligatorios
+1. Ejecutar auditoría final tipo revisor 2 usando el suplemento como mapa de evidencia.
+2. Verificar una a una las afirmaciones bibliográficas del estado del arte contra las fuentes primarias.
+3. Consolidar `methodology-corrections.jsx` dentro de las fuentes principales antes de una release estable posterior.
+4. Rerun de CI después de esa consolidación y verificar que las salidas científicas no cambian.
+5. Crear tag/release reproducible del paper sólo después del QA; no usar v3.13.0 antes de que exista realmente.
+6. Mantener el Word de envío dentro de 20 páginas después de cualquier corrección final.
+7. Antes de envío, hacer una última inspección cruzada: manuscrito ↔ suplemento ↔ CSV ↔ código ↔ referencias.
 
-1. Reexportar el Google Doc a PDF y verificar nuevamente el límite de 20 páginas después de las correcciones del 4 de septiembre.
-2. Realizar lectura tipo **revisor 2** centrada en novedad incremental, endogeneidad score/outcomes, validez externa, causalidad, sensibilidad de parámetros y sobreafirmaciones.
-3. Auditar referencias una por una contra las afirmaciones de estado del arte.
-4. Auditar ecuaciones, símbolos y notación contra el código.
-5. Consolidar `methodology-corrections.jsx` dentro de las fuentes principales si aún permanece como capa temporal.
-6. Congelar release/tag reproducible para el paper; no usar `v3.13.0` como release hasta que exista.
-7. Generar DOCX final EDTR con ecuaciones nativas Word Math/OMML.
-8. QA visual/editorial final: máximo 20 páginas, resumen <=200 palabras, figuras y referencias consistentes.
-
-Hasta completar estos pasos, el Google Doc es el manuscrito vivo y este archivo es el cursor de reanudación.
+Para retomar el trabajo desde un chat nuevo: comenzar por `docs/paper/README.md`, luego este cursor y finalmente el suplemento técnico.
