@@ -24,6 +24,8 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -53,7 +55,8 @@ jobs:
             echo "No output changes to publish"
           else
             git commit -m "Update depth-2 lookahead outputs"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
       - name: Upload outputs
         if: always()
