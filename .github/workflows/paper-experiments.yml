@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -64,7 +66,8 @@ jobs:
             echo "No experiment output changes to commit"
           else
             git commit -m "Update corrected paper experiment outputs"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
 
       - name: Upload experiment outputs
