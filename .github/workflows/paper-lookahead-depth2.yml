@@ -9,7 +9,6 @@ on:
       - 'experiments/paper-lookahead-depth2-only.js'
       - 'experiments/runner-lookahead-depth2.html'
       - 'scripts/run-paper-lookahead-depth2.mjs'
-      - 'results/paper-lookahead-depth2/baseline-greedy.json'
       - '.github/workflows/paper-lookahead-depth2.yml'
 
 permissions:
