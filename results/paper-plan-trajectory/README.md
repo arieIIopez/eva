@@ -1,30 +1,43 @@
-# EVA · trayectoria de implementación
+# EVA · experimento de trayectoria de implementación
 
-Resultados del experimento metodológico ejecutado el 2026-09-01 con Ponderación RMC, normalización fija en G0 y conjunto factible Comunal + Intercomunal.
+Generado: 2026-09-04T17:07:05.561Z
 
-## Hallazgo controlado
+## Pregunta metodológica
 
-El orden estático y EVA reordenado contienen exactamente los mismos 30 proyectos, cuestan 21.079 MCLP y terminan con 119 componentes. Sin embargo, EVA obtiene 14,0389 puntos de valor decisional acumulado frente a 13,6681 (+2,71%), 8,0593 frente a 7,6399 con descuento delta=0,95 (+5,49%) y una reducción integrada de componentes de 422 frente a 362 (+16,57%). EVA mantiene en promedio 126,93 componentes durante la implementación frente a 128,93 del orden estático.
+Los planes maestros suelen comparar una condición base G0 con un horizonte GH en que la cartera está implementada. Este experimento evalúa también la trayectoria G0→G1→…→GH y pregunta si el orden de entrada de los proyectos altera el valor capturado durante la implementación y la prioridad de los proyectos restantes.
 
-Con presupuestos equivalentes, EVA presenta mayor valor decisional acumulado en los diez puntos entre 10% y 100% del presupuesto; presenta menos componentes en ocho, igual al 100% y uno más al 30%.
+## Diseño
 
-## Hallazgo adaptativo
+- Escenario: Ponderación RMC.
+- Normalización: referencia fija G0 sobre proyectos Comunales + Intercomunales.
+- Universo modelado: 133; elegibles: 124.
+- Horizonte experimental: 30 proyectos.
+- Descuento por etapa para valor decisional temprano: δ=0.95.
+- El puntaje acumulado EVA es un valor decisional multicriterio; no debe interpretarse como bienestar monetario.
 
-Al permitir que EVA reevalúe los 124 proyectos elegibles después de cada intervención, 11 proyectos entran al Top-30 y 11 del Top-30 inicial son desplazados. La secuencia adaptativa abierta termina las primeras 30 intervenciones con 114 componentes, costo 19.431 MCLP y valor EVA acumulado 15,3998.
+## Experimento 1 · mismo plan final, distinto orden
 
-La trayectoria registra 3.255 efectos dirigidos sobre proyectos restantes: 421 positivos, 179 negativos y 2.655 nulos. El efecto positivo más intenso observado es I26→C049 (+0,23169; rank 48→4) y el negativo más intenso C068→C006 (-0,26322; rank 6→104).
+Se comparan (a) el orden estático inicial y (b) un reordenamiento EVA que en cada etapa selecciona el proyecto con mayor valoración actual, pero restringido exactamente al mismo Top-30 inicial. Ambos recorridos deben terminar con el mismo conjunto de proyectos.
 
-## Interpretación
+- Mismo conjunto final: true.
+- Mismo número final de componentes: true (121 vs 121).
+- Diferencia de valor EVA acumulado, adaptativo−estático: 0.371240.
+- Diferencia de valor EVA descontado (δ=0.95): 0.419477.
+- Diferencia en reducción integrada de componentes, adaptativo−estático: 58.000.
 
-El experimento 1 demuestra que el orden puede importar aun cuando el plan final sea idéntico. El experimento 2 muestra que, cuando la cartera puede adaptarse, el cambio de estado puede modificar además qué proyectos conviene programar. Los efectos positivos y negativos se interpretan como señales de complementariedad/habilitación y sustitución/pérdida de necesidad relativa, no como decisiones automáticas de construir o eliminar.
+La tabla order_only_budget_comparison.csv compara ambas trayectorias con presupuestos equivalentes, evitando atribuir a la secuencia diferencias producidas sólo por el costo de los proyectos.
 
-El análisis extendido, secuencias completas, ejemplos y cautelas metodológicas están en `docs/paper/PLAN_TRAJECTORY_RESULTS_2026-09-01.md`.
+## Experimento 2 · plan adaptativo abierto
 
-Archivos persistidos:
+EVA reevalúa los 124 proyectos elegibles después de cada intervención. A diferencia del experimento 1, la composición del Top-30 puede cambiar.
 
-- `order_only_summary.csv`
-- `order_only_budget_comparison.csv`
-- `adaptive_open_summary.csv`
-- `adaptive_open_transition_summary.csv`
+- Proyectos que entran respecto del Top-30 inicial: 11: C067, I04, I27, I25, C086, I06, C089, C046, C052, C035, C063.
+- Proyectos inicialmente Top-30 desplazados: 11: I14, I15, I08, C006, I05, I07, I02, I29, C060, C057, C058.
+- Efectos dirigidos observados entre transiciones: 3255; positivos=421; negativos=179.
+- Magnitud media absoluta del efecto de una intervención sobre proyectos restantes: 0.004711.
+- Señal positiva más intensa: I26 → C049, Δscore=0.231691.
+- Señal negativa más intensa: C068 → C006, Δscore=-0.263219.
 
-La corrida completa, incluidos panel candidato-etapa y efectos dirigidos, es reproducible con `experiments/paper-plan-trajectory.js` y `scripts/run-paper-plan-trajectory.mjs`.
+## Lectura metodológica
+
+El experimento 1 aísla el efecto del orden: mismo conjunto final y, por construcción, misma red al completar los 30 proyectos; cualquier diferencia acumulada antes del horizonte proviene de la trayectoria. El experimento 2 agrega adaptación de cartera y permite observar proyectos que ganan o pierden prioridad a medida que cambia la red. Los efectos negativos se interpretan como señales de sustitución o pérdida de necesidad relativa, no como prueba automática de que un proyecto deba eliminarse. Los positivos se interpretan como señales de complementariedad o habilitación.

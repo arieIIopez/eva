@@ -1,3 +1,3 @@
 strategy,steps,final_cost_mclp,cumulative_realized_eva_score,discounted_eva_score,mean_network_components,integrated_component_reduction,final_network_components,cumulative_population_marginal,cumulative_demand_enabled,cumulative_induced_cyclists
-static_fixed_set,30,21079,13.668088826797215,7.639866860364089,128.93333333333334,362,119,436666,654246,3765
-eva_adaptive_fixed_set,30,21079,14.038945167010112,8.059251581797032,126.93333333333334,422,119,436666,654242,3764
+static_fixed_set,30,21079,13.671497615823647,7.641754751696462,130.2,354,121,436666,654246,3760
+eva_adaptive_fixed_set,30,21079,14.042738064903974,8.061231651541252,128.26666666666668,412,121,436666,654242,3760
