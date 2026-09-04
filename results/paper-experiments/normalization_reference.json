@@ -1,0 +1,16 @@
+{
+  "reference": "G0",
+  "poblacion": 100383,
+  "costoOD": 21,
+  "oportunidades": 305,
+  "demanda": 231055,
+  "ciclistas": 931,
+  "estudiantes": 31497,
+  "seguridad": 169.83,
+  "monumentos": 74,
+  "intermodal": 16,
+  "factibilidad": 3.9,
+  "parques": 5589271,
+  "costo": 5765,
+  "fractalBase": 100
+}
