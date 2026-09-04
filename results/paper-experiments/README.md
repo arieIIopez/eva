@@ -1,6 +1,6 @@
 # Resultados reproducibles para el paper
 
-Generado: 2026-09-04T04:29:44.343Z
+Generado: 2026-09-04T17:02:59.072Z
 
 - Motor: 3.13.0
 - Metodología: 2.4.0
