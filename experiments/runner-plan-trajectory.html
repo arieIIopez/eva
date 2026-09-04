@@ -48,14 +48,18 @@
           '../src/engine.jsx',
           '../src/fractal.js',
           '../src/dendritic-config.js',
+          './effective-network.js',
           './paper-experiments.js',
           './paper-experiments-fast.js',
           './paper-plan-trajectory.js'
         ];
         for (const path of scripts) await evalScript(path);
         await window.loadProjects();
+        const experimentParams = { ...(window.PARAM_DEFAULTS || {}), perfil: 'general', segKSI: false };
+        window.EVA_EXPERIMENT_NETWORK_API.apply(experimentParams);
         window.__EVA_EXPERIMENT_READY = true;
-        document.getElementById('status').textContent = `Listo · ${(window.projectsFC && window.projectsFC.features || []).length} proyectos`;
+        const net = window.EVA_EXPERIMENT_NETWORK || {};
+        document.getElementById('status').textContent = `Listo · ${(window.projectsFC && window.projectsFC.features || []).length} proyectos · ${net.effective_count || 0}/${net.raw_count || 0} ejes efectivos`;
       } catch (error) {
         window.__EVA_EXPERIMENT_ERROR = String(error && error.stack || error);
         document.getElementById('status').textContent = window.__EVA_EXPERIMENT_ERROR;
