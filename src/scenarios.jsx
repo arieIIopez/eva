@@ -26,13 +26,13 @@ window.EVA_SCENARIOS = [
   {
     key: "ponderacion_rmc",
     nombre: "Ponderación RMC",
-    desc: "Escenario de ponderación multicriterio provisto para la revisión RMC: equilibra población marginal, ciclistas inducidos y prioridad GORE con atractor de parques y continuidad de red.",
+    desc: "Escenario de ponderación multicriterio provisto para la revisión RMC: equilibra cobertura marginal de población ocupada, ciclistas inducidos y prioridad GORE con atractor de parques y continuidad de red.",
     weights: { poblacion: 28, costoOD: 18, oportunidades: 14, equidad: 18, continuidad: 19, demanda: 13, ciclistas: 28, fractal: 30, estudiantes: 12, prioridadGore: 24, costoInv: 15, seguridad: 5, monumentos: 0, intermodal: 9, factibilidad: 15, parques: 20 },
   },
   {
     key: "balanceado",
     nombre: "Balanceado",
-    desc: "Reparto equilibrado entre cobertura poblacional, demanda, equidad, continuidad de red e intermodalidad bici-metro. Escenario por defecto del sistema.",
+    desc: "Reparto equilibrado entre cobertura de población ocupada, demanda, equidad, continuidad de red e intermodalidad bici-metro. Escenario por defecto del sistema.",
     weights: { poblacion: 14, costoOD: 10, oportunidades: 6, equidad: 12, continuidad: 12, demanda: 12, ciclistas: 10, fractal: 6, estudiantes: 5, prioridadGore: 10, costoInv: 6, seguridad: 5, monumentos: 0, intermodal: 8, factibilidad: 8, parques: 6 },
   },
   {
@@ -86,13 +86,13 @@ window.EVA_SCENARIOS = [
   {
     key: "seguridad",
     nombre: "Seguridad vial",
-    desc: "Prioriza proyectos que intervienen corredores con alta siniestralidad ciclista PREVENIBLE (CONASET 2020–2024): cada siniestro se pondera por severidad, por su tratabilidad con infraestructura segregada (un choque por alcance en tramo recto cuenta más que uno por ebriedad en un cruce) y por cercanía a la traza. Acompaña la seguridad con continuidad de red, equidad y cobertura poblacional.",
+    desc: "Prioriza proyectos que intervienen corredores con alta siniestralidad ciclista PREVENIBLE (CONASET 2020–2024): cada siniestro se pondera por severidad, por su tratabilidad con infraestructura segregada (un choque por alcance en tramo recto cuenta más que uno por ebriedad en un cruce) y por cercanía a la traza. Acompaña la seguridad con continuidad de red, equidad y cobertura de población ocupada.",
     weights: { poblacion: 14, costoOD: 8, oportunidades: 6, equidad: 12, continuidad: 14, demanda: 10, ciclistas: 8, fractal: 6, estudiantes: 5, prioridadGore: 8, costoInv: 6, seguridad: 35, monumentos: 0, intermodal: 5, factibilidad: 5, parques: 4 },
   },
   {
     key: "intermodal",
     nombre: "Intermodalidad bici-metro",
-    desc: "Prioriza ejes que conectan estaciones de Metro, potenciando el viaje combinado bicicleta+metro (primer/último kilómetro). Acompaña la intermodalidad con demanda OD, continuidad de red y cobertura poblacional.",
+    desc: "Prioriza ejes que conectan estaciones de Metro, potenciando el viaje combinado bicicleta+metro (primer/último kilómetro). Acompaña la intermodalidad con demanda OD, continuidad de red y cobertura de población ocupada.",
     weights: { poblacion: 12, costoOD: 12, oportunidades: 6, equidad: 10, continuidad: 14, demanda: 14, ciclistas: 8, fractal: 6, estudiantes: 5, prioridadGore: 8, costoInv: 6, seguridad: 5, monumentos: 0, intermodal: 35, factibilidad: 5, parques: 4 },
   },
 ];
@@ -107,7 +107,7 @@ window.EVA_SCENARIO_MAP = Object.fromEntries(window.EVA_SCENARIOS.map(s => [s.ke
 ------------------------------------------------------------ */
 window.evaExplainScore = function (p, weights, ranking) {
   const labels = {
-    poblacion: "población marginal",
+    poblacion: "cobertura marginal de población ocupada",
     costoOD: "tasa de habilitación OD",
     oportunidades: "hexes beneficiados",
     equidad: "equidad territorial",
@@ -142,7 +142,7 @@ window.evaExplainScore = function (p, weights, ranking) {
   const frases = [];
   if (p.componentesUnidos > 0) frases.push(`conecta ${p.componentesUnidos} subred${p.componentesUnidos > 1 ? "es" : ""} hoy separada${p.componentesUnidos > 1 ? "s" : ""}`);
   if ((p.demandaHabilitada || 0) > 0) frases.push(`habilita ${Math.round(p.demandaHabilitada).toLocaleString("es-CL")} viajes OD/día`);
-  if ((p.poblacion || 0) > 0) frases.push(`beneficia ${(p.poblacion).toLocaleString("es-CL")} personas de forma marginal`);
+  if ((p.poblacion || 0) > 0) frases.push(`incorpora acceso para ${(p.poblacion).toLocaleString("es-CL")} ocupados de forma marginal`);
 
   let texto = `${p.nombre} ocupa la posición ${p.rank != null ? p.rank : "—"} del ranking. `;
   if (frases.length) texto += `Su prioridad se explica porque ${frases.join(", ")}. `;
@@ -155,7 +155,7 @@ window.evaExplainScore = function (p, weights, ranking) {
     posicion: p.rank,
     dominante_en: top ? top.k : null,
     depende_de_un_criterio: !!dominante,
-    aportes: contribs.map(c => ({ criterio: c.k, peso: c.w, normalizado: c.norm, aporte_score: +c.aporte.toFixed(4), pct_score: +(c.aporte / sumAporte * 100).toFixed(1) })),
+    aportes: contribs.map(c => ({ criterio: c.k, etiqueta: c.label, peso: c.w, normalizado: c.norm, aporte_score: +c.aporte.toFixed(4), pct_score: +(c.aporte / sumAporte * 100).toFixed(1) })),
     fortalezas: fortalezas.map(f => f.label),
     debilidades: debilidades.map(d => d.label),
     explicacion: texto.trim(),
