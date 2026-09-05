@@ -143,16 +143,31 @@ Cambios aplicados:
 
 Mantener esta copia como fuente portátil de matemáticas; el Google Doc principal sigue siendo la referencia de layout.
 
+### Control editorial de extensión 2026-09-05
+
+La exportación PDF del Google Doc principal, después de las correcciones anteriores, tiene:
+
+- **20 páginas exactas**;
+- tamaño Carta (612×792 pt);
+- 1.015.872 bytes (~0,97 MiB).
+
+La inspección renderizada de las 20 páginas muestra que el contenido permanece dentro del límite editorial. Sin embargo, la exportación de Google Docs reemplaza varios subíndices y superíndices Unicode por cuadrados vacíos en la notación matemática. Por ello esta exportación es válida para QA de longitud/layout, **no** como archivo final de envío. El Word final deberá usar ecuaciones nativas OMML.
+
 ## 7. Deuda técnica pre-v3.13
 
-`src/methodology-corrections.jsx` sigue siendo una capa temporal. Antes de una release estable:
+La consolidación comenzó el 2026-09-05:
 
-1. integrar sus correcciones en `src/metodologia.jsx` y `src/scenarios.jsx`;
+- `b1805d7eee4742272e51f1ac9510a02af30ca124`: `src/scenarios.jsx` incorpora directamente la semántica “cobertura marginal de población ocupada” y `evaExplainScore` ya no depende del wrapper de compatibilidad; los vectores de pesos no se modificaron.
+- `5089587669168f72161c4cd5115836226b5ba800`: `src/methodology-corrections.jsx` quedó reducido únicamente a las fichas todavía heredadas de `metodologia.jsx`.
+
+Pendiente antes de una release estable:
+
+1. integrar en `src/metodologia.jsx` las correcciones de `sec_score`, `crit_costoOD`, `crit_poblacion`, `crit_oportunidades` y `crit_equidad`;
 2. eliminar el include de la capa temporal;
 3. borrar `src/methodology-corrections.jsx` sólo después de verificar que no queda semántica dependiente de ella;
 4. rerun QA y experimentos afectados.
 
-Semántica que debe conservarse al consolidar:
+Semántica que debe conservarse:
 
 - `pob` = población ocupada modelada, no población total;
 - `costoOD` = clave histórica para tasa discreta de habilitación OD, no costo generalizado;
@@ -169,10 +184,9 @@ Semántica que debe conservarse al consolidar:
 
 1. cerrar y persistir depth-2 corregido;
 2. actualizar §7.5 y auditoría;
-3. consolidar `methodology-corrections.jsx` en las fuentes principales;
+3. terminar consolidación de `methodology-corrections.jsx` en `metodologia.jsx`;
 4. rerun CI;
 5. congelar un commit reproducible único del paper;
-6. reexportar manuscrito y verificar ≤20 páginas;
-7. generar Word final con ecuaciones OMML, Times New Roman 12, interlineado simple, páginas numeradas y <20 MB;
-8. QA visual página por página;
-9. sólo entonces declarar versión lista para envío EDTR.
+6. generar Word final con ecuaciones OMML, Times New Roman 12, interlineado simple, páginas numeradas y <20 MB;
+7. QA visual página por página del DOCX/PDF derivado;
+8. sólo entonces declarar versión lista para envío EDTR.
