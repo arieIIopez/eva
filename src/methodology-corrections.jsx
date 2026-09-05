@@ -1,12 +1,12 @@
 /* ============================================================
    EVA · Correcciones metodológicas de compatibilidad · v3.13 experimental
    ------------------------------------------------------------
-   Corrige fichas heredadas cuyo texto quedó desalineado del motor vigente.
-   Se carga inmediatamente después de metodologia.jsx y antes de la UI.
+   Capa temporal para fichas de metodologia.jsx todavía heredadas.
 
    IMPORTANTE: esta capa no modifica cálculos, parámetros ni ponderaciones.
-   Sólo corrige documentación mostrada al usuario. Debe consolidarse dentro
-   de metodologia.jsx y scenarios.jsx antes de declarar una release estable.
+   La terminología de escenarios y evaExplainScore ya fue consolidada
+   directamente en scenarios.jsx; esta capa queda limitada a metodologia.jsx
+   hasta completar su integración antes de una release estable.
 ============================================================ */
 (function applyMethodologyCorrections() {
   const M = window.METODOLOGIA;
@@ -86,36 +86,5 @@
       "La métrica utiliza población ocupada modelada y no incorpora directamente ingreso, género, discapacidad u otras dimensiones distributivas.",
       "La mediana de cobertura depende del estado vigente de la red y puede cambiar durante la priorización secuencial.",
     ];
-  }
-
-  /* Corrige terminología de escenarios sin modificar los vectores de pesos. */
-  if (Array.isArray(window.EVA_SCENARIOS)) {
-    window.EVA_SCENARIOS.forEach(s => {
-      if (!s || !s.desc) return;
-      s.desc = s.desc
-        .replace(/población marginal/g, "cobertura marginal de población ocupada")
-        .replace(/cobertura poblacional/g, "cobertura de población ocupada");
-    });
-  }
-
-  /* Corrige la explicación automática del score generada por scenarios.jsx. */
-  if (typeof window.evaExplainScore === "function") {
-    const baseExplainScore = window.evaExplainScore;
-    const fixLabel = (s) => (s || "")
-      .replace(/población marginal/g, "cobertura marginal de población ocupada")
-      .replace(/cobertura poblacional/g, "cobertura de población ocupada");
-
-    window.evaExplainScore = function (p, weights, ranking) {
-      const out = baseExplainScore(p, weights, ranking);
-      if (!out) return out;
-      out.explicacion = fixLabel(out.explicacion)
-        .replace(/beneficia ([0-9.]+) personas de forma marginal/g, "incorpora acceso para $1 ocupados de forma marginal");
-      if (Array.isArray(out.aportes)) {
-        out.aportes.forEach(a => { if (a && a.criterio === "poblacion") a.etiqueta = "cobertura marginal de población ocupada"; });
-      }
-      if (Array.isArray(out.fortalezas)) out.fortalezas = out.fortalezas.map(fixLabel);
-      if (Array.isArray(out.debilidades)) out.debilidades = out.debilidades.map(fixLabel);
-      return out;
-    };
   }
 })();
